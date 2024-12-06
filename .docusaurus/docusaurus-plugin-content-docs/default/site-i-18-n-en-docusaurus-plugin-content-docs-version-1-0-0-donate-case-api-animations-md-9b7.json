@@ -1,0 +1,28 @@
+{
+  "id": "DonateCase/API/register-animations",
+  "title": "Register Animations",
+  "description": "To create an animation class, we will use the JavaAnimation abstract class",
+  "source": "@site/i18n/en/docusaurus-plugin-content-docs/version-1.0.0/DonateCase/API/animations.md",
+  "sourceDirName": "DonateCase/API",
+  "slug": "/DonateCase/API/register-animations",
+  "permalink": "/en/docs/1.0.0/DonateCase/API/register-animations",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "1.0.0",
+  "sidebarPosition": 6,
+  "frontMatter": {
+    "id": "register-animations",
+    "title": "Register Animations",
+    "sidebar_position": 6
+  },
+  "sidebar": "sidebar",
+  "previous": {
+    "title": "CaseManager",
+    "permalink": "/en/docs/1.0.0/DonateCase/API/casemanager"
+  },
+  "next": {
+    "title": "Register Sub Commands",
+    "permalink": "/en/docs/1.0.0/DonateCase/API/register-subcommands"
+  }
+}

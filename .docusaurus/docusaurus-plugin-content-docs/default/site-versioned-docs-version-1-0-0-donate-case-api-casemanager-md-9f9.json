@@ -1,0 +1,28 @@
+{
+  "id": "DonateCase/API/casemanager",
+  "title": "CaseManager",
+  "description": "CaseManager -",
+  "source": "@site/versioned_docs/version-1.0.0/DonateCase/API/casemanager.md",
+  "sourceDirName": "DonateCase/API",
+  "slug": "/DonateCase/API/casemanager",
+  "permalink": "/docs/1.0.0/DonateCase/API/casemanager",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "1.0.0",
+  "sidebarPosition": 5,
+  "frontMatter": {
+    "id": "casemanager",
+    "title": "CaseManager",
+    "sidebar_position": 5
+  },
+  "sidebar": "sidebar",
+  "previous": {
+    "title": "Реєстрація івентів",
+    "permalink": "/docs/1.0.0/DonateCase/API/register-events"
+  },
+  "next": {
+    "title": "Реєстрація анімацій",
+    "permalink": "/docs/1.0.0/DonateCase/API/register-animations"
+  }
+}

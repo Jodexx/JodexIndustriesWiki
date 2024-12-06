@@ -1,13 +1,13 @@
 ---
 id: animations
-title: Animations
-sidebar_position: 5
+title: Анімації
+sidebar_position: 4
 ---
 import ReactPlayer from 'react-player'
 
 
-# DonateCase Animations
-DonateCase supports 5 animations by default
+# DonateCase Анімації
+DonateCase підтримує 5 анімацій за замовченням
 
 ### SHAPE
 <ReactPlayer loop="true" controls url='https://jodexindustries.xyz/assets/videos/shape.mkv' />
@@ -19,27 +19,27 @@ DonateCase supports 5 animations by default
 <ReactPlayer loop="true" controls url='https://jodexindustries.xyz/assets/videos/rainly.mkv' />
 
 ### WHEEL (RANDOM)
-**(random groups, an infinite number of items)** <br></br>
-_if you want to install the wheel vertically, then you need to install the case looking down on it_
+**(випадкові групи, безкінечна кількість елементів)** <br></br>
+_якщо ви хочете встановити колесо вертикально, то кейс потрібно встановлювати дивлясись на нього вниз_
 <ReactPlayer loop="true" controls url='https://jodexindustries.xyz/assets/videos/wheel.mkv' />
 
 ### WHEEL (FULL)
-**(all groups from config)** <br></br>
-_if you want to install the wheel vertically, then you need to install the case looking down on it_
+**(одна група)** <br></br>
+_якщо ви хочете встановити колесо вертикально, то кейс потрібно встановлювати дивлясись на нього вниз_
 <ReactPlayer loop="true" controls url='https://jodexindustries.xyz/assets/videos/fullwheel.mkv' />
 
 ### FWHEEL 💰
-Price: 5$ <br></br>
-**Premium resource!** <br></br>
-To buy, contact the [Discord server](https://discord.gg/a65jVPK9vM) <br></br>
-_if you want to install the wheel vertically, then you need to install the case looking down on it_
+Ціна: 5$ <br></br>
+**Premium ресурс!** <br></br>
+Для купівлі, зверніться в [Discord сервер](https://discord.gg/a65jVPK9vM)<br></br>
+_якщо ви хочете встановити колесо вертикально, то кейс потрібно встановлювати дивлясись на нього вниз_
 
 <ReactPlayer loop="true" controls url='https://jodexindustries.xyz/assets/videos/fwheel.mkv' />
 
 ### BWHEEL 💰
-Price: 10$ <br></br>
-**Premium resource!** <br></br>
-To buy, contact the [Discord server](https://discord.gg/a65jVPK9vM) <br></br>
-_if you want to install the wheel vertically, then you need to install the case looking down on it_
+Ціна: 10$ <br></br>
+**Premium ресурс!** <br></br>
+Для купівлі, зверніться в [Discord сервер](https://discord.gg/a65jVPK9vM)<br></br>
+_якщо ви хочете встановити колесо вертикально, то кейс потрібно встановлювати дивлясись на нього вниз_
 
 <ReactPlayer loop="true" controls url='https://jodexindustries.xyz/assets/videos/bwheel.mp4' />

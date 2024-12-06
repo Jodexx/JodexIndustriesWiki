@@ -1,0 +1,28 @@
+{
+  "id": "DonateCase/API/Spigot/outdated/register-animations",
+  "title": "Реєстрація анімацій",
+  "description": "Для створення класу animation ми будемо використовувати JavaAnimation інтерфейс",
+  "source": "@site/docs/DonateCase/API/Spigot/outdated/animations.md",
+  "sourceDirName": "DonateCase/API/Spigot/outdated",
+  "slug": "/DonateCase/API/Spigot/outdated/register-animations",
+  "permalink": "/docs/2.0.0/DonateCase/API/Spigot/outdated/register-animations",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 6,
+  "frontMatter": {
+    "id": "register-animations",
+    "title": "Реєстрація анімацій",
+    "sidebar_position": 6
+  },
+  "sidebar": "defaultSidebar",
+  "previous": {
+    "title": "CaseManager",
+    "permalink": "/docs/2.0.0/DonateCase/API/Spigot/outdated/casemanager"
+  },
+  "next": {
+    "title": "Реєстрація субкоманд",
+    "permalink": "/docs/2.0.0/DonateCase/API/Spigot/outdated/register-subcommands"
+  }
+}

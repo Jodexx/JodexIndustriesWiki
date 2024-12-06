@@ -1,0 +1,28 @@
+{
+  "id": "DonateCase/materials",
+  "title": "Матеріали",
+  "description": "Матеріали Minecraft",
+  "source": "@site/docs/DonateCase/materials.md",
+  "sourceDirName": "DonateCase",
+  "slug": "/DonateCase/materials",
+  "permalink": "/docs/2.0.0/DonateCase/materials",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 5,
+  "frontMatter": {
+    "id": "materials",
+    "title": "Матеріали",
+    "sidebar_position": 5
+  },
+  "sidebar": "defaultSidebar",
+  "previous": {
+    "title": "Анімації",
+    "permalink": "/docs/2.0.0/DonateCase/animations"
+  },
+  "next": {
+    "title": "Голограмми",
+    "permalink": "/docs/2.0.0/DonateCase/holograms"
+  }
+}

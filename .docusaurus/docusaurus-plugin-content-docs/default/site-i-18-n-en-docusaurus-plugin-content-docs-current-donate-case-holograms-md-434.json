@@ -1,0 +1,28 @@
+{
+  "id": "DonateCase/holograms",
+  "title": "Holograms",
+  "description": "ArmorStand",
+  "source": "@site/i18n/en/docusaurus-plugin-content-docs/current/DonateCase/holograms.md",
+  "sourceDirName": "DonateCase",
+  "slug": "/DonateCase/holograms",
+  "permalink": "/en/docs/2.0.0/DonateCase/holograms",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 7,
+  "frontMatter": {
+    "id": "holograms",
+    "title": "Holograms",
+    "sidebar_position": 7
+  },
+  "sidebar": "defaultSidebar",
+  "previous": {
+    "title": "Materials",
+    "permalink": "/en/docs/2.0.0/DonateCase/materials"
+  },
+  "next": {
+    "title": "Встановлення",
+    "permalink": "/en/docs/2.0.0/DonateCase/API/install"
+  }
+}

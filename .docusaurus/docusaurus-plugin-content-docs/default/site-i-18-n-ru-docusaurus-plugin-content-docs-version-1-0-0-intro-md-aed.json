@@ -1,0 +1,24 @@
+{
+  "id": "wiki-index",
+  "title": "Вики индекс",
+  "description": "| DonateCase                                                                        |",
+  "source": "@site/i18n/ru/docusaurus-plugin-content-docs/version-1.0.0/intro.md",
+  "sourceDirName": ".",
+  "slug": "/wiki-index",
+  "permalink": "/ru/docs/1.0.0/wiki-index",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "1.0.0",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "sidebar_position": 1,
+    "id": "wiki-index",
+    "title": "Вики индекс"
+  },
+  "sidebar": "sidebar",
+  "next": {
+    "title": "Главная",
+    "permalink": "/ru/docs/1.0.0/DonateCase/donatecase-main"
+  }
+}

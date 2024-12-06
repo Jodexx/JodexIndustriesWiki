@@ -1,0 +1,28 @@
+{
+  "id": "DonateCase/API/Spigot/outdated/register-materials",
+  "title": "Реєстрація матеріалів",
+  "description": "Користувацькі матеріали оброблюються за допомогою інтерфейсу MaterialHandler",
+  "source": "@site/docs/DonateCase/API/Spigot/outdated/materials.md",
+  "sourceDirName": "DonateCase/API/Spigot/outdated",
+  "slug": "/DonateCase/API/Spigot/outdated/register-materials",
+  "permalink": "/docs/2.0.0/DonateCase/API/Spigot/outdated/register-materials",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 8,
+  "frontMatter": {
+    "id": "register-materials",
+    "title": "Реєстрація матеріалів",
+    "sidebar_position": 8
+  },
+  "sidebar": "defaultSidebar",
+  "previous": {
+    "title": "Реєстрація субкоманд",
+    "permalink": "/docs/2.0.0/DonateCase/API/Spigot/outdated/register-subcommands"
+  },
+  "next": {
+    "title": "Реєстрація предметів, заданими в гюї",
+    "permalink": "/docs/2.0.0/DonateCase/API/Spigot/outdated/register-guitypeditems"
+  }
+}

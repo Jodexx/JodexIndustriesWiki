@@ -1,0 +1,28 @@
+{
+  "id": "DonateCase/API/register-subcommands",
+  "title": "Register Sub Commands",
+  "description": "First method",
+  "source": "@site/i18n/en/docusaurus-plugin-content-docs/version-1.0.0/DonateCase/API/subcommands.md",
+  "sourceDirName": "DonateCase/API",
+  "slug": "/DonateCase/API/register-subcommands",
+  "permalink": "/en/docs/1.0.0/DonateCase/API/register-subcommands",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "1.0.0",
+  "sidebarPosition": 7,
+  "frontMatter": {
+    "id": "register-subcommands",
+    "title": "Register Sub Commands",
+    "sidebar_position": 7
+  },
+  "sidebar": "sidebar",
+  "previous": {
+    "title": "Register Animations",
+    "permalink": "/en/docs/1.0.0/DonateCase/API/register-animations"
+  },
+  "next": {
+    "title": "Register materials",
+    "permalink": "/en/docs/1.0.0/DonateCase/API/register-materials"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "DonateCase/API/register-materials",
+  "title": "Регистрация материалов",
+  "description": "Пользовательские материалы обрабатываются с помощью интерфейса MaterialHandler",
+  "source": "@site/i18n/ru/docusaurus-plugin-content-docs/version-1.0.0/DonateCase/API/materials.md",
+  "sourceDirName": "DonateCase/API",
+  "slug": "/DonateCase/API/register-materials",
+  "permalink": "/ru/docs/1.0.0/DonateCase/API/register-materials",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "1.0.0",
+  "sidebarPosition": 8,
+  "frontMatter": {
+    "id": "register-materials",
+    "title": "Регистрация материалов",
+    "sidebar_position": 8
+  },
+  "sidebar": "sidebar",
+  "previous": {
+    "title": "Регистрация субкоманд",
+    "permalink": "/ru/docs/1.0.0/DonateCase/API/register-subcommands"
+  },
+  "next": {
+    "title": "Регистрация предметов, заданными в гюи",
+    "permalink": "/ru/docs/1.0.0/DonateCase/API/register-guitypeditems"
+  }
+}

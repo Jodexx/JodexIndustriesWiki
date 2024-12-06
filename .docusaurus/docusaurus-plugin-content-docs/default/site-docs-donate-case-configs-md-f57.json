@@ -1,0 +1,28 @@
+{
+  "id": "DonateCase/configurations",
+  "title": "Конфігурації",
+  "description": "Спробуйте наш новий генератор кейсів для DonateCase! -> LINK",
+  "source": "@site/docs/DonateCase/configs.md",
+  "sourceDirName": "DonateCase",
+  "slug": "/DonateCase/configurations",
+  "permalink": "/docs/2.0.0/DonateCase/configurations",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "id": "configurations",
+    "title": "Конфігурації",
+    "sidebar_position": 2
+  },
+  "sidebar": "defaultSidebar",
+  "previous": {
+    "title": "Головна",
+    "permalink": "/docs/2.0.0/DonateCase/donatecase-main"
+  },
+  "next": {
+    "title": "Налаштування предметів",
+    "permalink": "/docs/2.0.0/DonateCase/items-settings"
+  }
+}

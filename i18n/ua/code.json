@@ -1,0 +1,180 @@
+{
+  "homepage.gotowiki": {
+    "message": "Перейти до вікі"
+  },
+  "theme.ErrorPageContent.title": {
+    "message": "Ця сторінка зазнала збоїв.",
+    "description": "Заголовок сторінки на випадок збою"
+  },
+  "theme.BackToTopButton.buttonAriaLabel": {
+    "message": "Прокрутити наверх",
+    "description": "ARIA мітка для кнопки прокручування наверх"
+  },
+  "theme.blog.archive.title": {
+    "message": "Архів",
+    "description": "Заголовок сторінки та героїв на сторінці архіву блогу"
+  },
+  "theme.blog.archive.description": {
+    "message": "Архів",
+    "description": "Опис сторінки та героїв на сторінці архіву блогу"
+  },
+  "theme.blog.paginator.navAriaLabel": {
+    "message": "Навігація по списку блогів",
+    "description": "ARIA мітка для пагінації блогу"
+  },
+  "theme.blog.paginator.newerEntries": {
+    "message": "Нові записи",
+    "description": "Мітка для переходу на сторінку новіших записів блогу (попередня сторінка)"
+  },
+  "theme.blog.paginator.olderEntries": {
+    "message": "Старіші записи",
+    "description": "Мітка для переходу на сторінку старіших записів блогу (наступна сторінка)"
+  },
+  "theme.blog.post.paginator.navAriaLabel": {
+    "message": "Навігація по сторінці блогу",
+    "description": "ARIA мітка для пагінації записів блогу"
+  },
+  "theme.blog.post.paginator.newerPost": {
+    "message": "Новіший пост",
+    "description": "Мітка кнопки запису блогу для переходу до новішого/попереднього поста"
+  },
+  "theme.blog.post.paginator.olderPost": {
+    "message": "Старіший пост",
+    "description": "Мітка кнопки запису блогу для переходу до старішого/наступного поста"
+  },
+  "theme.tags.tagsPageLink": {
+    "message": "Переглянути всі теги",
+    "description": "Мітка посилання на сторінку списку тегів"
+  },
+  "theme.colorToggle.ariaLabel": {
+    "message": "Перемикати між темною та світлою темою (зараз {mode})",
+    "description": "ARIA мітка для перемикача кольорових режимів на панелі навігації"
+  },
+  "theme.colorToggle.ariaLabel.mode.dark": {
+    "message": "темна тема",
+    "description": "Назва темної кольорової теми"
+  },
+  "theme.colorToggle.ariaLabel.mode.light": {
+    "message": "світла тема",
+    "description": "Назва світлої кольорової теми"
+  },
+  "theme.docs.breadcrumbs.navAriaLabel": {
+    "message": "Хлібні крихти",
+    "description": "ARIA мітка для хлібних крихт"
+  },
+  "theme.docs.DocCard.categoryDescription.plurals": {
+    "message": "1 елемент|{count} елементи",
+    "description": "Опис за замовчуванням для картки категорії у згенерованому індексі, який вказує на кількість елементів у цій категорії"
+  },
+  "theme.docs.paginator.navAriaLabel": {
+    "message": "Сторінки документації",
+    "description": "ARIA мітка для пагінації документації"
+  },
+  "theme.docs.paginator.previous": {
+    "message": "Попередній",
+    "description": "Мітка для переходу до попереднього документа"
+  },
+  "theme.docs.paginator.next": {
+    "message": "Наступний",
+    "description": "Мітка для переходу до наступного документа"
+  },
+  "theme.docs.tagDocListPageTitle.nDocsTagged": {
+    "message": "Один документ позначений|{count} документи позначені",
+    "description": "Множинна форма для \"{count} документи позначені\""
+  },
+  "theme.docs.tagDocListPageTitle": {
+    "message": "{nDocsTagged} з тегом \"{tagName}\"",
+    "description": "Заголовок сторінки для тегу документації"
+  },
+  "theme.docs.versionBadge.label": {
+    "message": "Версія: {versionLabel}"
+  },
+  "theme.docs.versions.unreleasedVersionLabel": {
+    "message": "Це нерелізована документація для версії {siteTitle} {versionLabel}.",
+    "description": "Мітка для повідомлення користувачеві, що він переглядає нерелізовану версію документа"
+  },
+  "theme.docs.versions.unmaintainedVersionLabel": {
+    "message": "Це документація для {siteTitle} {versionLabel}, яка більше не активно підтримується.",
+    "description": "Мітка для повідомлення користувачеві, що він переглядає версію документа, яка більше не підтримується"
+  },
+  "theme.docs.versions.latestVersionSuggestionLabel": {
+    "message": "Для актуальної документації перегляньте {latestVersionLink} ({versionLabel}).",
+    "description": "Мітка для запропонованої останньої версії документації"
+  },
+  "theme.docs.versions.latestVersionLinkLabel": {
+    "message": "остання версія",
+    "description": "Мітка для посилання на останню версію документа"
+  },
+  "theme.common.editThisPage": {
+    "message": "Редагувати цю сторінку",
+    "description": "Мітка посилання для редагування поточної сторінки"
+  },
+  "theme.common.headingLinkTitle": {
+    "message": "Пряме посилання на {heading}",
+    "description": "Назва для посилання на заголовок"
+  },
+  "theme.lastUpdated.atDate": {
+    "message": " на {date}",
+    "description": "Текст, що вказує на дату останнього оновлення сторінки"
+  },
+  "theme.lastUpdated.byUser": {
+    "message": " від {user}",
+    "description": "Текст, що вказує, хто останнім оновив сторінку"
+  },
+  "theme.lastUpdated.lastUpdatedAtBy": {
+    "message": "Останнє оновлення{atDate}{byUser}",
+    "description": "Фраза, що показує, коли та ким було оновлено сторінку"
+  },
+  "theme.navbar.mobileVersionsDropdown.label": {
+    "message": "Версії",
+    "description": "Мітка для випадаючого меню версій на мобільному перегляді"
+  },
+  "theme.NotFound.title": {
+    "message": "Сторінку не знайдено",
+    "description": "Заголовок сторінки 404"
+  },
+  "theme.tags.tagsListLabel": {
+    "message": "Теги:",
+    "description": "Мітка поруч зі списком тегів"
+  },
+  "theme.admonition.caution": {
+    "message": "увага",
+    "description": "Мітка для застереження (:::caution)"
+  },
+  "theme.admonition.danger": {
+    "message": "небезпека",
+    "description": "Мітка для попередження про небезпеку (:::danger)"
+  },
+  "theme.admonition.info": {
+    "message": "інформація",
+    "description": "Мітка для інформаційного попередження (:::info)"
+  },
+  "theme.admonition.note": {
+    "message": "зауваження",
+    "description": "Мітка для зауваження (:::note)"
+  },
+  "theme.admonition.tip": {
+    "message": "порада",
+    "description": "Мітка для поради (:::tip)"
+  },
+  "theme.admonition.warning": {
+    "message": "попередження",
+    "description": "Мітка для попередження (:::warning)"
+  },
+  "theme.AnnouncementBar.closeButtonAriaLabel": {
+    "message": "Закрити",
+    "description": "ARIA мітка для кнопки закриття анонсної панелі"
+  },
+  "theme.blog.sidebar.navAriaLabel": {
+    "message": "Навігація по останнім записам блогу",
+    "description": "ARIA мітка для навігації по останнім записам у бічній панелі блогу"
+  },
+  "theme.CodeBlock.copied": {
+    "message": "Скопійовано",
+    "description": "Мітка кнопки для копіювання вмісту коду"
+  },
+  "theme.CodeBlock.copy": {
+    "message": "Копіювати",
+    "description": "Мітка кнопки для копіювання вмісту коду"
+  }
+}

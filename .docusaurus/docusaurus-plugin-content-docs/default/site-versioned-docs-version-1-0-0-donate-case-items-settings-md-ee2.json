@@ -1,0 +1,30 @@
+{
+  "id": "DonateCase/items-settings",
+  "title": "Налаштування предметів",
+  "description": "Налаштування предметів в гюї",
+  "source": "@site/versioned_docs/version-1.0.0/DonateCase/items-settings.md",
+  "sourceDirName": "DonateCase",
+  "slug": "/DonateCase/items-settings",
+  "permalink": "/docs/1.0.0/DonateCase/items-settings",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "1.0.0",
+  "sidebarPosition": 4,
+  "frontMatter": {
+    "id": "items-settings",
+    "title": "Налаштування предметів",
+    "toc_min_heading_level": 2,
+    "toc_max_heading_level": 5,
+    "sidebar_position": 4
+  },
+  "sidebar": "sidebar",
+  "previous": {
+    "title": "Конфігурації",
+    "permalink": "/docs/1.0.0/DonateCase/configurations"
+  },
+  "next": {
+    "title": "Анімації",
+    "permalink": "/docs/1.0.0/DonateCase/animations"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "DonateCase/API/install",
+  "title": "Установка",
+  "description": "Maven",
+  "source": "@site/i18n/ru/docusaurus-plugin-content-docs/current/DonateCase/API/install.md",
+  "sourceDirName": "DonateCase/API",
+  "slug": "/DonateCase/API/install",
+  "permalink": "/ru/docs/2.0.0/DonateCase/API/install",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "id": "install",
+    "title": "Установка",
+    "sidebar_position": 2
+  },
+  "sidebar": "defaultSidebar",
+  "previous": {
+    "title": "Голограммы",
+    "permalink": "/ru/docs/2.0.0/DonateCase/holograms"
+  },
+  "next": {
+    "title": "Впровадження за допомогою аддону",
+    "permalink": "/ru/docs/2.0.0/DonateCase/API/implementing/Spigot/implementing-addon"
+  }
+}

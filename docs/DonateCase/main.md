@@ -1,9 +1,9 @@
 ---
-sidebar_position: 2
+sidebar_position: 1
 id: donatecase-main
-title: Home
+title: Головна
 ---
 
 
 # DonateCase Wiki
-This wiki page will help you set up the DonateCase plugin
+Ця вікі-сторінка допоможе вам налаштувати плагін DonateCase

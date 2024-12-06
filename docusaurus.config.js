@@ -25,16 +25,18 @@ const config = {
   // metadata like html lang. For example, if your site is Chinese, you may want
   // to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en', 'ru', 'ua'],
+    defaultLocale: 'ua',
+    locales: [ 'ua', 'en', 'ru'],
+    path: 'i18n',
     localeConfigs: {
       en: {
-        htmlLang: 'en-GB',
+        htmlLang: 'en-US',
       },
       ru: {
         htmlLang: 'ru-RU',
       },
       ua: {
+        label: 'Українська',
         htmlLang: 'ua-UA',
       },
     },
@@ -47,6 +49,13 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
+          lastVersion: 'current',
+          versions: {
+            current: {
+              label: '2.0.0',
+              path: '2.0.0',
+            },
+          },
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -69,9 +78,15 @@ const config = {
         items: [
           {
             type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
+            sidebarId: 'defaultSidebar',
             position: 'left',
             label: 'Docs',
+          },
+          {
+            type: 'localeDropdown',
+          },
+          {
+            type: 'docsVersionDropdown',
           },
         ],
       },
@@ -118,7 +133,7 @@ const config = {
       },
       colorMode: {
         defaultMode: 'dark',
-        disableSwitch: true,
+        disableSwitch: false,
         respectPrefersColorScheme: false,
       },
       prism: {
@@ -127,6 +142,16 @@ const config = {
         additionalLanguages: ['java', 'gradle', 'yaml', 'xml-doc'],
       },
     }),
+    future: {
+      experimental_faster: {
+        swcJsLoader: true,
+        swcJsMinimizer: true,
+        swcHtmlMinimizer: true,
+        lightningCssMinimizer: true,
+        rspackBundler: true,
+        mdxCrossCompilerCache: true,
+      },
+    },
 };
 
 module.exports = config;

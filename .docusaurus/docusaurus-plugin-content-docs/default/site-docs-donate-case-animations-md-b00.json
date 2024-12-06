@@ -1,0 +1,28 @@
+{
+  "id": "DonateCase/animations",
+  "title": "Анімації",
+  "description": "DonateCase підтримує 5 анімацій за замовченням",
+  "source": "@site/docs/DonateCase/animations.md",
+  "sourceDirName": "DonateCase",
+  "slug": "/DonateCase/animations",
+  "permalink": "/docs/2.0.0/DonateCase/animations",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 4,
+  "frontMatter": {
+    "id": "animations",
+    "title": "Анімації",
+    "sidebar_position": 4
+  },
+  "sidebar": "defaultSidebar",
+  "previous": {
+    "title": "Налаштування предметів",
+    "permalink": "/docs/2.0.0/DonateCase/items-settings"
+  },
+  "next": {
+    "title": "Матеріали",
+    "permalink": "/docs/2.0.0/DonateCase/materials"
+  }
+}

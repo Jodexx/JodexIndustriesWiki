@@ -1,0 +1,117 @@
+---
+id: implementing
+title: Впровадження
+sidebar_position: 3
+---
+
+import CodeBlock from '@theme/CodeBlock';
+
+# Впровадження
+
+:::note
+Для роботи обов'язково потрібно вибрати `spigot-api` модуль в якості залежності [встановлення](../install.mdx)
+:::
+
+## Приклад без зовнішнього плагіну
+
+Цей варінт пропонує створення спеціалізованих аддонів для DonateCase, які містяться в директорії DonateCase/addons/
+
+<details>
+<summary>Головний клас</summary>
+
+<CodeBlock
+        language="java"
+        title="src/main/java/com/jodexindustries/testaddon/TestAddon.java"
+>
+{
+`import com.jodexindustries.donatecase.api.addon.internal.InternalJavaAddonBukkit;
+import com.jodexindustries.donatecase.api.DCAPIBukkit;
+
+public class TestAddon extends InternalJavaAddonBukkit {
+
+    private DCAPIBukkit api;
+
+    @Override
+    public void onLoad() {
+        this.api = getDCAPI();
+        getLogger().info("TestAddon is loaded!")
+    }
+
+    @Override
+    public void onEnable() {
+        getLogger().info("TestAddon is enabled!");
+    }
+
+    @Override
+    public void onDisable() {
+        getLogger().info("TestAddon is disabled!");
+    }
+}
+`
+}
+</CodeBlock>
+
+</details>
+
+<details>
+<summary>Файл налаштувань</summary>
+
+<CodeBlock
+        language="yaml"
+        title="src/main/resources/addon.yml"
+>
+{`name: TestAddon
+main: com.jodexindustries.testaddon.TestAddon
+version: 1.0.0
+api: 2.0.0 # мінімальна версія api, яка потрібна для роботи аддона
+`
+}
+</CodeBlock>
+
+</details>
+
+## Приклад із зовнішнім плагіном
+
+Цей варінт пропонує використання API DonateCase за допомогою інших плагінів Spigot, які містяться в директорії plugins/
+
+<details>
+<summary>Головний клас</summary>
+
+<CodeBlock
+        language="java"
+        title="src/main/java/com/jodexindustries/testplugin/TestPlugin.java"
+>
+{`import org.bukkit.plugin.java.JavaPlugin;
+import com.jodexindustries.donatecase.api.DCAPIBukkit;
+
+public final class TestPlugin extends JavaPlugin {
+
+    private DCAPIBukkit api;
+
+    @Override
+    public void onEnable() {
+        this.api = DCAPIBukkit.get();
+    }
+}
+
+`}
+</CodeBlock>
+
+</details>
+
+<details>
+<summary>Файл налаштувань</summary>
+
+
+<CodeBlock
+        language="yaml"
+        title="src/main/resources/plugin.yml"
+>
+{`# Залежність від DonateCase
+depend:
+  - DonateCase
+`}
+
+</CodeBlock>
+</details>
+
