@@ -1,1 +1,0 @@
-cmd /C "set "GIT_USER=Jodexx" && npm run deploy"

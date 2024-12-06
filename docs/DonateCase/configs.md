@@ -1,20 +1,24 @@
 ---
 id: configurations
-title: Конфігурації
-sidebar_position: 2
+title: Configurations
+sidebar_position: 3
 ---
 
-~~**Спробуйте наш новий генератор кейсів для DonateCase! -> [LINK](https://jodexindustries.xyz/donatecasegenerator/)**~~
+~~**Try our new DonateCase case generator! -> [LINK](https://jodexindustries.xyz/donatecasegenerator/)**~~
 
 ```yaml
-├── addons # директорія аддонів
-├── cases # директорія конфігурацій кейсів
-│   └── case.yml # ваша конфігурація кейсу
-├── lang # директорія локалізацій
-├── Cases.yml # сховище кейсів (створених)
-├── Config.yml # головний конфігураційний
-├── Animations.yml # конфігурація анімацій
-├── database.db # сховище ключів та історіїї відкриттів кейсів
+├──
+├── cases
+│   └── case.yml # your case configuration
+├── lang # languages
+│   ├── ru_RU.yml 
+│   ├── en_US.yml
+│   └── ua_UA.yml
+├── Cases.yml # cases data
+├── Config.yml # configuration file
+├── Data.yml # data file
+├── Keys.yml # keys data
+├── Animations.yml # animations configuration
 └──
 ```
 
@@ -354,14 +358,6 @@ RAINLY:
     LeftArm: 0, 0, 0
     RightLeg: 0, 0, 0
     LeftLeg: 0, 0, 0
-  Scroll:
-    Sound: ENTITY_EXPERIENCE_ORB_PICKUP
-    Volume: 1
-    Pitch: 1
-  End:
-    Sound: ENTITY_GENERIC_EXPLODE
-    Volume: 1
-    Pitch: 1
   FallingParticle: FALLING_WATER # you can use all particles, full list: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Particle.html
   # FALLING_WATER
   # FALLING_LAVA
@@ -399,8 +395,8 @@ WHEEL:
     RightLeg: 0, 0, 0
     LeftLeg: 0, 0, 0
   ItemsCount: 6 # only for RANDOM type
-  Shuffle: true # only for FULL type
-  CircleRadius: 2
+  CircleSpeed: 0.5
+  CircleRadius: 1.5
   LiftingAlongX: 0
   LiftingAlongY: 0
   LiftingAlongZ: 0
@@ -408,9 +404,7 @@ WHEEL:
     Enabled: true
     Particle: FLAME
   Scroll:
-    Count: 1
-    Time: 150
-    EaseAmount: 2.5 # 1 = linear
+    Time: 100
     Sound: UI_BUTTON_CLICK
     Volume: 10
     Pitch: 1
