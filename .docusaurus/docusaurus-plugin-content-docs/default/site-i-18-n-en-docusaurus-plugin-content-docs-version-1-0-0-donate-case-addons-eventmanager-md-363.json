@@ -1,0 +1,26 @@
+{
+  "id": "DonateCase/Addons/dc-event-manager",
+  "title": "DCEventManager",
+  "description": "This addon allows you to manage DonateCase events.",
+  "source": "@site/i18n/en/docusaurus-plugin-content-docs/version-1.0.0/DonateCase/Addons/eventmanager.md",
+  "sourceDirName": "DonateCase/Addons",
+  "slug": "/DonateCase/Addons/dc-event-manager",
+  "permalink": "/en/docs/1.0.0/DonateCase/Addons/dc-event-manager",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "1.0.0",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "sidebar_position": 1,
+    "id": "dc-event-manager",
+    "title": "DCEventManager",
+    "toc_min_heading_level": 2,
+    "toc_max_heading_level": 5
+  },
+  "sidebar": "sidebar",
+  "previous": {
+    "title": "Register gui typed items",
+    "permalink": "/en/docs/1.0.0/DonateCase/API/register-guitypeditems"
+  }
+}

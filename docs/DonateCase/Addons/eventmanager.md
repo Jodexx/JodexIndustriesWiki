@@ -7,92 +7,93 @@ toc_max_heading_level: 5
 ---
 
 # DCEventManager Wiki
-This addon allows you to manage DonateCase events.<br></br>
-With it, you can perform certain actions, such as sending messages and executing commands on behalf of the console.
-**How does it work?<br></br>**
-The addon listens to all events that are registered in DonateCase.
-Receiving events takes place with the help of reflection, which means that when you update DonateCase, new events will be automatically uploaded to DCEventManager, without the need to update the addon! <br></br>
-## Example config.yml
+Цей аддон дозволяє вам керувати івентами DonateCase<br></br>
+З його допомогою ви можете виконувати певні дії, такі як надсилання повідомлень і виконання команд від імені консолі. <br></br>
+**Як це працює?**<br></br>
+Аддон прослуховує всі події, зареєстровані в DonateCase.
+Отримання подій відбувається за допомогою рефлексії, а це означає, що при оновленні DonateCase нові події будуть автоматично завантажуватися в DCEventManager без необхідності оновлювати аддон! <br></br>
+
+## Приклад config.yml
 ```yml
 Debug: false
-Package: "com.jodexindustries.donatecase.api.events" # dont change this
+Package: "com.jodexindustries.donatecase.api.events" # не змінюйте це
 
 Events:
   MyEvent:
     Event: AnimationStartEvent
     Actions:
-      - "[command] say Animation started!"
+      - "[command] say Анімація почалась!"
 
   MyAnotherEvent:
     Event: AnimationEndEvent
     Actions:
-      - "[broadcast] &dAnimation ended!"
+      - "[broadcast] &dАнімація завершена!"
 ```
 
-## Events
-> **List of all events available [here](https://repo.jodexindustries.xyz/javadoc/releases/com/jodexindustries/donatecase/spigot/2.2.6.7/raw/com/jodexindustries/donatecase/api/events/package-summary.html)**
+## Івенти
+> **Список всіх доступних подій [тут](https://repo.jodexindustries.xyz/javadoc/releases/com/jodexindustries/donatecase/spigot-api/2.0.1/raw/com/jodexindustries/donatecase/api/events/package-summary.html)**
 
-## Actions
-### [All DonateCase actions](../items-settings#actions)
-### DCEventManager actions
-#### Method invoke
-Example
+## Дії
+### [Усі дії DonateCase](../items-settings#дії)
+### Дії DCEventManager
+#### Виклик методу
+Приклад
 `- [invoke] setCancelled(true)`
 
-## Case-Specific Support
-Works only if event has `getCaseType` or `getCaseData` methods
+## Підтримка конкретного кейсу
+Працює, лише якщо у події є методи `getCaseType` або `getCaseData`
 ```yaml
 Events:
   MyEvent:
-    Event: AnimationStartEvent # your event
-    Case: case # here specific case
+    Event: AnimationStartEvent # ваш івент
+    Case: case # тут конкретний кейс
     Actions:
       - "[command] say Case opened!"
 ```
 
-## Slot-Case-Specific Support
-Works only if event has `getSlot` method
+## Підтримка конкретного слота кейсу
+Працює лише у випадку, якщо у події є метод `getSlot`
 ```yaml
 Events:
   MyEvent:
-    Event: CaseGuiClickEvent # your event
-    Case: case # here specific case
-    Slot: 1 # here specific slot
+    Event: CaseGuiClickEvent # ваш івент
+    Case: case # тут конкретний кейс
+    Slot: 1 # тут конкретний слот
     Actions:
       - "[command] say Gui clicked!"
 ```
 
-## Placeholders
-DCEventManager has its own personal placeholder system that allows you to use **ALL** the methods that events provide.<br></br>
-**This system works with the help of Reflection!**<br></br>
+## Заповнювачі
+У DCEventManager є своя власна система заповнювачів, яка дозволяє вам використовувати **ВСІ** методи, що надаються подіями.<br></br>
+**Ця система працює за допомогою Рефлексії!**<br></br>
 
-An example of a placeholders:
+Приклад заповнювачів:
 ```yaml
 Events:
-  AddonDisableEvent: # event class name
-    addon: # placeholder id
-      placeholder: "%addon%" # replaced placeholder
-      method: "getAddon#getName" # class method
-    reason: # placeholder id
-      placeholder: "%reason%" # replaced placeholder
-      method: "getReason" # class method
-    caused: # placeholder id
-      placeholder: "%caused%" # replaced placeholder
-      method: "getCaused#getName" # class method
+  AddonDisableEvent: # назва класу івенту
+    addon: # айді заповнювача
+      placeholder: "%addon%" # замінений плейсхолдер
+      method: "getAddon#getName" # метод класу
+    reason: # айді заповнювача
+      placeholder: "%reason%" # замінений плейсхолдер
+      method: "getReason" # метод класу
+    caused: # айді заповнювача
+      placeholder: "%caused%" # замінений плейсхолдер
+      method: "getCaused#getName" # метод класу
 ```
 
-If you don't understand programming, then it can look a little confusing, because of the `method` parameter.
-But don't be disappointed, it's as simple as that! <br></br>
-This parameter is used to determine where the placeholder value will be taken from. <br></br>
+Якщо ви не розбираєтесь у програмуванні, це може виглядати трохи заплутано через параметр `method`.
+Але не засмучуйтесь, це просто! <br></br>
+Цей параметр використовується для визначення місця, звідки буде взято значення placeholder. <br></br>
 
-Let's take a look at the JavaDocs of the [AddonDisableEvent](https://repo.jodexindustries.xyz/javadoc/releases/com/jodexindustries/donatecase/spigot/2.2.6.7/raw/com/jodexindustries/donatecase/api/events/AddonDisableEvent.html#method-summary) class
-![img.png](../../assets/jd.png)
+Давайте подивимось на JavaDocs [AddonDisableEvent](https://repo.jodexindustries.xyz/javadoc/releases/com/jodexindustries/donatecase/spigot-api/2.0.1/raw/com/jodexindustries/donatecase/api/events/AddonDisableEvent.html#method-summary) класу<br></br>
+![jd.png](../../assets/jd.png)
 
-Here we can see that the [AddonDisableEvent](https://repo.jodexindustries.xyz/javadoc/releases/com/jodexindustries/donatecase/spigot/2.2.6.7/raw/com/jodexindustries/donatecase/api/addon/internal/InternalAddon.html#method-summary) class has several interesting methods, such as: `getAddon`, `getCaused`, and `getReason` <br></br>
-I think you've already guessed that these are the methods used to get placeholder values, but what is `#`? <br></br>
-This is a symbol for separating methods. For example, we call the getAddon method, which is an [InternalAddon](https://repo.jodexindustries.xyz/javadoc/releases/com/jodexindustries/donatecase/spigot/2.2.6.7/raw/com/jodexindustries/donatecase/api/addon/internal/InternalAddon.html#method-summary) object that has the following methods:
-![img.png](../../assets/addon.png)
-Of course, it will be a little strange to just display information about some [InternalJavaAddon](https://repo.jodexindustries.xyz/javadoc/releases/com/jodexindustries/donatecase/spigot/2.2.6.7/raw/com/jodexindustries/donatecase/api/addon/internal/InternalAddon.html#method-summary) without additional instructions, but it is worth looking at what this class is and it looks like it represents the interface of an internal addon and we can take some useful information from it! Let's get the name of this addon, it seems that the [getName](https://repo.jodexindustries.xyz/javadoc/releases/com/jodexindustries/donatecase/spigot/2.2.6.7/raw/com/jodexindustries/donatecase/api/addon/Addon.html#getName()) method is just right for us! <br></br>
-Well, now our method looks like this: `getAddon#getName`<br></br>
+Тут ми бачимо, що клас [AddonDisableEvent](https://repo.jodexindustries.xyz/javadoc/releases/com/jodexindustries/donatecase/spigot-api/2.0.1/raw/com/jodexindustries/donatecase/api/addon/internal/InternalAddon.html#method-summary) має кілька цікавих методів, таких як: `getAddon`, `getCaused` та `getReason`. <br></br>
+Думаю, ви вже здогадались, що ці методи використовуються для отримання значень placeholder, але що таке `#`? <br></br>
+Це символ для розділення методів. Наприклад, ми викликаємо метод getAddon, який є об’єктом [InternalAddon](https://repo.jodexindustries.xyz/javadoc/releases/com/jodexindustries/donatecase/api/2.0.1/raw/com/jodexindustries/donatecase/api/addon/internal/InternalAddon.html), що має такі методи:
+![addon.png](../../assets/addon.png)
+Звичайно, буде трохи дивно просто відображати інформацію про деякі [InternalAddon](https://repo.jodexindustries.xyz/javadoc/releases/com/jodexindustries/donatecase/api/2.0.1/raw/com/jodexindustries/donatecase/api/addon/internal/InternalAddon.html) без додаткових інструкцій, але варто подивитись, що це за клас. Схоже, він представляє інтерфейс внутрішнього аддона, і ми можемо витягти з нього корисну інформацію! Давайте дізнаємось ім'я цього аддона, схоже, що метод [getName](https://repo.jodexindustries.xyz/javadoc/releases/com/jodexindustries/donatecase/api/2.0.1/raw/com/jodexindustries/donatecase/api/addon/Addon.html#getName()) якраз нам підходить! <br></br>
+Тепер наш метод виглядає так: `getAddon#getName`<br></br>
 
-If you have any additional questions, please contact our [Discord server](https://discord.gg/2syNtcKcgR)!
+Якщо у вас є додаткові питання, будь ласка, зв'яжіться з нами у [Discord сервері](https://discord.gg/2syNtcKcgR)!

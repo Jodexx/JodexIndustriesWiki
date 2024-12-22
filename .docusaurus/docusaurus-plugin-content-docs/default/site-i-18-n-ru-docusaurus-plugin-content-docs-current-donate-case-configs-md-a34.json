@@ -1,0 +1,28 @@
+{
+  "id": "DonateCase/configurations",
+  "title": "Конфигурации",
+  "description": "Попробуйте наш новый генератор кейсов для DonateCase! -> LINK",
+  "source": "@site/i18n/ru/docusaurus-plugin-content-docs/current/DonateCase/configs.md",
+  "sourceDirName": "DonateCase",
+  "slug": "/DonateCase/configurations",
+  "permalink": "/ru/docs/2.0.0/DonateCase/configurations",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "id": "configurations",
+    "title": "Конфигурации",
+    "sidebar_position": 3
+  },
+  "sidebar": "defaultSidebar",
+  "previous": {
+    "title": "Главная",
+    "permalink": "/ru/docs/2.0.0/DonateCase/donatecase-main"
+  },
+  "next": {
+    "title": "Настройка предметов",
+    "permalink": "/ru/docs/2.0.0/DonateCase/items-settings"
+  }
+}

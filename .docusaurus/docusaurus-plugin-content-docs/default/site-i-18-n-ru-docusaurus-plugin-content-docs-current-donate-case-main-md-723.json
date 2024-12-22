@@ -1,0 +1,24 @@
+{
+  "id": "DonateCase/donatecase-main",
+  "title": "Главная",
+  "description": "Эта вики-страница поможет вам настроить плагин DonateCase",
+  "source": "@site/i18n/ru/docusaurus-plugin-content-docs/current/DonateCase/main.md",
+  "sourceDirName": "DonateCase",
+  "slug": "/DonateCase/donatecase-main",
+  "permalink": "/ru/docs/2.0.0/DonateCase/donatecase-main",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "sidebar_position": 2,
+    "id": "donatecase-main",
+    "title": "Главная"
+  },
+  "sidebar": "defaultSidebar",
+  "next": {
+    "title": "Конфигурации",
+    "permalink": "/ru/docs/2.0.0/DonateCase/configurations"
+  }
+}

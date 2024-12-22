@@ -1,26 +1,28 @@
 ---
 id: materials
-title: Materials
-sidebar_position: 6
+title: Матеріали
+sidebar_position: 5
 ---
 
 # DonateCase Materials
-## Minecraft materials
-### Material names
+
+## Матеріали Minecraft
+
+### Назва матеріалів
 ```yml
 Item:
   ID: GOLDEN_SWORD
 ```
-### Material names (1.12.2 and below)
+### Назви матеріалів (1.12.2 і нижче)
 ```yml
 Item:
-  ID: WOOL:14 // (RED_WOOL in 1.13+)
+  ID: WOOL:14 // (RED_WOOL в 1.13+)
 ```
-## Custom materials
-### Player head
+## Користувацькі матеріали
+### Голова гравця
 ```yml
 Item:
-  ID: HEAD:_Jodex__ # HEAD:<Player name>
+  ID: HEAD:_Jodex__ # HEAD:<ім'я гравця>
 ```
 ### [HeadDataBase](https://www.spigotmc.org/resources/head-database.14280/)
 ```yml
@@ -48,7 +50,7 @@ Item:
 Item:
   ID: MCURL:3ba311761e3234810bb2b451f6bd0b506f8cb48e1195bef784eb7e2c6095d277 #MCURL:<texture-id> (Minecraft-URL)
 ```
-![Example MCURL](../assets/base64.png)
+![Приклад MCURL](../assets/base64.png)
 
 ### [Oraxen](https://www.spigotmc.org/resources/%E2%98%84%EF%B8%8F-oraxen-custom-items-blocks-emotes-furniture-resourcepack-and-gui-1-18-1-21.72448/)
 ```yml

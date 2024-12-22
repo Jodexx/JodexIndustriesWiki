@@ -1,16 +1,16 @@
 ---
 id: holograms
-title: Holograms
-sidebar_position: 7
+title: Голограмми
+sidebar_position: 6
 ---
 
-# DonateCase Holograms
+# DonateCase Голограмми
 
 ## ArmorStand
 ### [HolographicDisplays](https://dev.bukkit.org/projects/holographic-displays) (1.16-1.20.4)
 ### [DecentHolograms](https://www.spigotmc.org/resources/decentholograms-1-8-1-21-1-papi-support-no-dependencies.96927/) (1.16+)
 ### [CMI Holograms](https://www.zrips.net/cmi/holograms/) (1.16+)
-#### Configuration
+#### Конфігурація
 ```yaml
   Hologram:
     # Toggle on and off the holograms for the crates.
@@ -25,12 +25,12 @@ sidebar_position: 7
 ```
 ## Display entity (1.19.4+)
 ### [FancyHolograms](https://hangar.papermc.io/Oliver/FancyHolograms)
-#### Configuration
+#### Конфігурація
 ```yaml
   Hologram:
     # Toggle on and off the holograms for the crates.
     Toggle: true
-    FancyHolograms: # Here section from FancyHolograms configuration
+    FancyHolograms: # Тут секція з конфігурації FancyHolograms
       type: TEXT
       location:
         world: world

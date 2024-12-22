@@ -1,0 +1,28 @@
+{
+  "id": "DonateCase/animations",
+  "title": "Анимации",
+  "description": "DonateCase поддерживает 5 анимаций по умолчанию",
+  "source": "@site/i18n/ru/docusaurus-plugin-content-docs/current/DonateCase/animations.md",
+  "sourceDirName": "DonateCase",
+  "slug": "/DonateCase/animations",
+  "permalink": "/ru/docs/2.0.0/DonateCase/animations",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 5,
+  "frontMatter": {
+    "id": "animations",
+    "title": "Анимации",
+    "sidebar_position": 5
+  },
+  "sidebar": "defaultSidebar",
+  "previous": {
+    "title": "Настройка предметов",
+    "permalink": "/ru/docs/2.0.0/DonateCase/items-settings"
+  },
+  "next": {
+    "title": "Материалы",
+    "permalink": "/ru/docs/2.0.0/DonateCase/materials"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "DonateCase/API/Spigot/implementing/implementing-plugin",
+  "title": "Впровадження за допомогою плагіну",
+  "description": "Приклад із зовнішнім плагіном",
+  "source": "@site/docs/DonateCase/API/Spigot/implementing/plugin.md",
+  "sourceDirName": "DonateCase/API/Spigot/implementing",
+  "slug": "/DonateCase/API/Spigot/implementing/implementing-plugin",
+  "permalink": "/docs/2.0.0/DonateCase/API/Spigot/implementing/implementing-plugin",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 4,
+  "frontMatter": {
+    "id": "implementing-plugin",
+    "title": "Впровадження за допомогою плагіну",
+    "sidebar_position": 4
+  },
+  "sidebar": "defaultSidebar",
+  "previous": {
+    "title": "Впровадження за допомогою аддону",
+    "permalink": "/docs/2.0.0/DonateCase/API/Spigot/implementing/implementing-addon"
+  },
+  "next": {
+    "title": "API Індекс",
+    "permalink": "/docs/2.0.0/DonateCase/API/outdated/donatecase-api-main"
+  }
+}

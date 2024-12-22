@@ -1,0 +1,24 @@
+{
+  "id": "DonateCase/donatecase-main",
+  "title": "Головна",
+  "description": "Ця вікі-сторінка допоможе вам налаштувати плагін DonateCase",
+  "source": "@site/docs/DonateCase/main.md",
+  "sourceDirName": "DonateCase",
+  "slug": "/DonateCase/donatecase-main",
+  "permalink": "/docs/2.0.0/DonateCase/donatecase-main",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "sidebar_position": 1,
+    "id": "donatecase-main",
+    "title": "Головна"
+  },
+  "sidebar": "defaultSidebar",
+  "next": {
+    "title": "Конфігурації",
+    "permalink": "/docs/2.0.0/DonateCase/configurations"
+  }
+}

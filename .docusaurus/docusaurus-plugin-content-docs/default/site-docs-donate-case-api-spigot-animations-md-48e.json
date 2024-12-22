@@ -1,0 +1,28 @@
+{
+  "id": "DonateCase/API/Spigot/register-animations",
+  "title": "Реєстрація анімацій",
+  "description": "Застаріло!",
+  "source": "@site/docs/DonateCase/API/Spigot/animations.md",
+  "sourceDirName": "DonateCase/API/Spigot",
+  "slug": "/DonateCase/API/Spigot/register-animations",
+  "permalink": "/docs/2.0.0/DonateCase/API/Spigot/register-animations",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 6,
+  "frontMatter": {
+    "id": "register-animations",
+    "title": "Реєстрація анімацій",
+    "sidebar_position": 6
+  },
+  "sidebar": "defaultSidebar",
+  "previous": {
+    "title": "Реєстрація івентів",
+    "permalink": "/docs/2.0.0/DonateCase/API/Spigot/register-events"
+  },
+  "next": {
+    "title": "Реєстрація субкоманд",
+    "permalink": "/docs/2.0.0/DonateCase/API/Spigot/register-subcommands"
+  }
+}

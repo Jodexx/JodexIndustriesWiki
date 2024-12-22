@@ -1,0 +1,28 @@
+{
+  "id": "DonateCase/API/Spigot/outdated/register-guitypeditems",
+  "title": "Реєстрація предметів, заданими в гюї",
+  "description": "",
+  "source": "@site/docs/DonateCase/API/Spigot/outdated/guitypeditems.md",
+  "sourceDirName": "DonateCase/API/Spigot/outdated",
+  "slug": "/DonateCase/API/Spigot/outdated/register-guitypeditems",
+  "permalink": "/docs/2.0.0/DonateCase/API/Spigot/outdated/register-guitypeditems",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 9,
+  "frontMatter": {
+    "id": "register-guitypeditems",
+    "title": "Реєстрація предметів, заданими в гюї",
+    "sidebar_position": 9
+  },
+  "sidebar": "defaultSidebar",
+  "previous": {
+    "title": "Реєстрація матеріалів",
+    "permalink": "/docs/2.0.0/DonateCase/API/Spigot/outdated/register-materials"
+  },
+  "next": {
+    "title": "DCEventManager",
+    "permalink": "/docs/2.0.0/DonateCase/Addons/dc-event-manager"
+  }
+}
