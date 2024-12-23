@@ -3,24 +3,24 @@
     "message": "2.0.0",
     "description": "The label for version current"
   },
-  "sidebar.tutorialSidebar.category.DonateCase": {
+  "sidebar.defaultSidebar.category.DonateCase": {
     "message": "DonateCase",
-    "description": "The label for category DonateCase in sidebar tutorialSidebar"
+    "description": "The label for category DonateCase in sidebar defaultSidebar"
   },
-  "sidebar.tutorialSidebar.category.API": {
+  "sidebar.defaultSidebar.category.API": {
     "message": "API",
-    "description": "The label for category API in sidebar tutorialSidebar"
+    "description": "The label for category API in sidebar defaultSidebar"
   },
-  "sidebar.tutorialSidebar.category.implementing": {
+  "sidebar.defaultSidebar.category.implementing": {
     "message": "Впровадження",
-    "description": "The label for category implementing in sidebar tutorialSidebar"
+    "description": "The label for category implementing in sidebar defaultSidebar"
   },
-  "sidebar.tutorialSidebar.category.Spigot": {
+  "sidebar.defaultSidebar.category.Spigot": {
     "message": "Spigot",
-    "description": "The label for category Spigot in sidebar tutorialSidebar"
+    "description": "The label for category Spigot in sidebar defaultSidebar"
   },
-  "sidebar.tutorialSidebar.category.Addons": {
+  "sidebar.defaultSidebar.category.Addons": {
     "message": "Аддони",
-    "description": "The label for category Addons in sidebar tutorialSidebar"
+    "description": "The label for category Addons in sidebar defaultSidebar"
   }
 }
