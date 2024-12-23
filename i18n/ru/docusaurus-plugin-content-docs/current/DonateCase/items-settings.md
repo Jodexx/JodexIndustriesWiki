@@ -95,7 +95,7 @@ History0:
   Type: HISTORY-0-case # 0 - индекс недавних открытий кейсов, диапазон 0-9; case - тип кейса, если пусто, то будет кейс по умолчанию (опционально)
   HistoryNotFound: # Секция для незаполненных индексов
     DisplayName: "&cNot found"
-    Материал: BARRIER
+    Material: BARRIER
     #Enchanted: false
     #Lore:
     # - "&cSorry..."
