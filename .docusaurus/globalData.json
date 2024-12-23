@@ -31,6 +31,11 @@
               "sidebar": "defaultSidebar"
             },
             {
+              "id": "DonateCase/API/Spigot/register-actions",
+              "path": "/ru/docs/2.0.0/DonateCase/API/Spigot/register-actions",
+              "sidebar": "defaultSidebar"
+            },
+            {
               "id": "DonateCase/API/Spigot/register-animations",
               "path": "/ru/docs/2.0.0/DonateCase/API/Spigot/register-animations",
               "sidebar": "defaultSidebar"

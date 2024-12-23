@@ -6,7 +6,7 @@
     },
     "content": "393be207"
   },
-  "/ru/docs-586": {
+  "/ru/docs-d76": {
     "__comp": "5e95c892",
     "__context": {
       "plugin": "aba21aa0"
@@ -87,11 +87,11 @@
     "__comp": "17896441",
     "content": "aed13e7c"
   },
-  "/ru/docs/2.0.0-cb6": {
+  "/ru/docs/2.0.0-0f4": {
     "__comp": "a7bd4aaa",
     "__props": "8e069609"
   },
-  "/ru/docs/2.0.0-f0e": {
+  "/ru/docs/2.0.0-e0a": {
     "__comp": "a94703ab"
   },
   "/ru/docs/2.0.0/DonateCase/Addons/dc-event-manager-45c": {
@@ -109,6 +109,10 @@
   "/ru/docs/2.0.0/DonateCase/API/Spigot/implementing-56e": {
     "__comp": "17896441",
     "content": "76ee7cb3"
+  },
+  "/ru/docs/2.0.0/DonateCase/API/Spigot/register-actions-60b": {
+    "__comp": "17896441",
+    "content": "07231baf"
   },
   "/ru/docs/2.0.0/DonateCase/API/Spigot/register-animations-042": {
     "__comp": "17896441",

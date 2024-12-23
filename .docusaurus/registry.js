@@ -1,4 +1,5 @@
 export default {
+  "07231baf": [() => import(/* webpackChunkName: "07231baf" */ "@site/docs/DonateCase/API/Spigot/actions.mdx"), "@site/docs/DonateCase/API/Spigot/actions.mdx", require.resolveWeak("@site/docs/DonateCase/API/Spigot/actions.mdx")],
   "17896441": [() => import(/* webpackChunkName: "17896441" */ "@theme/DocItem"), "@theme/DocItem", require.resolveWeak("@theme/DocItem")],
   "1dcb69d5": [() => import(/* webpackChunkName: "1dcb69d5" */ "@generated/docusaurus-plugin-content-docs/default/p/ru-docs-1-0-0-d35.json"), "@generated/docusaurus-plugin-content-docs/default/p/ru-docs-1-0-0-d35.json", require.resolveWeak("@generated/docusaurus-plugin-content-docs/default/p/ru-docs-1-0-0-d35.json")],
   "1f391b9e": [() => import(/* webpackChunkName: "1f391b9e" */ "@theme/MDXPage"), "@theme/MDXPage", require.resolveWeak("@theme/MDXPage")],

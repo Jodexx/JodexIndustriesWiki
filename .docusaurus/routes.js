@@ -9,7 +9,7 @@ export default [
   },
   {
     path: '/ru/docs',
-    component: ComponentCreator('/ru/docs', '586'),
+    component: ComponentCreator('/ru/docs', 'd76'),
     routes: [
       {
         path: '/ru/docs/1.0.0',
@@ -127,11 +127,11 @@ export default [
       },
       {
         path: '/ru/docs/2.0.0',
-        component: ComponentCreator('/ru/docs/2.0.0', 'cb6'),
+        component: ComponentCreator('/ru/docs/2.0.0', '0f4'),
         routes: [
           {
             path: '/ru/docs/2.0.0',
-            component: ComponentCreator('/ru/docs/2.0.0', 'f0e'),
+            component: ComponentCreator('/ru/docs/2.0.0', 'e0a'),
             routes: [
               {
                 path: '/ru/docs/2.0.0/DonateCase/Addons/dc-event-manager',
@@ -154,6 +154,12 @@ export default [
               {
                 path: '/ru/docs/2.0.0/DonateCase/API/Spigot/implementing',
                 component: ComponentCreator('/ru/docs/2.0.0/DonateCase/API/Spigot/implementing', '56e'),
+                exact: true,
+                sidebar: "defaultSidebar"
+              },
+              {
+                path: '/ru/docs/2.0.0/DonateCase/API/Spigot/register-actions',
+                component: ComponentCreator('/ru/docs/2.0.0/DonateCase/API/Spigot/register-actions', '60b'),
                 exact: true,
                 sidebar: "defaultSidebar"
               },

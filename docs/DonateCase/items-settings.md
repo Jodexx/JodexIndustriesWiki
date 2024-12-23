@@ -62,7 +62,7 @@ Type: OPEN_donate
 - `%actiondisplayname%` - Відображаєме ім'я RandomAction
 - `%casename%` - Назва кейса
 - `%casedisplayname%` - Відображаєме ім'я кейсу
-- `%casetitle` - Тайтл кейсу (заголовок)
+- `%casetitle%` - Тайтл кейсу (заголовок)
 
 Type: HISTORY-[index]-[case]     (_index - індекс недавніх відкриттів кейсу, діапазон 0-9; case - тип кейсу, необов'язковий_)
 ```yaml

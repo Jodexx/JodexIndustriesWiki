@@ -1,7 +1,7 @@
 {
   "id": "DonateCase/API/Spigot/register-guitypeditems",
   "title": "Реєстрація предметів, заданими в гюї",
-  "description": "",
+  "description": "Користувацькі предмети в гюї оброблюються за допомогою інтерфейсів TypedItemHandler та TypedItemClickHandler",
   "source": "@site/docs/DonateCase/API/Spigot/guitypeditems.mdx",
   "sourceDirName": "DonateCase/API/Spigot",
   "slug": "/DonateCase/API/Spigot/register-guitypeditems",
@@ -10,11 +10,13 @@
   "unlisted": false,
   "tags": [],
   "version": "current",
-  "sidebarPosition": 9,
+  "sidebarPosition": 6,
   "frontMatter": {
     "id": "register-guitypeditems",
     "title": "Реєстрація предметів, заданими в гюї",
-    "sidebar_position": 9
+    "sidebar_position": 6,
+    "toc_min_heading_level": 2,
+    "toc_max_heading_level": 5
   },
   "sidebar": "defaultSidebar",
   "previous": {

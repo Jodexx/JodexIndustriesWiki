@@ -68,31 +68,33 @@ DonateCase:
 config: 1.2
 case:
   Animation: WHEEL #SHAPE, FIREWORK, RAINLY, WHEEL see: https://wiki.jodexindustries.xyz/docs/DonateCase/animations
-  #  AnimationSettings:
-  #    Type: FULL # or RANDOM
-  #    ItemSlot: HEAD # HEAD, HAND, OFF_HAND, FEET, LEGS, CHEST
-  #    SmallArmorStand: true
-  #    Pose:
-  #      Head: 0, 0, 0
-  #      Body: 0, 0, 0
-  #      RightArm: 0, 0, 0
-  #      LeftArm: 0, 0, 0
-  #      RightLeg: 0, 0, 0
-  #      LeftLeg: 0, 0, 0
-  #    ItemsCount: 6 # only for RANDOM type
-  #    CircleSpeed: 0.5
-  #    CircleRadius: 1.5
-  #    LiftingAlongX: 0
-  #    LiftingAlongY: 0
-  #    LiftingAlongZ: 0
-  #    Flame:
-  #      Enabled: true
-  #      Particle: FLAME
-  #    Scroll:
-  #      Time: 100
-  #      Sound: UI_BUTTON_CLICK
-  #      Volume: 10
-  #      Pitch: 1
+  # AnimationSettings:
+  # Type: FULL # or RANDOM
+  # ItemSlot: HEAD # HEAD, HAND, OFF_HAND, FEET, LEGS, CHEST
+  # SmallArmorStand: true
+  # Pose:
+  #   Head: 0, 0, 0
+  #   Body: 0, 0, 0
+  #   RightArm: 0, 0, 0
+  #   LeftArm: 0, 0, 0
+  #   RightLeg: 0, 0, 0
+  #   LeftLeg: 0, 0, 0
+  # ItemsCount: 6 # only for RANDOM type
+  # Shuffle: true # only for FULL type
+  # CircleRadius: 2
+  # LiftingAlongX: 0
+  # LiftingAlongY: 0
+  # LiftingAlongZ: 0
+  # Flame:
+  #   Enabled: true
+  #   Particle: FLAME
+  # Scroll:
+  #   Count: 1
+  #   Time: 150
+  #   EaseAmount: 2.5 # 1 = linear
+  #   Sound: UI_BUTTON_CLICK
+  #   Volume: 10
+  #   Pitch: 1
   Hologram: # see: https://wiki.jodexindustries.xyz/docs/DonateCase/holograms
     # Toggle on and off the holograms for the crates.
     Toggle: true
@@ -343,6 +345,20 @@ SHAPE:
     White:
       Size: 1.0
       Rgb: 255, 255, 255
+  StartPosition:
+    X: 0.5
+    Y: -0.1
+    Z: 0.5
+  Tail:
+    Radius: 0.5
+  Scroll:
+    Period: 2
+    Time: 15
+    Height: 0.91
+    Interval: 1
+    Yaw: 20.0
+  End:
+    Time: 25
 
 RAINLY:
   ItemSlot: HEAD # HEAD, HAND, OFF_HAND, FEET, LEGS, CHEST

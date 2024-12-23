@@ -1,7 +1,7 @@
 {
   "id": "DonateCase/API/Spigot/register-subcommands",
   "title": "Реєстрація субкоманд",
-  "description": "Застаріло!",
+  "description": "Перший спосіб",
   "source": "@site/docs/DonateCase/API/Spigot/subcommands.mdx",
   "sourceDirName": "DonateCase/API/Spigot",
   "slug": "/DonateCase/API/Spigot/register-subcommands",
@@ -10,19 +10,19 @@
   "unlisted": false,
   "tags": [],
   "version": "current",
-  "sidebarPosition": 7,
+  "sidebarPosition": 2,
   "frontMatter": {
     "id": "register-subcommands",
     "title": "Реєстрація субкоманд",
-    "sidebar_position": 7
+    "sidebar_position": 2
   },
   "sidebar": "defaultSidebar",
   "previous": {
-    "title": "Реєстрація анімацій",
-    "permalink": "/ru/docs/2.0.0/DonateCase/API/Spigot/register-animations"
+    "title": "Реєстрація івентів",
+    "permalink": "/ru/docs/2.0.0/DonateCase/API/Spigot/register-events"
   },
   "next": {
-    "title": "Реєстрація матеріалів",
-    "permalink": "/ru/docs/2.0.0/DonateCase/API/Spigot/register-materials"
+    "title": "Реєстрація подій",
+    "permalink": "/ru/docs/2.0.0/DonateCase/API/Spigot/register-actions"
   }
 }

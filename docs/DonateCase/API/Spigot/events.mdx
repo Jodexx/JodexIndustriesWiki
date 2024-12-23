@@ -1,18 +1,24 @@
 ---
 id: register-events
 title: Реєстрація івентів
-sidebar_position: 4
+sidebar_position: 1
 ---
 
 import CodeBlock from '@theme/CodeBlock';
 
 # Реєстрація івентів
 Івенти DonateCase реєструються так само, як і звичайні івенти Bukkit
+
 <CodeBlock
         language="java"
         title="EventListener клас"
 >
-{`public class EventListener implements Listener {
+{`import org.bukkit.event.Listener;
+import org.bukkit.event.EventHandler;
+import org.bukkit.entity.Player;
+import com.jodexindustries.donatecase.api.events.CaseInteractEvent;
+
+public class EventListener implements Listener {
     @EventHandler
     public void onCaseInteract(CaseInteractEvent e) {
         Player p = e.getPlayer();
@@ -22,15 +28,29 @@ import CodeBlock from '@theme/CodeBlock';
 `}
 </CodeBlock>
 
+## Зовнішній плагін
+
 <CodeBlock
         language="java"
-        title="Main клас"
+        title="Main класс"
 >
-{`public class Main extends JavaPlugin {
-    @Override
-    public void onEnable() {
-        getServer().getPluginManager().registerEvents(new EventListener(), this);
-    }
+{`@Override
+public void onEnable() {
+    getServer().getPluginManager().registerEvents(new EventListener(), this);
+}
+`}
+</CodeBlock>
+
+## Внутрішній аддон
+<CodeBlock
+
+        language="java"
+        title="Main класс"
+>
+{`@Override
+public void onEnable() {
+    Plugin plugin = api.getDonateCase();
+    plugin.getServer().getPluginManager().registerEvents(new EventListener(), plugin);
 }
 `}
 </CodeBlock>

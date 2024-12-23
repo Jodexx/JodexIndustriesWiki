@@ -10,11 +10,11 @@
   "unlisted": false,
   "tags": [],
   "version": "current",
-  "sidebarPosition": 3,
+  "sidebarPosition": 0,
   "frontMatter": {
     "id": "implementing",
     "title": "Впровадження",
-    "sidebar_position": 3
+    "sidebar_position": 0
   },
   "sidebar": "defaultSidebar",
   "previous": {

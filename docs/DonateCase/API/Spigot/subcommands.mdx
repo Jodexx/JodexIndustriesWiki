@@ -1,20 +1,20 @@
 ---
 id: register-subcommands
 title: Реєстрація субкоманд
-sidebar_position: 7
+sidebar_position: 2
 ---
+
+import CodeBlock from '@theme/CodeBlock';
+
 # Реєстрація субкоманд
 
-:::warning
-
-Застаріло!
-
-:::
-
 ## Перший спосіб
-> TestCommand клас
-```java
-import com.jodexindustries.donatecase.api.data.subcommand.SubCommandExecutor;
+
+<CodeBlock
+        language="java"
+        title="TestCommand класс"
+>
+{`import com.jodexindustries.donatecase.api.data.subcommand.SubCommandExecutor;
 import com.jodexindustries.donatecase.api.data.subcommand.SubCommandTabCompleter;
 import org.bukkit.command.CommandSender;
 import org.jetbrains.annotations.NotNull;
@@ -22,113 +22,101 @@ import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TestCommand implements SubCommandExecutor, SubCommandTabCompleter {
+public class TestCommand implements SubCommandExecutor<CommandSender>, SubCommandTabCompleter<CommandSender> {
 
-    /**
-     * Виконує задану субкоманду
-     * @param sender Джерело команди
-     * @param label Ярлик команди
-     * @param args Передаваємі аргументи команди
-     */
     @Override
     public void execute(CommandSender sender, @NotNull String label, String[] args) {
-        // звичайний код, як для Bukkit команди
         sender.sendMessage("Bukkit command");
     }
 
-    /**
-     * Наповнення табуляції
-     * @param sender Джерело команди
-     * @param label Ярлик команди
-     * @param args Передаваємі аргументи команди
-     * @return наповнення
-     */
     @Override
     public List<String> getTabCompletions(@NotNull CommandSender sender, @NotNull String label, String[] args) {
         return new ArrayList<>();
     }
 
 }
-```
+`}
 
-> Main клас
-```java
-    @Override
-    public void onEnable() {
-        // отримання CaseManager
-        CaseManager api = new CaseManager(this);
-        // реєстрація субкоманди
-        SubCommandManager subCommandManager = api.getSubCommandManager();
-    
-        TestCommand executor = new TestCommand();
-    
-        SubCommand subCommand = subCommandManager.builder("test")
-                .type(SubCommandType.PLAYER)
-                .executor(executor)
-                .tabCompleter(executor)
-                .args(new String[]{"(test)", "(test2)"})
-                .description("This is cool command!")
-                .build();
-    
-        subCommandManager.registerSubCommand(subCommand);
-}
-```
+</CodeBlock>
+
+
+<CodeBlock
+        language="java"
+        title="Реєстрація"
+>
+{`SubCommandManager<CommandSender> subCommandManager = api.getSubCommandManager();
+
+TestCommand executor = new TestCommand();
+
+SubCommand subCommand = subCommandManager.builder("test")
+        .permission("donatecase.player")
+        .executor(executor)
+        .tabCompleter(executor)
+        .args(new String[]{"(test)", "(test2)"})
+        .description("This is cool command!")
+        .build();
+
+subCommandManager.registerSubCommand(subCommand);
+`}
+
+</CodeBlock>
 
 ## Другий спосіб
-> SecondCommand клас
-```java
-import com.jodexindustries.donatecase.api.addon.Addon;
-import com.jodexindustries.donatecase.api.data.SubCommandType;
+<CodeBlock
+        language="java"
+        title="SecondCommand класс"
+>
+{`import com.jodexindustries.donatecase.api.addon.Addon;
 import com.jodexindustries.donatecase.api.data.subcommand.SubCommand;
+import com.jodexindustries.donatecase.api.data.subcommand.SubCommandExecutor;
+import com.jodexindustries.donatecase.api.data.subcommand.SubCommandTabCompleter;
+import com.jodexindustries.donatecase.api.data.subcommand.SubCommandType;
 import org.bukkit.command.CommandSender;
-import org.jetbrains.annotations.NotNull;
 
-import java.util.List;
+import java.util.ArrayList;
 
-public class SecondCommand extends SubCommand {
+public class SecondCommand extends SubCommand<CommandSender> {
 
     public SecondCommand(String name, Addon addon) {
         super(name, addon);
-
-        setType(SubCommandType.PLAYER);
-        setDescription("This is a second command");
-        setArgs(new String[]{"(test)", "(test2)"});
     }
 
     @Override
-    public void execute(@NotNull CommandSender sender, @NotNull String label, String[] args) {
-        sender.sendMessage("Second command");
+    public String getDescription() {
+        return "This is a second command";
     }
 
     @Override
-    public List<String> getTabCompletions(@NotNull CommandSender sender, @NotNull String label, String[] args) {
-        return new ArrayList<>();
+    public String getPermission() {
+        return SubCommandType.PLAYER.permission;
     }
-}
-```
 
-> Main class
-```java
     @Override
-    public void onEnable() {
-        // отримання CaseManager
-        CaseManager api = new CaseManager(this);
-        // реєстрація субкоманди
-        SubCommandManager subCommandManager = api.getSubCommandManager();
-        
-        SecondCommand second = new SecondCommand("test2", api.getAddon());
-        subCommandManager.registerSubCommand(second);
+    public String[] getArgs() {
+        return new String[]{"(test)", "(test2)"};
     }
-```
 
-> Main class
-```java
     @Override
-    public void onEnable() {
-        // отримання CaseManager
-        CaseManager api = new CaseManager(this);
-        // реєстрація субкоманди
-        SubCommandManager subCommandManager = api.getSubCommandManager();
-        subCommandManager.registerSubCommand("test", new TestCommand());
+    public SubCommandExecutor<CommandSender> getExecutor() {
+        return (sender, label, args) -> sender.sendMessage("Second command");
     }
-```
+
+    @Override
+    public SubCommandTabCompleter<CommandSender> getTabCompleter() {
+        return (sender, label, args) -> new ArrayList<>();
+    }
+
+}`}
+
+</CodeBlock>
+
+<CodeBlock
+        language="java"
+        title="Реєстрація"
+>
+{`SubCommandManager<CommandSender> subCommandManager = api.getSubCommandManager();
+    
+SecondCommand second = new SecondCommand("test2", api.getAddon());
+subCommandManager.registerSubCommand(second);
+`}
+</CodeBlock>
