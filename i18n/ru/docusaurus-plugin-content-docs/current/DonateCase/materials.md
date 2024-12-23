@@ -1,12 +1,14 @@
 ---
 id: materials
 title: Материалы
-sidebar_position: 6
+sidebar_position: 5
 ---
 
 # DonateCase Materials
+
 ## Материалы Minecraft
-### Название материалов
+
+### Названия материлов
 ```yml
 Item:
   ID: GOLDEN_SWORD
@@ -20,7 +22,7 @@ Item:
 ### Голова игрока
 ```yml
 Item:
-  ID: HEAD:_Jodex__ # HEAD:<Имя игрока>
+  ID: HEAD:_Jodex__ # HEAD:<имя игрока>
 ```
 ### [HeadDataBase](https://www.spigotmc.org/resources/head-database.14280/)
 ```yml

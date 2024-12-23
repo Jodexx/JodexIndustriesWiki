@@ -1,13 +1,14 @@
 ---
 id: animations
 title: Animations
-sidebar_position: 5
+sidebar_position: 4
 ---
 import ReactPlayer from 'react-player'
 
 
 # DonateCase Animations
-DonateCase supports 5 animations by default
+DonateCase supports 5 default animations
+
 
 ### SHAPE
 <ReactPlayer loop="true" controls url='https://jodexindustries.xyz/assets/videos/shape.mkv' />
@@ -19,27 +20,27 @@ DonateCase supports 5 animations by default
 <ReactPlayer loop="true" controls url='https://jodexindustries.xyz/assets/videos/rainly.mkv' />
 
 ### WHEEL (RANDOM)
-**(random groups, an infinite number of items)** <br></br>
-_if you want to install the wheel vertically, then you need to install the case looking down on it_
+**(random groups, infinite number of items)** <br></br>
+_if you want to place the wheel vertically, the case should be placed looking up at it_
 <ReactPlayer loop="true" controls url='https://jodexindustries.xyz/assets/videos/wheel.mkv' />
 
 ### WHEEL (FULL)
-**(all groups from config)** <br></br>
-_if you want to install the wheel vertically, then you need to install the case looking down on it_
+**(one group)** <br></br>
+_if you want to place the wheel vertically, the case should be placed looking up at it_
 <ReactPlayer loop="true" controls url='https://jodexindustries.xyz/assets/videos/fullwheel.mkv' />
 
 ### FWHEEL 💰
 Price: 5$ <br></br>
 **Premium resource!** <br></br>
-To buy, contact the [Discord server](https://discord.gg/a65jVPK9vM) <br></br>
-_if you want to install the wheel vertically, then you need to install the case looking down on it_
+For purchase, please contact the [Discord server](https://discord.gg/a65jVPK9vM)<br></br>
+_if you want to place the wheel vertically, the case should be placed looking down at it_
 
 <ReactPlayer loop="true" controls url='https://jodexindustries.xyz/assets/videos/fwheel.mkv' />
 
 ### BWHEEL 💰
 Price: 10$ <br></br>
 **Premium resource!** <br></br>
-To buy, contact the [Discord server](https://discord.gg/a65jVPK9vM) <br></br>
-_if you want to install the wheel vertically, then you need to install the case looking down on it_
+For purchase, please contact the [Discord server](https://discord.gg/a65jVPK9vM)<br></br>
+_if you want to place the wheel vertically, the case should be placed looking down at it_
 
 <ReactPlayer loop="true" controls url='https://jodexindustries.xyz/assets/videos/bwheel.mp4' />

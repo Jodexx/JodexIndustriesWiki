@@ -1,24 +1,20 @@
 ---
 id: configurations
 title: Конфигурации
-sidebar_position: 3
+sidebar_position: 2
 ---
 
-~~**Попробуйте наш новый генератор кейсов для DonateCase! -> [LINK](https://jodexindustries.xyz/donatecasegenerator/)**~~
+~~**Спробуйте наш новий генератор кейсів для DonateCase! -> [LINK](https://jodexindustries.xyz/donatecasegenerator/)**~~
 
 ```yaml
-├──
-├── cases
+├── addons # директория аддонов
+├── cases # директория конфигураций кейсов
 │   └── case.yml # ваша конфигурация кейса
-├── lang # языки
-│   ├── ru_RU.yml 
-│   ├── en_US.yml
-│   └── ua_UA.yml
+├── lang # директория локализаций
 ├── Cases.yml # хранилище кейсов (созданных)
 ├── Config.yml # главный конфигурационный файл
-├── Data.yml # хранилище истории открытий кейсов
-├── Keys.yml # хранилище ключей
 ├── Animations.yml # конфигурация анимаций
+├── database.db # хранилище ключей и истории открытий кейсов
 └──
 ```
 
@@ -71,33 +67,35 @@ DonateCase:
 ```yml
 config: 1.2
 case:
-  Animation: WHEEL #SHAPE, FIREWORK, RAINLY, WHEEL see: https://wiki.jodexindustries.xyz/docs/DonateCase/animations
-  #  AnimationSettings:
-  #    Type: FULL # or RANDOM
-  #    ItemSlot: HEAD # HEAD, HAND, OFF_HAND, FEET, LEGS, CHEST
-  #    SmallArmorStand: true
-  #    Pose:
-  #      Head: 0, 0, 0
-  #      Body: 0, 0, 0
-  #      RightArm: 0, 0, 0
-  #      LeftArm: 0, 0, 0
-  #      RightLeg: 0, 0, 0
-  #      LeftLeg: 0, 0, 0
-  #    ItemsCount: 6 # only for RANDOM type
-  #    CircleSpeed: 0.5
-  #    CircleRadius: 1.5
-  #    LiftingAlongX: 0
-  #    LiftingAlongY: 0
-  #    LiftingAlongZ: 0
-  #    Flame:
-  #      Enabled: true
-  #      Particle: FLAME
-  #    Scroll:
-  #      Time: 100
-  #      Sound: UI_BUTTON_CLICK
-  #      Volume: 10
-  #      Pitch: 1
-  Hologram: # see: https://wiki.jodexindustries.xyz/docs/DonateCase/holograms
+  Animation: WHEEL #SHAPE, FIREWORK, RAINLY, WHEEL see: https://wiki.jodexindustries.xyz/docs/2.0.0/DonateCase/animations
+  # AnimationSettings:
+  # Type: FULL # or RANDOM
+  # ItemSlot: HEAD # HEAD, HAND, OFF_HAND, FEET, LEGS, CHEST
+  # SmallArmorStand: true
+  # Pose:
+  #   Head: 0, 0, 0
+  #   Body: 0, 0, 0
+  #   RightArm: 0, 0, 0
+  #   LeftArm: 0, 0, 0
+  #   RightLeg: 0, 0, 0
+  #   LeftLeg: 0, 0, 0
+  # ItemsCount: 6 # only for RANDOM type
+  # Shuffle: true # only for FULL type
+  # CircleRadius: 2
+  # LiftingAlongX: 0
+  # LiftingAlongY: 0
+  # LiftingAlongZ: 0
+  # Flame:
+  #   Enabled: true
+  #   Particle: FLAME
+  # Scroll:
+  #   Count: 1
+  #   Time: 150
+  #   EaseAmount: 2.5 # 1 = linear
+  #   Sound: UI_BUTTON_CLICK
+  #   Volume: 10
+  #   Pitch: 1
+  Hologram: # see: https://wiki.jodexindustries.xyz/docs/2.0.0/DonateCase/holograms
     # Toggle on and off the holograms for the crates.
     Toggle: true
     # The height of the hologram above the crate.
@@ -124,7 +122,7 @@ case:
     default: 0
 
   DisplayName: "&c&lDonate-&a&lCase" # Name for placeholders
-  Gui: # see more about items configuring -> https://wiki.jodexindustries.xyz/docs/DonateCase/items-settings
+  Gui: # see more about items configuring -> https://wiki.jodexindustries.xyz/docs/2.0.0/DonateCase/items-settings
     Title: "&c&lDonate-&a&lCase"
     Size: 45
     UpdateRate: 20 # in ticks, set -1 to disable updating
@@ -137,7 +135,7 @@ case:
         Slots: # or Slots: 0-10 (range)
           - 0
           - 8
-        Material: WHITE_STAINED_GLASS_PANE # see: https://wiki.jodexindustries.xyz/docs/DonateCase/materials
+        Material: WHITE_STAINED_GLASS_PANE # see: https://wiki.jodexindustries.xyz/docs/2.0.0/DonateCase/materials
         Type: DEFAULT
       Open:
         DisplayName: "&bOpen Case"
@@ -157,14 +155,14 @@ case:
           - ''
         Slots: # or Slots: 0-10 (range)
           - 22
-        Material: TRIPWIRE_HOOK # see: https://wiki.jodexindustries.xyz/docs/DonateCase/materials
+        Material: TRIPWIRE_HOOK # see: https://wiki.jodexindustries.xyz/docs/2.0.0/DonateCase/materials
         Type: OPEN # or you can use OPEN_<anotherCaseName> for opening another case 
   Items:
     Vip:
       Group: vip
       Chance: 30
       Item:
-        ID: YELLOW_WOOL # see: https://wiki.jodexindustries.xyz/docs/DonateCase/materials
+        ID: YELLOW_WOOL # see: https://wiki.jodexindustries.xyz/docs/2.0.0//DonateCase/materials
         DisplayName: '&7[&eVIP&7]'
         Enchanted: false
       Index: 0
@@ -191,7 +189,7 @@ case:
       Group: vipplus
       Chance: 25
       Item:
-        ID: LIGHT_BLUE_WOOL # see: https://wiki.jodexindustries.xyz/docs/DonateCase/materials
+        ID: LIGHT_BLUE_WOOL # see: https://wiki.jodexindustries.xyz/docs/2.0.0/DonateCase/materials
         DisplayName: '&7[&bVIP&6+&7]'
         Enchanted: false
       Index: 1
@@ -245,7 +243,7 @@ case:
       Group: deluxe
       Chance: 15
       Item:
-        ID: PURPLE_WOOL # see: https://wiki.jodexindustries.xyz/docs/DonateCase/materials
+        ID: PURPLE_WOOL # see: https://wiki.jodexindustries.xyz/docs/2.0.0/DonateCase/materials
         DisplayName: '&7[&5Deluxe&7]'
         Enchanted: false
       Index: 3
@@ -271,7 +269,7 @@ case:
       Group: legend
       Chance: 10
       Item:
-        ID: PINK_WOOL # see: https://wiki.jodexindustries.xyz/docs/DonateCase/materials
+        ID: PINK_WOOL # see: https://wiki.jodexindustries.xyz/docs/2.0.0/DonateCase/materials
         DisplayName: '&7[&dLegend&7]'
         Enchanted: false
       Index: 4
@@ -347,6 +345,20 @@ SHAPE:
     White:
       Size: 1.0
       Rgb: 255, 255, 255
+  StartPosition:
+    X: 0.5
+    Y: -0.1
+    Z: 0.5
+  Tail:
+    Radius: 0.5
+  Scroll:
+    Period: 2
+    Time: 15
+    Height: 0.91
+    Interval: 1
+    Yaw: 20.0
+  End:
+    Time: 25
 
 RAINLY:
   ItemSlot: HEAD # HEAD, HAND, OFF_HAND, FEET, LEGS, CHEST
@@ -358,6 +370,14 @@ RAINLY:
     LeftArm: 0, 0, 0
     RightLeg: 0, 0, 0
     LeftLeg: 0, 0, 0
+  Scroll:
+    Sound: ENTITY_EXPERIENCE_ORB_PICKUP
+    Volume: 1
+    Pitch: 1
+  End:
+    Sound: ENTITY_GENERIC_EXPLODE
+    Volume: 1
+    Pitch: 1
   FallingParticle: FALLING_WATER # you can use all particles, full list: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Particle.html
   # FALLING_WATER
   # FALLING_LAVA
@@ -395,8 +415,8 @@ WHEEL:
     RightLeg: 0, 0, 0
     LeftLeg: 0, 0, 0
   ItemsCount: 6 # only for RANDOM type
-  CircleSpeed: 0.5
-  CircleRadius: 1.5
+  Shuffle: true # only for FULL type
+  CircleRadius: 2
   LiftingAlongX: 0
   LiftingAlongY: 0
   LiftingAlongZ: 0
@@ -404,7 +424,9 @@ WHEEL:
     Enabled: true
     Particle: FLAME
   Scroll:
-    Time: 100
+    Count: 1
+    Time: 150
+    EaseAmount: 2.5 # 1 = linear
     Sound: UI_BUTTON_CLICK
     Volume: 10
     Pitch: 1

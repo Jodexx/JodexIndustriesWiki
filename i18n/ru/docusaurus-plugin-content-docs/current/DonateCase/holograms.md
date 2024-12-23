@@ -1,7 +1,7 @@
 ---
 id: holograms
 title: Голограммы
-sidebar_position: 7
+sidebar_position: 6
 ---
 
 # DonateCase Голограммы
@@ -30,7 +30,7 @@ sidebar_position: 7
   Hologram:
     # Toggle on and off the holograms for the crates.
     Toggle: true
-    FancyHolograms: # Здесь секция с FancyHolograms конфигурации
+    FancyHolograms: # Здесь секция конфигурации с FancyHolograms
       type: TEXT
       location:
         world: world

@@ -19,10 +19,6 @@
     "message": "Spigot",
     "description": "The label for category Spigot in sidebar defaultSidebar"
   },
-  "sidebar.defaultSidebar.category.outdated": {
-    "message": "outdated",
-    "description": "The label for category outdated in sidebar defaultSidebar"
-  },
   "sidebar.defaultSidebar.category.Addons": {
     "message": "Аддоны",
     "description": "The label for category Addons in sidebar defaultSidebar"
