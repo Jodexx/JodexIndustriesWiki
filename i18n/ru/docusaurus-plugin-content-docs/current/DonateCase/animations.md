@@ -4,48 +4,39 @@ title: Анимации
 sidebar_position: 4
 ---
 
-import ReactPlayer from 'react-player'
-
 # DonateCase Анимации
 
 DonateCase поддерживает 5 анимаций по умолчанию
 
-### SHAPE
+### Shape
+  <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/lemoqyTfQh8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-<ReactPlayer loop="true" controls url='https://jodexindustries.xyz/assets/videos/shape.mkv' />
+### Firework
+  <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/vx_yGHSVc68" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  
+### Rainly
+  <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/8IlZTK2bPPo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-### FIREWORK
+### Wheel (RANDOM)
+**(случайные группы, бесконечное количество элементов)**\
+_если вы хотите установить колесо вертикально, то кейс нужно устанавливать смотря на него вверх_
+  <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/VTo_QGl6nyM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-<ReactPlayer loop="true" controls url='https://jodexindustries.xyz/assets/videos/firework.mkv' />
+### Wheel (FULL)
+**(одна группа)**\
+_если вы хотите установить колесо вертикально, то кейс нужно устанавливать смотря на него вверх_
+  <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/Vqh-0VdbkMs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-### RAINLY
-
-<ReactPlayer loop="true" controls url='https://jodexindustries.xyz/assets/videos/rainly.mkv' />
-
-### WHEEL (RANDOM)
-
-**(случайные группы, бесконечное количество элементов)** <br></br>
-*если вы хотите установить колесо вертикально, то кейс нужно устанавливать смотря на него вверх* <ReactPlayer loop="true" controls url='https://jodexindustries.xyz/assets/videos/wheel.mkv' />
-
-### WHEEL (FULL)
-
-**(одна группа)** <br></br>
-*если вы хотите установить колесо вертикально, то кейс нужно устанавливать смотря на него вверх* <ReactPlayer loop="true" controls url='https://jodexindustries.xyz/assets/videos/fullwheel.mkv' />
-
-### FWHEEL 💰
-
-Цена: 5$ <br></br>
-**Премиум ресурс!** <br></br>
-Для покупки, обратитесь в [Discord сервер](https://discord.gg/a65jVPK9vM)<br></br>
+### FutureWheel 💰
+**Premium ресурс!**\
+Цена: 3$\
+Для покупки, обратитесь в [Discord сервер](https://discord.gg/a65jVPK9vM) или [Телеграм](https://t.me/jodexindustries)\
 *если вы хотите установить колесо вертикально, то кейс нужно устанавливать смотря на него вниз*
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/PLz3l0kKkus" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>  
 
-<ReactPlayer loop="true" controls url='https://jodexindustries.xyz/assets/videos/fwheel.mkv' />
-
-### BWHEEL 💰
-
-Цена: 10$ <br></br>
-**Премиум ресурс!** <br></br>
-Для покупки, обратитесь в [Discord сервер](https://discord.gg/a65jVPK9vM)<br></br>
-*если вы хотите установить колесо вертикально, то кейс нужно устанавливать смотря на него вниз*
-
-<ReactPlayer loop="true" controls url='https://jodexindustries.xyz/assets/videos/bwheel.mp4' />
+### BetterWheel 💰
+**Premium ресурс!**\
+Цена: 6$\
+Для покупки, обратитесь в [Discord сервер](https://discord.gg/a65jVPK9vM) или [Телеграм](https://t.me/jodexindustries)\
+_если вы хотите установить колесо вертикально, то кейс нужно устанавливать смотря на него вниз_
+  <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/BSqGSSmKy28" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

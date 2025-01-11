@@ -3,44 +3,41 @@ id: animations
 title: Animations
 sidebar_position: 4
 ---
-import ReactPlayer from 'react-player'
 
 
 # DonateCase Animations
 DonateCase supports 5 default animations
 
 
-### SHAPE
-<ReactPlayer loop="true" controls url='https://jodexindustries.xyz/assets/videos/shape.mkv' />
+### Shape
+  <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/lemoqyTfQh8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-### FIREWORK
-<ReactPlayer loop="true" controls url='https://jodexindustries.xyz/assets/videos/firework.mkv' />
+### Firework
+  <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/vx_yGHSVc68" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  
+### Rainly
+  <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/8IlZTK2bPPo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-### RAINLY
-<ReactPlayer loop="true" controls url='https://jodexindustries.xyz/assets/videos/rainly.mkv' />
-
-### WHEEL (RANDOM)
-**(random groups, infinite number of items)** <br></br>
+### Wheel (RANDOM)
+**(random groups, infinite number of items)**\
 _if you want to place the wheel vertically, the case should be placed looking up at it_
-<ReactPlayer loop="true" controls url='https://jodexindustries.xyz/assets/videos/wheel.mkv' />
+  <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/VTo_QGl6nyM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-### WHEEL (FULL)
-**(one group)** <br></br>
+### Wheel (FULL)
+**(one group)**\
 _if you want to place the wheel vertically, the case should be placed looking up at it_
-<ReactPlayer loop="true" controls url='https://jodexindustries.xyz/assets/videos/fullwheel.mkv' />
+  <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/Vqh-0VdbkMs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-### FWHEEL 💰
-Price: 5$ <br></br>
-**Premium resource!** <br></br>
-For purchase, please contact the [Discord server](https://discord.gg/a65jVPK9vM)<br></br>
+### FutureWheel 💰
+**Premium resource!**\
+Price: 3$\
+For purchase, please contact the [Discord server](https://discord.gg/a65jVPK9vM) or [Telegram](https://t.me/jodexindustries)\
 _if you want to place the wheel vertically, the case should be placed looking down at it_
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/PLz3l0kKkus" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>  
 
-<ReactPlayer loop="true" controls url='https://jodexindustries.xyz/assets/videos/fwheel.mkv' />
-
-### BWHEEL 💰
-Price: 10$ <br></br>
-**Premium resource!** <br></br>
-For purchase, please contact the [Discord server](https://discord.gg/a65jVPK9vM)<br></br>
+### BetterWheel 💰
+Price: 6$\
+**Premium resource!**\
+For purchase, please contact the [Discord server](https://discord.gg/a65jVPK9vM) or [Telegram](https://t.me/jodexindustries)\
 _if you want to place the wheel vertically, the case should be placed looking down at it_
-
-<ReactPlayer loop="true" controls url='https://jodexindustries.xyz/assets/videos/bwheel.mp4' />
+  <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/BSqGSSmKy28" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

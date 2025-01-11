@@ -3,43 +3,40 @@ id: animations
 title: Анімації
 sidebar_position: 4
 ---
-import ReactPlayer from 'react-player'
 
 
 # DonateCase Анімації
 DonateCase підтримує 5 анімацій за замовченням
 
-### SHAPE
-<ReactPlayer loop="true" controls url='https://jodexindustries.xyz/assets/videos/shape.mkv' />
+### Shape
+  <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/lemoqyTfQh8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-### FIREWORK
-<ReactPlayer loop="true" controls url='https://jodexindustries.xyz/assets/videos/firework.mkv' />
+### Firework
+  <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/vx_yGHSVc68" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  
+### Rainly
+  <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/8IlZTK2bPPo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-### RAINLY
-<ReactPlayer loop="true" controls url='https://jodexindustries.xyz/assets/videos/rainly.mkv' />
+### Wheel (RANDOM)
+**(випадкові групи, безкінечна кількість елементів)**\
+_якщо ви хочете встановити колесо вертикально, то кейс потрібно встановлювати дивлясись на нього вверх_
+  <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/VTo_QGl6nyM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-### WHEEL (RANDOM)
-**(випадкові групи, безкінечна кількість елементів)** <br></br>
+### Wheel (FULL)
+**(одна група)**\
+_якщо ви хочете встановити колесо вертикально, то кейс потрібно встановлювати дивлясись на нього вверх_
+  <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/Vqh-0VdbkMs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+### FutureWheel 💰
+**Premium ресурс!**\
+Ціна: 3$\
+Для купівлі, зверніться в [Discord сервер](https://discord.gg/a65jVPK9vM) або [Телеграм](https://t.me/jodexindustries)\
 _якщо ви хочете встановити колесо вертикально, то кейс потрібно встановлювати дивлясись на нього вниз_
-<ReactPlayer loop="true" controls url='https://jodexindustries.xyz/assets/videos/wheel.mkv' />
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/PLz3l0kKkus" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>  
 
-### WHEEL (FULL)
-**(одна група)** <br></br>
+### BetterWheel 💰
+**Premium ресурс!**\
+Ціна: 6$\
+Для купівлі, зверніться в [Discord сервер](https://discord.gg/a65jVPK9vM) або [Телеграм](https://t.me/jodexindustries)\
 _якщо ви хочете встановити колесо вертикально, то кейс потрібно встановлювати дивлясись на нього вниз_
-<ReactPlayer loop="true" controls url='https://jodexindustries.xyz/assets/videos/fullwheel.mkv' />
-
-### FWHEEL 💰
-Ціна: 5$ <br></br>
-**Premium ресурс!** <br></br>
-Для купівлі, зверніться в [Discord сервер](https://discord.gg/a65jVPK9vM)<br></br>
-_якщо ви хочете встановити колесо вертикально, то кейс потрібно встановлювати дивлясись на нього вниз_
-
-<ReactPlayer loop="true" controls url='https://jodexindustries.xyz/assets/videos/fwheel.mkv' />
-
-### BWHEEL 💰
-Ціна: 10$ <br></br>
-**Premium ресурс!** <br></br>
-Для купівлі, зверніться в [Discord сервер](https://discord.gg/a65jVPK9vM)<br></br>
-_якщо ви хочете встановити колесо вертикально, то кейс потрібно встановлювати дивлясись на нього вниз_
-
-<ReactPlayer loop="true" controls url='https://jodexindustries.xyz/assets/videos/bwheel.mp4' />
+  <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/BSqGSSmKy28" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
