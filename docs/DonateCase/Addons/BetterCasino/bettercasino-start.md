@@ -8,7 +8,6 @@ toc_max_heading_level: 5
 
 import CodeBlock from '@theme/CodeBlock';
 
-
 # BetterCasino
 DCBetterCasino — це інструмент для створення унікальних та динамічних анімацій в GUI для DonateCase. Він дозволяє вам реалізувати навіть найсміливіші ідеї, використовуючи гнучкий і зручний синтаксис YAML.
 
@@ -62,8 +61,8 @@ title="plugins/DonateCase/addons/BetterCasino/config.yml">
 animation: "BETTER_CASINO" # назва анімації, яка буде використовуватися у конфігурації кейсів
 menus: # ваші конфігурації меню
     csgo: "csgo_dcbc.yml"
-`
-}
+    wheel: "wheel_dcbc.yml"
+`}
 </CodeBlock>
 
 :::info
@@ -79,8 +78,7 @@ case:
     Animation: BETTER_CASINO # або інша, раніше зазначена в конфігурації аддону, назва анімації
     AnimationSettings:
         Menu: csgo # назва конфігурації меню
-`
-}
+`}
 </CodeBlock>
 
 :::tip

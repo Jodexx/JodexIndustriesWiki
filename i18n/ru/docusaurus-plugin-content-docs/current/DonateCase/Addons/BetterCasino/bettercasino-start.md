@@ -61,6 +61,7 @@ title="plugins/DonateCase/addons/BetterCasino/config.yml">
 animation: "BETTER_CASINO" # название анимации, которая будет использоваться в конфигурации кейсов
 menus: # ваши конфигурации меню
     csgo: "csgo_dcbc.yml"
+    wheel: "wheel_dcbc.yml"
 `}
 </CodeBlock>
 
