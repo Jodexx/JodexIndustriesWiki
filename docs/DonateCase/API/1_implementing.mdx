@@ -1,0 +1,62 @@
+---
+id: implementing
+title: Впровадження
+sidebar_position: 1
+---
+
+import CodeBlock from '@theme/CodeBlock';
+
+# Впровадження
+
+
+Цей варінт пропонує створення спеціалізованих аддонів для DonateCase, які містяться в директорії DonateCase/addons/
+
+Приклад аддону: [Github](https://github.com/Jodexx/DonateCaseTestAddon)
+
+<CodeBlock
+        language="java"
+        title="src/main/java/com/jodexindustries/testaddon/TestAddon.java"
+>
+{
+`import com.jodexindustries.donatecase.api.DCAPI;
+import com.jodexindustries.donatecase.api.addon.InternalJavaAddon;
+
+public class TestAddon extends InternalJavaAddon {
+
+    private final DCAPI api = DCAPI.getInstance();
+
+    @Override
+    public void onLoad() {
+        getLogger().info("TestAddon is loaded!")
+    }
+
+    @Override
+    public void onEnable() {
+        getLogger().info("TestAddon is enabled!");
+    }
+
+    @Override
+    public void onDisable() {
+        getLogger().info("TestAddon is disabled!");
+    }
+}
+`
+}
+</CodeBlock>
+
+<CodeBlock
+        language="yaml"
+        title="src/main/resources/addon.yml"
+>
+{`name: TestAddon
+main: com.jodexindustries.testaddon.TestAddon
+version: 1.0.0
+api: 2.1.0.0 # мінімальна версія api, яка потрібна для роботи аддона
+authors: ["_Jodex__"] # автори аддону
+platforms: ["Bukkit"] # список доступних платформ
+softdepend: ["FriendCase"] # список м'яких залежностей
+depend: ["DCEventManager"] # список жорстких залежностей (без них аддон не запуститься)
+`
+}
+</CodeBlock>
+

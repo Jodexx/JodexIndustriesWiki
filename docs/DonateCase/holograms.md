@@ -30,27 +30,19 @@ sidebar_position: 6
   Hologram:
     # Toggle on and off the holograms for the crates.
     Toggle: true
-    FancyHolograms: # Тут секція з конфігурації FancyHolograms
-      type: TEXT
-      location:
-        world: world
-        x: 262.5
-        y: 72
-        z: -163.5
-        yaw: -180
-        pitch: 0
-      visibility_distance: -1
-      visibility: ALL
-      persistent: true
-      scale_x: 1.5
-      scale_y: 1.5
-      scale_z: 1.5
-      shadow_radius: 1.0
-      shadow_strength: 1.0
-      text:
-        - "Test"
-      text_shadow: false
-      see_through: false
-      text_alignment: center
-      update_text_interval: -1
+    type: TEXT
+    visibility_distance: -1
+    visibility: ALL
+    persistent: true
+    scale_x: 1.5
+    scale_y: 1.5
+    scale_z: 1.5
+    shadow_radius: 1.0
+    shadow_strength: 1.0
+    text:
+      - "Test"
+    text_shadow: false
+    see_through: false
+    text_alignment: center
+    update_text_interval: -1
 ```

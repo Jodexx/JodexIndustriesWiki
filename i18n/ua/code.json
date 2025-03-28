@@ -125,13 +125,25 @@
     "message": "Останнє оновлення{atDate}{byUser}",
     "description": "Фраза, що показує, коли та ким було оновлено сторінку"
   },
+  "theme.navbar.mobileLanguageDropdown.label": {
+    "message": "Мови",
+    "description": "The label for the mobile language switcher dropdown"
+  },
   "theme.navbar.mobileVersionsDropdown.label": {
     "message": "Версії",
     "description": "Мітка для випадаючого меню версій на мобільному перегляді"
   },
+  "theme.navbar.mobileSidebarSecondaryMenu.backButtonLabel": {
+    "message": "← Назад до головного меню",
+    "description": "The label of the back button to return to main menu, inside the mobile navbar sidebar secondary menu (notably used to display the docs sidebar)"
+  },
   "theme.NotFound.title": {
     "message": "Сторінку не знайдено",
     "description": "Заголовок сторінки 404"
+  },
+  "theme.TOCCollapsible.toggleButtonLabel": {
+    "message": "На цій сторінці",
+    "description": "The label used by the button on the collapsible TOC component"
   },
   "theme.tags.tagsListLabel": {
     "message": "Теги:",

@@ -98,7 +98,7 @@ const config = {
             items: [
               {
                 label: 'DonateCase',
-                to: '/docs/donatecase',
+                to: '/docs/2.0.0/donatecase',
               },
             ],
           },
@@ -111,7 +111,7 @@ const config = {
               },
               {
                 label: 'Discord',
-                href: 'https://discord.gg/8XT8zJb5',
+                href: 'https://discord.gg/2syNtcKcgR',
               },
             ],
           },
@@ -138,7 +138,7 @@ const config = {
       },
       prism: {
         theme: prismThemes.github,
-      	darkTheme: prismThemes.dracula,
+      	darkTheme: prismThemes.palenight,
         additionalLanguages: ['java', 'gradle', 'yaml', 'xml-doc'],
       },
     }),

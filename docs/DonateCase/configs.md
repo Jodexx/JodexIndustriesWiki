@@ -4,26 +4,24 @@ title: Конфігурації
 sidebar_position: 2
 ---
 
-~~**Спробуйте наш новий генератор кейсів для DonateCase! -> [LINK](https://jodexindustries.xyz/donatecasegenerator/)**~~
-
 ```yaml
 ├── addons # директорія аддонів
 ├── cases # директорія конфігурацій кейсів
 │   └── case.yml # ваша конфігурація кейсу
 ├── lang # директорія локалізацій
-├── Cases.yml # сховище кейсів (створених)
-├── Config.yml # головний конфігураційний
-├── Animations.yml # конфігурація анімацій
-├── database.db # сховище ключів та історіїї відкриттів кейсів
-└──
+├── Animations.yml # глобальні налаштування анімацій
+├── Cases.yml # сховище створених кейсів (локацій)
+├── Config.yml # головний конфігураційний файл
+└── database.db # сховище ключів та історії відкриттів кейсів
 ```
 
-## Config.yml
 <details>
 <summary>Config.yml</summary>
 
 ```yml
-config: '2.5' #DON'T CHANGE THIS PLEASE
+config:
+  version: 25
+  type: config
 
 DonateCase:
   #Do I need to check for plugin updates?
@@ -38,10 +36,8 @@ DonateCase:
     Password: 'password'
   # en_US, es_ES, ru_RU, ua_UA
   Languages: en_US
-  HologramDriver: DecentHolograms # CMI, DecentHolograms or HolographicDisplays
-  PermissionDriver: luckperms # luckperms or vault
-  # Only if Vault enabled
-  LevelGroup: false #Enable if you use PermissionEX, if you use LuckPerms, don't enable if you use "parent add"
+  HologramDriver: DecentHolograms # CMI, DecentHolograms, HolographicDisplays or FancyHolograms
+  LevelGroup: false # Don't enable if you use "parent add" in LuckPerms
   LevelGroups:
     legend: 4
     deluxe: 3
@@ -57,45 +53,41 @@ DonateCase:
   Caching: 20 # in ticks
   # Set spawn-protection to 0 in server.properties
   DisableSpawnProtection: true
+  # If true, checks whether the player with the nickname exists on the server.
+  CheckPlayerName: true
 ```
 </details>
 
-## case.yml
 <details>
 <summary>case.yml</summary>
 
 ```yml
-config: 1.2
+config:
+  version: 13
+  type: old_case
 case:
-  Animation: WHEEL #SHAPE, FIREWORK, RAINLY, WHEEL see: https://wiki.jodexindustries.xyz/docs/2.0.0/DonateCase/animations
-  # AnimationSettings:
-  # Type: FULL # or RANDOM
-  # ItemSlot: HEAD # HEAD, HAND, OFF_HAND, FEET, LEGS, CHEST
-  # SmallArmorStand: true
-  # Pose:
-  #   Head: 0, 0, 0
-  #   Body: 0, 0, 0
-  #   RightArm: 0, 0, 0
-  #   LeftArm: 0, 0, 0
-  #   RightLeg: 0, 0, 0
-  #   LeftLeg: 0, 0, 0
-  # ItemsCount: 6 # only for RANDOM type
-  # Shuffle: true # only for FULL type
-  # CircleRadius: 2
-  # LiftingAlongX: 0
-  # LiftingAlongY: 0
-  # LiftingAlongZ: 0
-  # Flame:
-  #   Enabled: true
-  #   Particle: FLAME
-  # Scroll:
-  #   Count: 1
-  #   Time: 150
-  #   EaseAmount: 2.5 # 1 = linear
-  #   Sound: UI_BUTTON_CLICK
-  #   Volume: 10
-  #   Pitch: 1
-  Hologram: # see: https://wiki.jodexindustries.xyz/docs/2.0.0/DonateCase/holograms
+  Animation: WHEEL #SHAPE, FIREWORK, RAINLY, WHEEL, RANDOM, POP see: https://wiki.jodexindustries.xyz/en/docs/2.0.0/DonateCase/animations
+  #  AnimationSettings:
+  #    Type: FULL # or RANDOM
+  #    ItemSlot: HEAD # HEAD, HAND, OFF_HAND, FEET, LEGS, CHEST
+  #    SmallArmorStand: true
+  #    ItemsCount: 6 # only for RANDOM type
+  #    CircleSpeed: 0.5
+  #    CircleRadius: 1.5
+  #    LiftingAlongX: 0
+  #    LiftingAlongY: 0
+  #    LiftingAlongZ: 0
+  #    Flame:
+  #      Enabled: true
+  #      Particle: FLAME
+  #    Scroll:
+  #      Time: 100
+  #      Sound: UI_BUTTON_CLICK
+  #      Volume: 10
+  #      Pitch: 1
+  #    Facing: west # for POP animation
+
+  Hologram: # see: https://wiki.jodexindustries.xyz/en/docs/2.0.0/DonateCase/holograms
     # Toggle on and off the holograms for the crates.
     Toggle: true
     # The height of the hologram above the crate.
@@ -106,11 +98,32 @@ case:
     Message:
       - '&6DonateCase'
 
+  ## FancyHolograms
+  #    type: TEXT
+  #    visibility_distance: -1
+  #    visibility: ALL
+  #    persistent: true
+  #    scale_x: 1.5
+  #    scale_y: 1.5
+  #    scale_z: 1.5
+  #    shadow_radius: 1.0
+  #    shadow_strength: 1.0
+  #    text:
+  #      - "Test"
+  #    text_shadow: false
+  #    see_through: false
+  #    text_alignment: center
+  #    update_text_interval: -1
+
   OpenType: GUI # or BLOCK
 
   NoKeyActions:
-    - "[message] &cYou don't have keys for this case. You can buy them here >>> &6JodexIndustries.com"
+    - "[message] &cYou don't have keys for this case. You can buy them here >>> &6JodexIndustries.xyz"
     - "[sound] ENTITY_ENDERMAN_TELEPORT"
+
+  HistoryDataSize: 10 # 0 if you want to disable history data
+
+  CooldownBeforeAnimation: 0 # in tick
 
   LevelGroups: # delete all of this section, if you want to use default LevelGroups from Config.yml
     ultra: 6
@@ -122,47 +135,49 @@ case:
     default: 0
 
   DisplayName: "&c&lDonate-&a&lCase" # Name for placeholders
-  Gui: # see more about items configuring -> https://wiki.jodexindustries.xyz/docs/2.0.0/DonateCase/items-settings
+  Gui: # see more about items configuring -> https://wiki.jodexindustries.xyz/en/docs/2.0.0/DonateCase/items-settings
     Title: "&c&lDonate-&a&lCase"
     Size: 45
     UpdateRate: 20 # in ticks, set -1 to disable updating
     Items:
       "1":
-        DisplayName: "&cJodexIndustries.xyz"
-        Enchanted: false
-        Lore:
-          - ""
+        Material:
+          ID: WHITE_STAINED_GLASS_PANE # see: https://wiki.jodexindustries.xyz/en/docs/2.0.0/DonateCase/materials
+          DisplayName: "&cJodexIndustries.xyz"
+          Enchanted: false
+          Lore:
+            - ""
         Slots: # or Slots: 0-10 (range)
           - 0
           - 8
-        Material: WHITE_STAINED_GLASS_PANE # see: https://wiki.jodexindustries.xyz/docs/2.0.0/DonateCase/materials
         Type: DEFAULT
       Open:
-        DisplayName: "&bOpen Case"
-        Enchanted: false
-        Lore:
-          - '&6The case can be bought on the website: &cJodexIndustries.xyz'
-          - ''
-          - '&7Keys: &e%keys%'
-          - ''
-          - '&6Drops:'
-          - '&7[&eVIP&7] - &b&n30%'
-          - '&7[&bVIP&6+&7] - &b&n25%'
-          - '&7[&3Premium&7] - &b&n20%'
-          - '&7[&5Deluxe&7] - &b&n15%'
-          - '&7[&dLegend&7] - &b&n10%'
-          - '&7[&cUltra&7] - &b&n5%'
-          - ''
+        Material:
+          ID: TRIPWIRE_HOOK # see: https://wiki.jodexindustries.xyz/en/docs/2.0.0/DonateCase/materials
+          DisplayName: "&bOpen Case"
+          Enchanted: false
+          Lore:
+            - '&6The case can be bought on the website: &cJodexIndustries.xyz'
+            - ''
+            - '&7Keys: &e%keys%'
+            - ''
+            - '&6Drops:'
+            - '&7[&eVIP&7] - &b&n30%'
+            - '&7[&bVIP&6+&7] - &b&n25%'
+            - '&7[&3Premium&7] - &b&n20%'
+            - '&7[&5Deluxe&7] - &b&n15%'
+            - '&7[&dLegend&7] - &b&n10%'
+            - '&7[&cUltra&7] - &b&n5%'
+            - ''
         Slots: # or Slots: 0-10 (range)
           - 22
-        Material: TRIPWIRE_HOOK # see: https://wiki.jodexindustries.xyz/docs/2.0.0/DonateCase/materials
-        Type: OPEN # or you can use OPEN_<anotherCaseName> for opening another case 
+        Type: OPEN # or you can use OPEN_<anotherCaseName> for opening another case
   Items:
     Vip:
       Group: vip
       Chance: 30
-      Item:
-        ID: YELLOW_WOOL # see: https://wiki.jodexindustries.xyz/docs/2.0.0//DonateCase/materials
+      Material:
+        ID: YELLOW_WOOL # see: https://wiki.jodexindustries.xyz/en/docs/2.0.0/DonateCase/materials
         DisplayName: '&7[&eVIP&7]'
         Enchanted: false
       Index: 0
@@ -188,8 +203,8 @@ case:
     VipPlus:
       Group: vipplus
       Chance: 25
-      Item:
-        ID: LIGHT_BLUE_WOOL # see: https://wiki.jodexindustries.xyz/docs/2.0.0/DonateCase/materials
+      Material:
+        ID: LIGHT_BLUE_WOOL # see: https://wiki.jodexindustries.xyz/en/docs/2.0.0/DonateCase/materials
         DisplayName: '&7[&bVIP&6+&7]'
         Enchanted: false
       Index: 1
@@ -215,7 +230,7 @@ case:
     Premium:
       Group: premium
       Chance: 20
-      Item:
+      Material:
         ID: CYAN_WOOL
         DisplayName: '&7[&3Premium&7]'
       Index: 2
@@ -242,8 +257,8 @@ case:
     Deluxe:
       Group: deluxe
       Chance: 15
-      Item:
-        ID: PURPLE_WOOL # see: https://wiki.jodexindustries.xyz/docs/2.0.0/DonateCase/materials
+      Material:
+        ID: PURPLE_WOOL # see: https://wiki.jodexindustries.xyz/en/docs/2.0.0/DonateCase/materials
         DisplayName: '&7[&5Deluxe&7]'
         Enchanted: false
       Index: 3
@@ -268,8 +283,8 @@ case:
     Legend:
       Group: legend
       Chance: 10
-      Item:
-        ID: PINK_WOOL # see: https://wiki.jodexindustries.xyz/docs/2.0.0/DonateCase/materials
+      Material:
+        ID: PINK_WOOL # see: https://wiki.jodexindustries.xyz/en/docs/2.0.0/DonateCase/materials
         DisplayName: '&7[&dLegend&7]'
         Enchanted: false
       Index: 4
@@ -294,7 +309,7 @@ case:
     Ultra:
       Group: ultra
       Chance: 5
-      Item:
+      Material:
         ID: RED_WOOL
         DisplayName: '&7[&cUltra&7]'
         Enchanted: true
@@ -322,23 +337,44 @@ case:
 ```
 </details>
 
-## Animations.yml
 <details>
 <summary>Animations.yml</summary>
 
 ```yml
-config: "1.4"
+config: # Please do not touch this section
+  version: 15
+  type: animations
+
 SHAPE:
   ItemSlot: HEAD # HEAD, HAND, OFF_HAND, FEET, LEGS, CHEST
   SmallArmorStand: true
-  Pose:
-    Head: 0, 0, 0
-    Body: 0, 0, 0
-    RightArm: 0, 0, 0
-    LeftArm: 0, 0, 0
-    RightLeg: 0, 0, 0
-    LeftLeg: 0, 0, 0
-  Particle: # 1.13+
+  Firework: true
+  #  Pose:
+  #    Head:
+  #      x: 0
+  #      y: 0
+  #      z: 0
+  #    Body:
+  #      x: 0
+  #      y: 0
+  #      z: 0
+  #    RightArm:
+  #      x: 0
+  #      y: 0
+  #      z: 0
+  #    LeftArm:
+  #      x: 0
+  #      y: 0
+  #      z: 0
+  #    RightLeg:
+  #      x: 0
+  #      y: 0
+  #      z: 0
+  #    LeftLeg:
+  #      x: 0
+  #      y: 0
+  #      z: 0
+  Particle:
     Orange:
       Size: 1.0
       Rgb: 255, 165, 0
@@ -346,9 +382,9 @@ SHAPE:
       Size: 1.0
       Rgb: 255, 255, 255
   StartPosition:
-    X: 0.5
-    Y: -0.1
-    Z: 0.5
+    x: 0.5
+    y: -0.1
+    z: 0.5
   Tail:
     Radius: 0.5
   Scroll:
@@ -357,19 +393,15 @@ SHAPE:
     Height: 0.91
     Interval: 1
     Yaw: 20.0
+    Volume: 10
+    Pitch: 1
+    Sound: UI_BUTTON_CLICK
   End:
     Time: 25
 
 RAINLY:
   ItemSlot: HEAD # HEAD, HAND, OFF_HAND, FEET, LEGS, CHEST
   SmallArmorStand: true
-  Pose:
-    Head: 0, 0, 0
-    Body: 0, 0, 0
-    RightArm: 0, 0, 0
-    LeftArm: 0, 0, 0
-    RightLeg: 0, 0, 0
-    LeftLeg: 0, 0, 0
   Scroll:
     Sound: ENTITY_EXPERIENCE_ORB_PICKUP
     Volume: 1
@@ -382,21 +414,21 @@ RAINLY:
   # FALLING_WATER
   # FALLING_LAVA
   # FALLING_DUST
-  # FALLING_HONEY   1.16+
-  # FALLING_NECTAR  1.16+
+  # FALLING_HONEY
+  # FALLING_NECTAR
   # FALLING_OBSIDIAN_TEAR
 
 FIREWORK:
   ItemSlot: HEAD # HEAD, HAND, OFF_HAND, FEET, LEGS, CHEST
   SmallArmorStand: true
-  Pose:
-    Head: 0, 0, 0
-    Body: 0, 0, 0
-    RightArm: 0, 0, 0
-    LeftArm: 0, 0, 0
-    RightLeg: 0, 0, 0
-    LeftLeg: 0, 0, 0
   Power: 0 # Firework power
+  StartPosition:
+    x: 0.5
+    y: 1
+    z: 0.5
+  Scroll:
+    Period: 2
+    Yaw: 20.0
   FireworkColors:
     - RED
     - BLUE
@@ -407,19 +439,13 @@ WHEEL:
   Type: FULL # or RANDOM
   ItemSlot: HEAD # HEAD, HAND, OFF_HAND, FEET, LEGS, CHEST
   SmallArmorStand: true
-  Pose:
-    Head: 0, 0, 0
-    Body: 0, 0, 0
-    RightArm: 0, 0, 0
-    LeftArm: 0, 0, 0
-    RightLeg: 0, 0, 0
-    LeftLeg: 0, 0, 0
   ItemsCount: 6 # only for RANDOM type
   Shuffle: true # only for FULL type
   CircleRadius: 2
-  LiftingAlongX: 0
-  LiftingAlongY: 0
-  LiftingAlongZ: 0
+  StartPosition:
+    x: 0.5
+    y: 1
+    z: 0.5
   Flame:
     Enabled: true
     Particle: FLAME
@@ -430,5 +456,30 @@ WHEEL:
     Sound: UI_BUTTON_CLICK
     Volume: 10
     Pitch: 1
+
+RANDOM:
+  SHAPE: 15 # Chance
+  RAINLY: 15
+  FIREWORK: 15
+  WHEEL: 15
+  POP: 15
+  SELECT: 15
+
+POP:
+  Scroll:
+    Sound: ENTITY_ITEM_PICKUP
+    Volume: 10
+    Pitch: 1
+  Facing: EAST
+  Rounded: true
+  Radius: 1.5
+#  Period: 0
+#  ItemSlot: HEAD
+
+SELECT:
+  Facing: EAST
+  Timeout: 600 # in ticks
+#  Period: 0
+#  ItemSlot: HEAD
 ```
 </details>
