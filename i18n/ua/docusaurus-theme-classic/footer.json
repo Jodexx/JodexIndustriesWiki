@@ -16,7 +16,7 @@
     "description": "The label of footer link with label=DonateCase linking to /docs/donatecase"
   },
   "link.item.label.WebSite": {
-    "message": "WebSite",
+    "message": "Веб-сайт",
     "description": "The label of footer link with label=WebSite linking to https://www.jodexindustries.xyz"
   },
   "link.item.label.Discord": {
@@ -32,7 +32,7 @@
     "description": "The label of footer link with label=JodexIndustries GitHub linking to https://github.com/JodexIndustries"
   },
   "copyright": {
-    "message": "Права захищено © 2024 JodexIndustries",
+    "message": "Права захищено © 2025 JodexIndustries",
     "description": "The footer copyright"
   }
 }
