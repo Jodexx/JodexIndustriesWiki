@@ -5,6 +5,7 @@ sidebar_position: 2
 ---
 
 ```yaml
+plugins/DonateCase
 ├── addons # директорія аддонів
 ├── cases # директорія конфігурацій кейсів
 │   └── case.yml # ваша конфігурація кейсу
@@ -16,7 +17,7 @@ sidebar_position: 2
 ```
 
 <details>
-<summary>Config.yml</summary>
+<summary>plugins/DonateCase/Config.yml</summary>
 
 ```yml
 config:
@@ -59,7 +60,7 @@ DonateCase:
 </details>
 
 <details>
-<summary>case.yml</summary>
+<summary>plugins/DonateCase/cases/case.yml</summary>
 
 ```yml
 config:
@@ -338,7 +339,7 @@ case:
 </details>
 
 <details>
-<summary>Animations.yml</summary>
+<summary>plugins/DonateCase/Animations.yml</summary>
 
 ```yml
 config: # Please do not touch this section

@@ -12,6 +12,10 @@ import CodeBlock from '@theme/CodeBlock';
 ## Прослуховувач
 Прослуховувач обов'язково повинен реалізовувати інтерфейс [Subscriber](https://repo.jodexindustries.xyz/javadoc/releases/com/jodexindustries/donatecase/api/2.1.0.0/raw/com/jodexindustries/donatecase/api/event/Subscriber.html)
 та містити в собі методи, які мають аннотацію Subscribe
+
+:::info
+Кількість методів у прослуховувачі може бути безмежною
+:::
 <CodeBlock
         language="java"
         title="src/main/java/com/jodexindustries/testaddon/EventListener.java"
@@ -34,10 +38,7 @@ public class EventListener implements Subscriber {
 `}
 </CodeBlock>
 
-:::info
-Кількість методів у прослуховувачі може бути безмежною
-:::
-
+### Реєстрація
 <CodeBlock
         language="java"
         title="src/main/java/com/jodexindustries/testaddon/MainAddon.java"

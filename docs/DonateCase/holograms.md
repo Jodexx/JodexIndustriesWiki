@@ -1,10 +1,10 @@
 ---
 id: holograms
-title: Голограмми
+title: Голограми
 sidebar_position: 6
 ---
 
-# DonateCase Голограмми
+# DonateCase Голограми
 
 ## ArmorStand
 ### [HolographicDisplays](https://dev.bukkit.org/projects/holographic-displays) (1.16-1.20.4)
