@@ -49,12 +49,20 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
+          showLastUpdateAuthor: true,
+          showLastUpdateTime: true,
           lastVersion: 'current',
           versions: {
             current: {
               label: '2.0.0',
               path: '2.0.0',
+              banner: "none"
             },
+            '1.0.0': {
+              label: '1.0.0',
+              path: '1.0.0',
+              banner: "unmaintained"
+            }
           },
         },
         theme: {
