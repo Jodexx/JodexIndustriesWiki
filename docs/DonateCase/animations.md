@@ -31,6 +31,16 @@ ID: `WHEEL`\
 _якщо ви хочете встановити колесо вертикально, то кейс потрібно встановлювати дивлясись на нього вверх_
   <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/Vqh-0VdbkMs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
+### POP
+ID: `POP`
+
+  <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/9lEbROM0W-E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+### SELECT
+ID: `SELECT`
+
+  <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/Svd_Lox2YjI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 ### FutureWheel 💰
 ID: `FWHEEL`\
 **Premium ресурс!**\
