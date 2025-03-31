@@ -471,15 +471,17 @@ POP:
     Sound: ENTITY_ITEM_PICKUP
     Volume: 10
     Pitch: 1
-  Facing: EAST
+  Facing: EAST # WEST, NORTH, EAST, SOUTH
   Rounded: true
   Radius: 1.5
 #  Period: 0
 #  ItemSlot: HEAD
 
 SELECT:
-  Facing: EAST
+  Facing: EAST # WEST, NORTH, EAST, SOUTH
   Timeout: 600 # in ticks
+  Radius: 1.5
+  Item: CHEST
 #  Period: 0
 #  ItemSlot: HEAD
 ```
