@@ -45,6 +45,7 @@ public class MainAddon extends InternalJavaAddon {
         api.getActionManager().register(
                 CaseAction.builder()
                         .name("[test]")
+                        .addon(this)
                         .description("Awesome action!")
                         .executor(new TestAction()).build()
         );

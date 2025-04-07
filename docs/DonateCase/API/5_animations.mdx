@@ -46,6 +46,7 @@ public class MainAddon extends InternalJavaAddon {
         api.getAnimationManager().register(
                 CaseAnimation.builder()
                         .name("test")
+                        .addon(this)
                         .animation(TestAnimation.class)
                         .description("Here some description")
                         .build()

@@ -63,6 +63,7 @@ public class MainAddon extends InternalJavaAddon {
         api.getMaterialManager().register(
                 CaseMaterial.builder()
                         .id("HEAD")
+                        .addon(this)
                         .description("Default Minecraft heads by nickname")
                         .handler(new TestMaterial())
                         .build()

@@ -58,6 +58,7 @@ public class MainAddon extends InternalJavaAddon {
 
         SubCommand first = SubCommand.builder()
                 .name("test")
+                .addon(this)
                 .permission(SubCommandType.PLAYER.permission)
                 .executor(executor)
                 .tabCompleter(executor)
