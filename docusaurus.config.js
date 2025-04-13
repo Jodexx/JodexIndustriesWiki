@@ -7,7 +7,7 @@ const config = {
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://wiki.jodexindustries.xyz',
+  url: 'https://wiki.jodex.xyz',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
@@ -115,7 +115,7 @@ const config = {
             items: [
               {
                 label: 'WebSite',
-                href: 'https://www.jodexindustries.xyz',
+                href: 'https://www.jodex.xyz',
               },
               {
                 label: 'Discord',

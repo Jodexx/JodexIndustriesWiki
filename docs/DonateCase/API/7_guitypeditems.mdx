@@ -10,8 +10,8 @@ import CodeBlock from '@theme/CodeBlock';
 
 # Реєстрація предметів, заданими в гюї
 
-Користувацькі предмети в гюї оброблюються за допомогою інтерфейсів [TypedItemHandler](https://repo.jodexindustries.xyz/javadoc/releases/com/jodexindustries/donatecase/api/2.1.0.0/raw/com/jodexindustries/donatecase/api/data/casedata/gui/typeditem/TypedItemHandler.html)
-та [TypedItemClickHandler](https://repo.jodexindustries.xyz/javadoc/releases/com/jodexindustries/donatecase/api/2.1.0.0/raw/com/jodexindustries/donatecase/api/data/casedata/gui/typeditem/TypedItemClickHandler.html)
+Користувацькі предмети в гюї оброблюються за допомогою інтерфейсів [TypedItemHandler](https://repo.jodex.xyz/javadoc/releases/com/jodexindustries/donatecase/api/2.1.0.0/raw/com/jodexindustries/donatecase/api/data/casedata/gui/typeditem/TypedItemHandler.html)
+та [TypedItemClickHandler](https://repo.jodex.xyz/javadoc/releases/com/jodexindustries/donatecase/api/2.1.0.0/raw/com/jodexindustries/donatecase/api/data/casedata/gui/typeditem/TypedItemClickHandler.html)
 
 ## Приклад реалізації `TEST` предмету
 
@@ -109,9 +109,9 @@ public class MainAddon extends InternalJavaAddon {
 #### Додаткові параметри
 За замовчуванням, предмет не буде оброблено під час завантаження кейсу (так само, як і в `HISTORY`), 
 але це можна виправити, використавши параметр
-[loadOnCase](https://repo.jodexindustries.xyz/javadoc/releases/com/jodexindustries/donatecase/api/2.1.0.0/raw/com/jodexindustries/donatecase/api/data/casedata/gui/typeditem/TypedItem.TypedItemBuilder.html#loadOnCase(boolean))
-у білдері предмета ([TypedItem#builder](https://repo.jodexindustries.xyz/javadoc/releases/com/jodexindustries/donatecase/api/2.1.0.0/raw/com/jodexindustries/donatecase/api/data/casedata/gui/typeditem/TypedItem.html#builder())),
+[loadOnCase](https://repo.jodex.xyz/javadoc/releases/com/jodexindustries/donatecase/api/2.1.0.0/raw/com/jodexindustries/donatecase/api/data/casedata/gui/typeditem/TypedItem.TypedItemBuilder.html#loadOnCase(boolean))
+у білдері предмета ([TypedItem#builder](https://repo.jodex.xyz/javadoc/releases/com/jodexindustries/donatecase/api/2.1.0.0/raw/com/jodexindustries/donatecase/api/data/casedata/gui/typeditem/TypedItem.html#builder())),
 який використовується для обробки `OPEN` предмету, тому що він не містить у собі обробника та підвантаженню у GUI не потребує.
 Також, дуже важливим є параметр
-[updateMeta](https://repo.jodexindustries.xyz/javadoc/releases/com/jodexindustries/donatecase/api/2.1.0.0/raw/com/jodexindustries/donatecase/api/data/casedata/gui/typeditem/TypedItem.TypedItemBuilder.html#updateMeta(boolean)), 
+[updateMeta](https://repo.jodex.xyz/javadoc/releases/com/jodexindustries/donatecase/api/2.1.0.0/raw/com/jodexindustries/donatecase/api/data/casedata/gui/typeditem/TypedItem.TypedItemBuilder.html#updateMeta(boolean)), 
 який відповідає за оновлення метаданних предметів із зазначеним інтервалом у налаштуваннях GUI. (В основному використовується для оновлення заповнювачів (стандартних від DonateCase та PlaceholderAPI))

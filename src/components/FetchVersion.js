@@ -15,7 +15,7 @@ export default function FetchVersion({ type = 'maven', artifactId = 'api' }) {
     async function fetchVersion() {
       try {
         const response = await fetch(
-          `https://repo.jodexindustries.xyz/api/maven/latest/version/releases/com/jodexindustries/donatecase/${artifactId}?type=raw`
+          `https://repo.jodex.xyz/api/maven/latest/version/releases/com/jodexindustries/donatecase/${artifactId}?type=raw`
         );
         const data = await response.text();
         const fetchedVersion = data.trim();

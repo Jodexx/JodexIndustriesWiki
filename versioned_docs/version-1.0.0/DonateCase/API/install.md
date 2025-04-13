@@ -9,7 +9,7 @@ Maven
 <repository>
     <id>JodexIndustries</id>
     <name>JodexIndustries Repo</name>
-    <url>https://repo.jodexindustries.xyz/releases</url>
+    <url>https://repo.jodex.xyz/releases</url>
 </repository>
 ```
 ```xml
@@ -24,7 +24,7 @@ Gradle
 ```gradle
 maven {
     name "JodexIndustries"
-    url "https://repo.jodexindustries.xyz/releases"
+    url "https://repo.jodex.xyz/releases"
 }
 ```
 ```gradle

@@ -10,23 +10,23 @@ import ReactPlayer from 'react-player'
 DonateCase supports 5 animations by default
 
 ### SHAPE
-<ReactPlayer loop="true" controls url='https://jodexindustries.xyz/assets/videos/shape.mkv' />
+<ReactPlayer loop="true" controls url='https://jodex.xyz/assets/videos/shape.mkv' />
 
 ### FIREWORK
-<ReactPlayer loop="true" controls url='https://jodexindustries.xyz/assets/videos/firework.mkv' />
+<ReactPlayer loop="true" controls url='https://jodex.xyz/assets/videos/firework.mkv' />
 
 ### RAINLY
-<ReactPlayer loop="true" controls url='https://jodexindustries.xyz/assets/videos/rainly.mkv' />
+<ReactPlayer loop="true" controls url='https://jodex.xyz/assets/videos/rainly.mkv' />
 
 ### WHEEL (RANDOM)
 **(random groups, an infinite number of items)** <br></br>
 _if you want to install the wheel vertically, then you need to install the case looking down on it_
-<ReactPlayer loop="true" controls url='https://jodexindustries.xyz/assets/videos/wheel.mkv' />
+<ReactPlayer loop="true" controls url='https://jodex.xyz/assets/videos/wheel.mkv' />
 
 ### WHEEL (FULL)
 **(all groups from config)** <br></br>
 _if you want to install the wheel vertically, then you need to install the case looking down on it_
-<ReactPlayer loop="true" controls url='https://jodexindustries.xyz/assets/videos/fullwheel.mkv' />
+<ReactPlayer loop="true" controls url='https://jodex.xyz/assets/videos/fullwheel.mkv' />
 
 ### FWHEEL 💰
 Price: 5$ <br></br>
@@ -34,7 +34,7 @@ Price: 5$ <br></br>
 To buy, contact the [Discord server](https://discord.gg/a65jVPK9vM) <br></br>
 _if you want to install the wheel vertically, then you need to install the case looking down on it_
 
-<ReactPlayer loop="true" controls url='https://jodexindustries.xyz/assets/videos/fwheel.mkv' />
+<ReactPlayer loop="true" controls url='https://jodex.xyz/assets/videos/fwheel.mkv' />
 
 ### BWHEEL 💰
 Price: 10$ <br></br>
@@ -42,4 +42,4 @@ Price: 10$ <br></br>
 To buy, contact the [Discord server](https://discord.gg/a65jVPK9vM) <br></br>
 _if you want to install the wheel vertically, then you need to install the case looking down on it_
 
-<ReactPlayer loop="true" controls url='https://jodexindustries.xyz/assets/videos/bwheel.mp4' />
+<ReactPlayer loop="true" controls url='https://jodex.xyz/assets/videos/bwheel.mp4' />

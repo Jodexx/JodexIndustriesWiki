@@ -35,7 +35,7 @@ events:
           - "[broadcast] &cAnimation ended %player%!"
 ```
 
-**Список всіх доступних подій [тут](https://repo.jodexindustries.xyz/javadoc/releases/com/jodexindustries/donatecase/api/2.1.0.0/raw/com/jodexindustries/donatecase/api/event/package-summary.html)**
+**Список всіх доступних подій [тут](https://repo.jodex.xyz/javadoc/releases/com/jodexindustries/donatecase/api/2.1.0.0/raw/com/jodexindustries/donatecase/api/event/package-summary.html)**
 
 ## Дії
 > - [Усі дії DonateCase](../items-settings#дії)
@@ -75,19 +75,19 @@ events:
 Але не засмучуйтесь, це не складно!\
 Цей параметр використовується для визначення місця, звідки буде взято значення для `replace`.
 
-Давайте подивимось на JavaDocs [CaseInteractEvent](https://repo.jodexindustries.xyz/javadoc/releases/com/jodexindustries/donatecase/api/2.1.0.0/raw/com/jodexindustries/donatecase/api/event/player/CaseInteractEvent.html) класу\
+Давайте подивимось на JavaDocs [CaseInteractEvent](https://repo.jodex.xyz/javadoc/releases/com/jodexindustries/donatecase/api/2.1.0.0/raw/com/jodexindustries/donatecase/api/event/player/CaseInteractEvent.html) класу\
 ![jd.png](../../assets/jd.png)
 
 Тут ми бачимо, що клас має кілька цікавих методів, таких як: `caseInfo`, `player` та `action`.\
 Думаю, ви вже здогадались, що ці методи використовуються для отримання значень `replace`, але що таке `#`?\
-Це символ для розділення методів. Наприклад, ми викликаємо метод player, який повертає об’єкт [DCPlayer](https://repo.jodexindustries.xyz/javadoc/releases/com/jodexindustries/donatecase/api/2.1.0.0/raw/com/jodexindustries/donatecase/api/platform/DCPlayer.html), що має такі методи:
+Це символ для розділення методів. Наприклад, ми викликаємо метод player, який повертає об’єкт [DCPlayer](https://repo.jodex.xyz/javadoc/releases/com/jodexindustries/donatecase/api/2.1.0.0/raw/com/jodexindustries/donatecase/api/platform/DCPlayer.html), що має такі методи:
 ![dcplayer.png](../../assets/dcplayer.png)
 
-Варто подивитись, що це за клас. Схоже, він представляє інтерфейс гравця, ми можемо витягти з нього корисну інформацію. Давайте дізнаємось ім'я гравця, метод [getName](https://repo.jodexindustries.xyz/javadoc/releases/com/jodexindustries/donatecase/api/2.1.0.0/raw/com/jodexindustries/donatecase/api/platform/DCPlayer.html#getName()) якраз нам підходить!\
+Варто подивитись, що це за клас. Схоже, він представляє інтерфейс гравця, ми можемо витягти з нього корисну інформацію. Давайте дізнаємось ім'я гравця, метод [getName](https://repo.jodex.xyz/javadoc/releases/com/jodexindustries/donatecase/api/2.1.0.0/raw/com/jodexindustries/donatecase/api/platform/DCPlayer.html#getName()) якраз нам підходить!\
 Тепер наш цільовий `method` виглядає так: `player#getName`
 
 :::info
-DCEventManager автоматично шукатиме метод `player` для знаходження об'єкта [DCPlayer](https://repo.jodexindustries.xyz/javadoc/releases/com/jodexindustries/donatecase/api/2.1.0.0/raw/com/jodexindustries/donatecase/api/platform/DCPlayer.html), котрий буде використовуватись у діях **DonateCase** та заповнювачах **PlaceholderAPI**.\
+DCEventManager автоматично шукатиме метод `player` для знаходження об'єкта [DCPlayer](https://repo.jodex.xyz/javadoc/releases/com/jodexindustries/donatecase/api/2.1.0.0/raw/com/jodexindustries/donatecase/api/platform/DCPlayer.html), котрий буде використовуватись у діях **DonateCase** та заповнювачах **PlaceholderAPI**.\
 Якщо такого методу немає в заповнювачах івенту (placeholders), то дії (та PlaceholderAPI), котрі використовують гравця, працювати не будуть.
 :::
 
