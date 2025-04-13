@@ -68,15 +68,16 @@ Type: OPEN_donate
 Type: HISTORY-[index]-[case]     (_index - індекс недавніх відкриттів кейсу, діапазон 0-9; case - тип кейсу, необов'язковий_)
 ```yaml
 History0:
-  DisplayName: "&c%player%"
-  Enchanted: false
-  Lore:
-    - '&6Група &f- &c%group%'
-    - '&6Час &f- &c%time%'
-    - ''
+  Material:
+    # ID: TRIPWIRE_HOOK - Матеріал вже буде player_head, може бути DEFAULT, якщо ви хочете використовувати матеріал виграшного предмету
+    DisplayName: "&c%player%"
+    Enchanted: false
+    Lore:
+      - '&6Група &f- &c%group%'
+      - '&6Час &f- &c%time%'
+      - ''
   Slots:
     - 36
-  # Material: TRIPWIRE_HOOK - Матеріал вже буде player_head, може бути DEFAULT, якщо ви хочете використовувати матеріал виграшного предмету
   Type: HISTORY-0-case # 0 – індекс недавніх відкриттів кейсів, діапазон 0-9; case - тип кейсу, якщо пусто, то буде кейс за замовчанням (необов'язково)
 ```
 Ви можете використовувати `HISTORY-[index]-GLOBAL` опцію, якщо ви хочете відобразити відсортовані відкриття всіх кейсів
@@ -85,15 +86,16 @@ History0:
 Також для цього типу предмета доступне розширене налаштування. Якщо індекс недавніх відкриттів ще не заповнений (кейс не було відкрито), то можна встановити зовсім інший предмет замість історії в секції `HistoryNotFound`:
 ```yaml
 History0:
-  DisplayName: "&c%player%"
-  Enchanted: false
-  Lore:
-    - '&6Группа &f- &c%group%'
-    - '&6Час &f- &c%time%'
-    - ''
+  Material:
+  # ID: TRIPWIRE_HOOK - Матеріал уже буде player_head, якщо він закоментований, може бути DEFAULT, якщо ви хочете використовувати матеріал виграшного предмета
+    DisplayName: "&c%player%"
+    Enchanted: false
+    Lore:
+      - '&6Группа &f- &c%group%'
+      - '&6Час &f- &c%time%'
+      - ''
   Slots:
     - 36
-  # Material: TRIPWIRE_HOOK - Матеріал уже буде player_head, якщо він закоментований, може бути DEFAULT, якщо ви хочете використовувати матеріал виграшного предмета
   Type: HISTORY-0-case # 0 - індекс недавніх відкриттів кейсів, діапазон 0-9; case - тип кейса, якщо порожньо, то буде кейс за замовчуванням (опціонально)
   HistoryNotFound: # Секція для незаповнених індексів
     DisplayName: "&cNot found"
