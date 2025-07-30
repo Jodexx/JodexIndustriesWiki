@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 4
 id: dc-everydaycase
 title: DCEveryDayCase
 toc_min_heading_level: 2
