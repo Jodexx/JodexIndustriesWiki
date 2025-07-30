@@ -187,7 +187,7 @@ public class MyPlugin extends JavaPlugin {
 ### Вимоги
 - **DonateCase** — обов'язкова залежність
 - **Java 8+** — мінімальна версія Java
-- **Bukkit/Spigot** — сумісні сервери
+- **Spigot, Paper, Purpur** — сумісні сервери
 
 ### Інтеграція з іншими аддонами
 DCEveryDayCase надає API для інтеграції з іншими плагінами:
