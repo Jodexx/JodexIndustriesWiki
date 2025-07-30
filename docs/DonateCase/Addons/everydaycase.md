@@ -105,7 +105,7 @@ case_ready: '&aВаш щоденний кейс готовий!'
 ## Приклад меню використання
 
 <details>
-<summary>plugins/DonateCase/cases/<\case\>/menu/<\menu\>.yml</summary>
+<summary>plugins/DonateCase/cases/&lt;case&gt;/menu/&lt;menu&gt;.yml</summary>
 
 ```yaml
 config:
