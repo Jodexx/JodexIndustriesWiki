@@ -108,8 +108,9 @@ case_ready: '&aВаш щоденний кейс готовий!'
 <summary>plugins/DonateCase/cases/<case>/menu/<menu>.yml</summary>
 
 ```yaml
-version: 10
-type: case_menu
+config:
+  version: 10
+  type: case_menu
 id: everydaycase_menu
 title: 'DCEveryDayCase'
 size: 45
