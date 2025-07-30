@@ -257,3 +257,12 @@ public class MyDailyCaseAddon extends JavaPlugin {
 - Часи наступного отримання
 - Статуси сповіщень
 - Налаштування гравців
+
+---
+
+## Авторство
+
+**Автор:** [@1wairesd](https://github.com/1wairesd)  
+
+---
+
