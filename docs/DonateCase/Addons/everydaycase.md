@@ -133,7 +133,7 @@ items:
             id: CHEST
             display-name: '&aЩоденний кейс'
             enchanted: false
-            Lore:
+            lore:
             - ''
             - '&7Безкоштовний кейс з різноманітними нагородами.'
             - '%dceverydaycase_remaining_time%'
