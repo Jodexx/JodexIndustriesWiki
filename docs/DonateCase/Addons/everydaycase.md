@@ -102,6 +102,51 @@ case_ready: '&aВаш щоденний кейс готовий!'
 - `$m` — хвилини
 - `$s` — секунди
 
+## Приклад меню використання
+
+<details>
+<summary>plugins/DonateCase/cases/<case>/menu/<menu>.yml</summary>
+
+```yaml
+version: 10
+type: case_menu
+id: everydaycase_menu
+title: 'DCEveryDayCase'
+size: 45
+update-rate: 20
+items:
+    '1':
+        material:
+            id: WHITE_STAINED_GLASS_PANE
+            display-name: '&cJodexIndustries.xyz'
+            enchanted: false
+            lore:
+            - ''
+            rgb: []
+        slots:
+        - 0
+        - 8
+        type: DEFAULT
+    open:
+        material:
+            id: CHEST
+            display-name: '&aЩоденний кейс'
+            enchanted: false
+            Lore:
+            - ''
+            - '&7Безкоштовний кейс з різноманітними нагородами.'
+            - '%dceverydaycase_remaining_time%'
+            - ''
+            - §#FF6BA0Не знаєш, що отримаєш?
+            - §#CF6BFFПеревір свою удачу — твоя нагорода чекає на тебе!
+            rgb: []
+        slots:
+        - 4
+        type: OPEN
+```
+
+</details>
+
 ## API для інтеграції
 
 ### Основні методи DailyCaseApi
