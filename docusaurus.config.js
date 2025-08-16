@@ -1,72 +1,72 @@
-import {themes as prismThemes} from 'prism-react-renderer';
+import { themes as prismThemes } from "prism-react-renderer";
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'JodexIndustries Wiki',
-  tagline: 'Ukrainian development studio for Minecraft',
-  favicon: 'img/favicon.ico',
+  title: "JodexIndustries Wiki",
+  tagline: "Ukrainian development studio for Minecraft",
+  favicon: "img/favicon.ico",
 
   // Set the production url of your site here
-  url: 'https://wiki.jodex.xyz',
+  url: "https://wiki.jodex.xyz",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  baseUrl: "/",
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'Jodexx', // Usually your GitHub org/user name.
-  projectName: 'JodexIndustriesWiki', // Usually your repo name.
+  organizationName: "Jodexx", // Usually your GitHub org/user name.
+  projectName: "JodexIndustriesWiki", // Usually your repo name.
   trailingSlash: false,
 
-  onBrokenLinks: 'ignore',
-  onBrokenMarkdownLinks: 'ignore',
+  onBrokenLinks: "ignore",
+  onBrokenMarkdownLinks: "ignore",
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
   // to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: 'ua',
-    locales: [ 'ua', 'en', 'ru'],
-    path: 'i18n',
+    defaultLocale: "ua",
+    locales: ["ua", "en", "ru"],
+    path: "i18n",
     localeConfigs: {
       en: {
-        htmlLang: 'en-US',
+        htmlLang: "en-US",
       },
       ru: {
-        htmlLang: 'ru-RU',
+        htmlLang: "ru-RU",
       },
       ua: {
-        label: 'Українська',
-        htmlLang: 'ua-UA',
+        label: "Українська",
+        htmlLang: "ua-UA",
       },
     },
   },
 
   presets: [
     [
-      'classic',
+      "classic",
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          sidebarPath: require.resolve('./sidebars.js'),
+          sidebarPath: require.resolve("./sidebars.js"),
           showLastUpdateAuthor: true,
           showLastUpdateTime: true,
-          lastVersion: 'current',
+          lastVersion: "current",
           versions: {
             current: {
-              label: '2.0.0',
-              path: '2.0.0',
-              banner: "none"
+              label: "2.0.0",
+              path: "2.0.0",
+              banner: "none",
             },
-            '1.0.0': {
-              label: '1.0.0',
-              path: '1.0.0',
-              banner: "unmaintained"
-            }
+            "1.0.0": {
+              label: "1.0.0",
+              path: "1.0.0",
+              banner: "unmaintained",
+            },
           },
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: require.resolve("./src/css/custom.css"),
         },
       }),
     ],
@@ -76,63 +76,63 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: 'img/logo.png',
+      image: "img/logo.png",
       navbar: {
-        title: 'JodexIndustries Wiki',
+        title: "JodexIndustries Wiki",
         logo: {
-          alt: 'JodexIndustries Logo',
-          src: 'img/logo.png',
+          alt: "JodexIndustries Logo",
+          src: "img/logo.png",
         },
         items: [
           {
-            type: 'docSidebar',
-            sidebarId: 'defaultSidebar',
-            position: 'left',
-            label: 'Docs',
+            type: "docSidebar",
+            sidebarId: "defaultSidebar",
+            position: "left",
+            label: "Docs",
           },
           {
-            type: 'localeDropdown',
+            type: "localeDropdown",
           },
           {
-            type: 'docsVersionDropdown',
+            type: "docsVersionDropdown",
           },
         ],
       },
       footer: {
-        style: 'dark',
+        style: "dark",
         links: [
           {
-            title: 'Docs',
+            title: "Docs",
             items: [
               {
-                label: 'DonateCase',
-                to: '/docs/2.0.0/donatecase',
+                label: "DonateCase",
+                to: "/docs/2.0.0/donatecase",
               },
             ],
           },
           {
-            title: 'Community',
+            title: "Community",
             items: [
               {
-                label: 'WebSite',
-                href: 'https://www.jodex.xyz',
+                label: "WebSite",
+                href: "https://www.jodex.xyz",
               },
               {
-                label: 'Discord',
-                href: 'https://discord.gg/2syNtcKcgR',
+                label: "Discord",
+                href: "https://discord.gg/2syNtcKcgR",
               },
             ],
           },
           {
-            title: 'More',
+            title: "More",
             items: [
               {
-                label: 'Jodexx GitHub',
-                href: 'https://github.com/Jodexx',
+                label: "Jodexx GitHub",
+                href: "https://github.com/Jodexx",
               },
               {
-                label: 'JodexIndustries GitHub',
-                href: 'https://github.com/JodexIndustries',
+                label: "JodexIndustries GitHub",
+                href: "https://github.com/JodexIndustries",
               },
             ],
           },
@@ -140,26 +140,36 @@ const config = {
         copyright: `Copyright © ${new Date().getFullYear()} JodexIndustries`,
       },
       colorMode: {
-        defaultMode: 'dark',
+        defaultMode: "dark",
         disableSwitch: false,
         respectPrefersColorScheme: false,
       },
       prism: {
         theme: prismThemes.github,
-      	darkTheme: prismThemes.palenight,
-        additionalLanguages: ['java', 'gradle', 'yaml', 'xml-doc'],
+        darkTheme: prismThemes.palenight,
+        additionalLanguages: ["java", "gradle", "yaml", "xml-doc"],
+      },
+      announcementBar: {
+        id: "deprecated-warning",
+        content: `
+    ⚠️ Documentation for <code>DonateCase 2.2.9.2+</code> 
+    is still <b>in development</b>.
+  `,
+        backgroundColor: "var(--ifm-color-warning-contrast-background)",
+        textColor: "var(--ifm-color-warning-contrast-foreground)",
+        isCloseable: false,
       },
     }),
-    future: {
-      experimental_faster: {
-        swcJsLoader: true,
-        swcJsMinimizer: true,
-        swcHtmlMinimizer: true,
-        lightningCssMinimizer: true,
-        rspackBundler: true,
-        mdxCrossCompilerCache: true,
-      },
+  future: {
+    experimental_faster: {
+      swcJsLoader: true,
+      swcJsMinimizer: true,
+      swcHtmlMinimizer: true,
+      lightningCssMinimizer: true,
+      rspackBundler: true,
+      mdxCrossCompilerCache: true,
     },
+  },
 };
 
 module.exports = config;
