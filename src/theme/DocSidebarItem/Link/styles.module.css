@@ -1,0 +1,10 @@
+.menuExternalLink {
+  align-items: center;
+}
+
+.icon {
+  margin-right: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  color: var(--ifm-color-primary-dark);
+}

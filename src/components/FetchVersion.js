@@ -1,16 +1,16 @@
-import { useEffect, useState } from 'react';
-import CodeBlock from '@theme/CodeBlock';
+import { useEffect, useState } from "react";
+import CodeBlock from "@theme/CodeBlock";
 
-export default function FetchVersion({ type = 'maven', artifactId = 'api' }) {
+export default function FetchVersion({ type = "maven", artifactId = "api" }) {
   const [version, setVersion] = useState(() => {
-    if (typeof window !== 'undefined') {
-      return localStorage.getItem(`version_${artifactId}`) || 'loading';
+    if (typeof window !== "undefined") {
+      return localStorage.getItem(`version_${artifactId}`) || "loading";
     }
-    return 'loading';
+    return "loading";
   });
 
   useEffect(() => {
-    if (version !== 'loading') return;
+    if (version !== "loading") return;
 
     async function fetchVersion() {
       try {
@@ -21,11 +21,12 @@ export default function FetchVersion({ type = 'maven', artifactId = 'api' }) {
         const fetchedVersion = data.trim();
 
         setVersion(fetchedVersion);
-        if (typeof window !== 'undefined') {
+        if (typeof window !== "undefined") {
           localStorage.setItem(`version_${artifactId}`, fetchedVersion);
         }
       } catch (error) {
-        setVersion('Error fetching version');
+        console.error(error);
+        setVersion("Error fetching version");
       }
     }
 
@@ -33,7 +34,7 @@ export default function FetchVersion({ type = 'maven', artifactId = 'api' }) {
   }, [artifactId]);
 
   const dependency =
-    type === 'gradle'
+    type === "gradle"
       ? `dependencies {
     compileOnly("com.jodexindustries.donatecase:${artifactId}:${version}")
 }`
@@ -44,5 +45,9 @@ export default function FetchVersion({ type = 'maven', artifactId = 'api' }) {
     <scope>provided</scope>
 </dependency>`;
 
-  return <CodeBlock language={type === 'gradle' ? 'groovy' : 'xml'}>{dependency}</CodeBlock>;
+  return (
+    <CodeBlock language={type === "gradle" ? "groovy" : "xml"}>
+      {dependency}
+    </CodeBlock>
+  );
 }

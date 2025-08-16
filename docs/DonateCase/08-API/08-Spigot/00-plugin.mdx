@@ -1,0 +1,48 @@
+---
+id: plugin
+title: Впровадження з плагіном
+sidebar_position: 8
+toc_min_heading_level: 2
+toc_max_heading_level: 5
+sidebar_custom_props:
+  icon: FaCog
+---
+
+import CodeBlock from '@theme/CodeBlock';
+
+:::note
+Для роботи необхідно вибрати `spigot-api` модуль в якості залежності [встановлення](../install.mdx), щоб використовувати BukkitUtils
+:::
+
+Цей варінт пропонує використання API DonateCase за допомогою інших плагінів Spigot, які містяться в директорії plugins/
+
+<CodeBlock
+        language="java"
+        title="src/main/java/com/jodexindustries/testplugin/TestPlugin.java"
+>
+{`import org.bukkit.plugin.java.JavaPlugin;
+import com.jodexindustries.donatecase.api.DCAPI;
+
+public final class TestPlugin extends JavaPlugin {
+
+    private final DCAPI api = DCAPI.getInstance();
+
+    @Override
+    public void onEnable() {
+        this.api.getCaseKeyManager().add("case", "_Jodex__", 10); // видаємо 10 ключів від кейсу "case" гравцю "_Jodex__"
+    }
+}
+
+`}
+</CodeBlock>
+
+<CodeBlock
+        language="yaml"
+        title="src/main/resources/plugin.yml"
+>
+{`# Залежність від DonateCase
+depend:
+  - DonateCase
+`}
+
+</CodeBlock>

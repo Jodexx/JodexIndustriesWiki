@@ -1,8 +1,4 @@
 {
-  "link.title.Docs": {
-    "message": "Документація",
-    "description": "The title of the footer links column with title=Docs in the footer"
-  },
   "link.title.Community": {
     "message": "Спільнота",
     "description": "The title of the footer links column with title=Community in the footer"

@@ -102,15 +102,6 @@ const config = {
         style: "dark",
         links: [
           {
-            title: "Docs",
-            items: [
-              {
-                label: "DonateCase",
-                to: "/docs/2.0.0/donatecase",
-              },
-            ],
-          },
-          {
             title: "Community",
             items: [
               {
