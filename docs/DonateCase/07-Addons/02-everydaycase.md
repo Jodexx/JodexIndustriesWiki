@@ -306,6 +306,9 @@ public class MyDailyCaseAddon extends JavaPlugin {
 - Налаштування гравців
 
 ---
+## API
+
+**Подивіться:** [API](https://github.com/1wairesd/DCEveryDayCase)
 
 ## Авторство
 
