@@ -2,7 +2,7 @@ import { themes as prismThemes } from "prism-react-renderer";
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "JodexIndustries Wiki",
+  title: "JodexIndustries",
   tagline: "Ukrainian development studio for Minecraft",
   favicon: "img/favicon.ico",
 
@@ -79,7 +79,7 @@ const config = {
   themeConfig: {
     image: "img/logo.png",
     navbar: {
-      title: "JodexIndustries Wiki",
+      title: "JodexIndustries",
       logo: {
         alt: "JodexIndustries Logo",
         src: "img/logo.png",
@@ -137,8 +137,8 @@ const config = {
       respectPrefersColorScheme: false,
     },
     prism: {
-      theme: prismThemes.github,
-      darkTheme: prismThemes.palenight,
+      theme: prismThemes.vsLight,
+      darkTheme: prismThemes.vsDark,
       additionalLanguages: ["java", "gradle", "yaml", "xml-doc"],
     },
     announcementBar: {
