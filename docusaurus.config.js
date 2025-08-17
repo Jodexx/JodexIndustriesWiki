@@ -42,6 +42,11 @@ const config = {
     },
   },
 
+  markdown: {
+    mermaid: true,
+  },
+  themes: ["@docusaurus/theme-mermaid"],
+
   presets: [
     [
       "@docusaurus/preset-classic",
@@ -150,6 +155,11 @@ const config = {
       backgroundColor: "var(--ifm-color-warning-contrast-background)",
       textColor: "var(--ifm-color-warning-contrast-foreground)",
       isCloseable: false,
+    },
+    mermaid: {
+      options: {
+        fontSize: 24,
+      },
     },
   },
   future: {
