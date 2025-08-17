@@ -6,9 +6,6 @@ sidebar_custom_props:
 ---
 
 import Mermaid from '@theme/Mermaid';
-import MermaidTooltip from '@site/src/components/MermaidTooltip';
-
-<MermaidTooltip />
 
 <Mermaid value={
 `graph LR
