@@ -1,0 +1,57 @@
+---
+id: register-actions
+title: Реєстрація подій
+sidebar_custom_props:
+  icon: FaCog
+---
+
+import CodeBlock from '@theme/CodeBlock';
+
+# Реєстрація подій
+
+<CodeBlock
+        language="java"
+        title="src/main/java/com/jodexindustries/testaddon/registry/TestAction.java"
+>
+{`import com.jodexindustries.donatecase.api.data.action.ActionExecutor;
+import com.jodexindustries.donatecase.api.platform.DCPlayer;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
+public class TestAction implements ActionExecutor {
+
+    @Override
+    public void execute(@Nullable DCPlayer player, @NotNull String context) {
+        if (player != null) player.sendMessage("Hello!");
+    }
+}
+`}
+</CodeBlock>
+
+<CodeBlock
+        language="java"
+        title="src/main/java/com/jodexindustries/testaddon/MainAddon.java"
+>
+{`import com.jodexindustries.donatecase.api.DCAPI;
+import com.jodexindustries.donatecase.api.addon.InternalJavaAddon;
+import com.jodexindustries.donatecase.api.data.action.CaseAction;
+import com.jodexindustries.testaddon.registry.TestAction;
+
+public class MainAddon extends InternalJavaAddon {
+
+    private final DCAPI api = DCAPI.getInstance();
+
+    @Override
+    public void onEnable() {
+        api.getActionManager().register(
+                CaseAction.builder()
+                        .name("[test]")
+                        .addon(this)
+                        .description("Awesome action!")
+                        .executor(new TestAction()).build()
+        );
+    }
+
+}
+`}
+</CodeBlock>

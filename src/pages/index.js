@@ -4,14 +4,11 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
 import Translate from "@docusaurus/Translate";
 import useBaseUrl from "@docusaurus/useBaseUrl";
-import { useLatestVersion } from "@docusaurus/plugin-content-docs/lib/client/index.js";
 
 import styles from "./index.module.css";
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
-
-  const latestVersion = useLatestVersion();
 
   return (
     <header className={clsx("hero hero--primary", styles.heroBanner)}>
@@ -21,7 +18,7 @@ function HomepageHeader() {
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
-            to={useBaseUrl(`${latestVersion.path}/DonateCase/donatecase-main`)}
+            to={useBaseUrl(`/DonateCase/donatecase-main`)}
           >
             <Translate>homepage.gotowiki</Translate>
           </Link>

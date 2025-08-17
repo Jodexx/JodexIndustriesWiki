@@ -1,26 +1,6 @@
 {
   "version.label": {
-    "message": "2.0.0",
+    "message": "2.1.0",
     "description": "The label for version current"
-  },
-  "sidebar.defaultSidebar.category.DonateCase": {
-    "message": "DonateCase",
-    "description": "The label for category DonateCase in sidebar defaultSidebar"
-  },
-  "sidebar.defaultSidebar.category.API": {
-    "message": "API",
-    "description": "The label for category API in sidebar defaultSidebar"
-  },
-  "sidebar.defaultSidebar.category.implementing": {
-    "message": "Implementing",
-    "description": "The label for category implementing in sidebar defaultSidebar"
-  },
-  "sidebar.defaultSidebar.category.Spigot": {
-    "message": "Spigot",
-    "description": "The label for category Spigot in sidebar defaultSidebar"
-  },
-  "sidebar.defaultSidebar.category.Addons": {
-    "message": "Addons",
-    "description": "The label for category Addons in sidebar defaultSidebar"
   }
 }
