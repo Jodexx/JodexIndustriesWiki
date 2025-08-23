@@ -4,7 +4,7 @@ title: Створення аддону
 toc_min_heading_level: 2
 toc_max_heading_level: 5
 sidebar_custom_props:
-icon: FaCog
+  icon: FaCog
 ---
 
 import CodeBlock from '@theme/CodeBlock';
