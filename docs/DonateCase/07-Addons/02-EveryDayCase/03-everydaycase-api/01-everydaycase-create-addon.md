@@ -17,10 +17,13 @@ import CodeBlock from '@theme/CodeBlock';
 
 ## Головний клас
 Головний клас це початкова точка вашого аддону.
-Ось приклад, як повинен виглядати ваш початковий клас:
-
-<CodeBlock language="java" title="src/main/java/com/jodexindustries/testaddon/TestAddon.java">
-import com.wairesd.dceverydaycase.api.DCEDCAPI;
+Ось приклад, як повинен виглядати ваш `TestAddon` клас:
+<CodeBlock
+        language="java"
+        title="src/main/java/com/jodexindustries/testaddon/TestAddon.java"
+>
+{
+`import com.wairesd.dceverydaycase.api.DCEDCAPI;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class TestAddon extends JavaPlugin {
@@ -36,5 +39,7 @@ public class TestAddon extends JavaPlugin {
     public void onDisable() {
         getLogger().info("TestAddon is disabled!");
     }
+}
+`
 }
 </CodeBlock>
