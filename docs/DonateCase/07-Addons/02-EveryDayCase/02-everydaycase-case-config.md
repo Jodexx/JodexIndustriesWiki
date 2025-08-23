@@ -1,5 +1,5 @@
 ---
-id: everydaycase-config
+id: everydaycase-case-config
 title: Конфігурація кейса
 toc_min_heading_level: 2
 toc_max_heading_level: 5
