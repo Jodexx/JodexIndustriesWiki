@@ -14,12 +14,9 @@ import CodeBlock from '@theme/CodeBlock';
 Цей приклад показує, як за допомогою API `DCEDCAPI` отримати основні дані про кейс і гравця:  
 час наступного отримання, кулдаун, інформацію про кейс та статус гравця.
 
-<CodeBlock
-language="java"
-title="src/main/java/com/wairesd/testaddon/DCEveryDayCaseTestAddon.java"
->
-{
-`package com.wairesd.testaddon;
+<CodeBlock language="java" title="src/main/java/com/wairesd/testaddon/DCEveryDayCaseTestAddon.java">
+{`
+package com.wairesd.testaddon;
 
 import com.wairesd.dceverydaycase.api.DCEDCAPI;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -48,5 +45,6 @@ private final DCEDCAPI api = DCEDCAPI.getInstance();
     public void onDisable() {
         getLogger().info("Plugin disabled");
     }
-}`
+}
+`}
 </CodeBlock>
