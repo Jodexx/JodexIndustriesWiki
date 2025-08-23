@@ -50,3 +50,5 @@ items:
         - 4
         type: OPEN
 ```
+
+</details>
