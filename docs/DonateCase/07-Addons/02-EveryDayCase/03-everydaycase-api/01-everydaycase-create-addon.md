@@ -13,6 +13,8 @@ import CodeBlock from '@theme/CodeBlock';
 
 Цей варінт пропонує створення спеціалізованих аддонів для DCEveryDayCase
 
+Приклад аддону: [Github](https://github.com/1wairesd/DCEveryDayCaseTestAddon)
+
 ## Головний клас
 Головний клас це початкова точка вашого аддону.
 Ось приклад, як повинен виглядати ваш початковий клас:
