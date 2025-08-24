@@ -1,5 +1,5 @@
 ---
-id: configurations
+id: overview
 title: Конфігурації
 sidebar_custom_props:
   icon: FaSlidersH
