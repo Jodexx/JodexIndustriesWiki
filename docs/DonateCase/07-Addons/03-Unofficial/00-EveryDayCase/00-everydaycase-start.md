@@ -52,7 +52,7 @@ DCEveryDayCase — це аддон для DonateCase, який автомати�
 
 **GitHub:** [API](https://github.com/1wairesd/DCEveryDayCase)
 
-**WiKi:** [API](./Addons/everydaycase-api-install)
+**WiKi:** [API](./API/everydaycase-api-install)
 
 ## Авторство
 
