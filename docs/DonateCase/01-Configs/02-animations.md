@@ -149,7 +149,7 @@ FIREWORK:
     - YELLOW
 ```
 
-## [WHEEL](../animations#wheel)
+## [WHEEL](../animations#wheel-full)
 ```yaml
 WHEEL:
   Type: FULL
