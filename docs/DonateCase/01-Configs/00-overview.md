@@ -9,7 +9,6 @@ import Mermaid from '@theme/Mermaid';
 
 <Mermaid value={
 `graph LR
-
   A[plugins/DonateCase \nГоловна директорія плагіну]
   A --> B[addons \nДиректорія аддонів]
   A --> C[cases \nДиректорія конфігурацій кейсів]
@@ -23,7 +22,6 @@ import Mermaid from '@theme/Mermaid';
   A --> F[Cases.yml \nСховище створених кейсів]
   A --> G[Config.yml \nГоловний конфігураційний файл]
   A --> H[database.db \nСховище ключів та історії відкриттів кейсів]
-  
-`
+  `
 }
 />
