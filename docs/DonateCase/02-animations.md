@@ -62,7 +62,7 @@ _якщо ви хочете встановити колесо вертикаль
 **Premium ресурс!**\
 Ціна: 5$\
 Аддон для створення користувацьких анімацій в gui\
-Детальніше: [тут](./Addons/BetterCasino/bettercasino-start.md)\
+Детальніше: [тут](./Addons/BetterCasino/bettercasino-start)\
 Для купівлі, зверніться в [Discord сервер](https://discord.gg/a65jVPK9vM) або [Телеграм](https://t.me/jodexindustries)
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/x1Z5uN8oDb8" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
