@@ -146,16 +146,16 @@ const config = {
       darkTheme: prismThemes.vsDark,
       additionalLanguages: ["java", "gradle", "yaml", "xml-doc"],
     },
-    announcementBar: {
-      id: "deprecated-warning",
-      content: `
-    ⚠️ Documentation for <code>DonateCase 2.2.9.2+</code> 
-    is still <b>in development</b>.
-  `,
-      backgroundColor: "var(--ifm-color-warning-contrast-background)",
-      textColor: "var(--ifm-color-warning-contrast-foreground)",
-      isCloseable: false,
-    },
+    //   announcementBar: {
+    //     id: "deprecated-warning",
+    //     content: `
+    //   ⚠️ Documentation for <code>DonateCase 2.2.9.2+</code>
+    //   is still <b>in development</b>.
+    // `,
+    //     backgroundColor: "var(--ifm-color-warning-contrast-background)",
+    //     textColor: "var(--ifm-color-warning-contrast-foreground)",
+    //     isCloseable: false,
+    //   },
     mermaid: {
       options: {
         fontSize: 24,
