@@ -73,12 +73,11 @@ menus: # ваші конфігурації меню
 #### Призначення анімацій для кейсів
 <CodeBlock
 language="yaml"
-title="plugins/DonateCase/cases/case.yml">
-{`config: 1.2
-case:
-    Animation: BETTER_CASINO # або інша, раніше зазначена в конфігурації аддону, назва анімації
-    AnimationSettings:
-        Menu: csgo # назва конфігурації меню
+title="plugins/DonateCase/cases/default/settings.yml">
+{`
+animation: BETTER_CASINO # або інша, раніше зазначена в конфігурації аддону, назва анімації
+animation-settings:
+    Menu: csgo # назва конфігурації меню
 `}
 </CodeBlock>
 

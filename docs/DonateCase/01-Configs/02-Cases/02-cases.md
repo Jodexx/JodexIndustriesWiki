@@ -100,7 +100,7 @@ animation-settings:
 #### `hologram`
 > Налаштування голограми над блоком кейсу\
 > Використовує драйвер, що задано в [цьому параметрі](config#hologram-driver)\
-> Для [FancyHolograms](https://hangar.papermc.io/Oliver/FancyHolograms) доступні [розширені параметри](../holograms#fancyholograms)
+> Для [FancyHolograms](https://hangar.papermc.io/Oliver/FancyHolograms) доступні [розширені параметри](../holograms#display-entity-1194)
 
 ```yaml
 hologram:
