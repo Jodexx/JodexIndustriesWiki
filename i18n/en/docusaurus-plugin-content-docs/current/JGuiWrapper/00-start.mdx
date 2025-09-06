@@ -1,0 +1,54 @@
+---
+id: jguiwrapper-start
+title: JGuiWrapper
+---
+
+
+**JGuiWrapper** is a lightweight and convenient library for creating graphical user interfaces (**GUI**) in Minecraft plugins on **PaperMC 1.16.5+**.
+It allows you to build custom menus and inventories with just a few lines of code — without complex constructs and unnecessary boilerplate.
+
+[![GitHub](https://img.shields.io/badge/GitHub-Repo-blue?logo=github&style=for-the-badge)](https://github.com/Jodexx/JGuiWrapper)
+[![Issues](https://img.shields.io/github/issues/Jodexx/JGuiWrapper?style=for-the-badge)](https://github.com/Jodexx/JGuiWrapper/issues)
+[![License](https://img.shields.io/github/license/Jodexx/JGuiWrapper?style=for-the-badge)](https://github.com/Jodexx/JGuiWrapper/blob/master/LICENSE)
+
+---
+
+## 🔑 Key features
+
+- 🖼️ **Simple API** — create menus and elements in just a few lines of code.  
+- 🔄 **Dynamic GUIs** — support for real-time updating of elements.  
+- 🎨 **Settings** — flexible events, click processing, custom actions.  
+- 🧩 **Modularity** — use as:
+  - **API plugin** (connection without shading),
+  - **Common/NMS library** (embedded directly into your plugin).  
+- 🚀 **Easy integration** via Maven/Gradle from the official repository.  
+
+---
+
+| Simple GUI | Advanced GUI |
+|------------|--------------|
+| ![Simple gui](/gif/simple_gui.gif) | ![Advanced gui](/gif/advanced_gui.gif) |
+
+## 📦 Example of creating a GUI
+```java
+AdvancedGui gui = new AdvancedGui("&cCustom menu");
+
+gui.registerItem("test", builder -> builder
+        .slots(0, 1, 2, 3)
+        .defaultItem(ItemWrapper.builder(Material.DIAMOND)
+                .displayName("&bDiamond")
+                .build())
+        .defaultClickHandler((event, controller) -> 
+                event.getWhoClicked().sendMessage("Clicked on diamond!"))
+);
+```
+
+---
+
+## 👥 Who is it for?
+
+* 🔹 For developers who want to quickly add a menu to their plugin.
+* 🔹 For large projects that require scalable GUI systems.
+* 🔹 For those looking for a ready-made and understandable API instead of reinventing the wheel.
+
+---

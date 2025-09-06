@@ -1,0 +1,144 @@
+---
+id: install
+title: Installation
+sidebar_custom_props:
+  icon: FaCogs
+---
+
+import FetchVersion from '@site/src/components/FetchVersion';
+import CodeBlock from '@theme/CodeBlock';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+[![MavenRepo](https://img.shields.io/badge/Maven-Repository-blue?logo=apachemaven&style=for-the-badge)](https://repo.jodex.xyz/#/releases/com/jodexindustries/jguiwrapper)
+[![JavaDocs](https://img.shields.io/badge/JavaDocs-Latest-green?logo=openjdk&style=for-the-badge)](https://repo.jodex.xyz/javadoc/releases/com/jodexindustries/jguiwrapper/api/latest)
+
+## Repository
+<Tabs
+  defaultValue="maven"
+  groupId="build"
+  values={[
+    {label: 'Maven', value: 'maven'},
+    {label: 'Gradle (Groovy DSL)', value: 'gradle-groovy'},
+    {label: 'Gradle (Kotlin DSL)', value: 'gradle-kts'}
+  ]}>
+  <TabItem value="maven">
+    <CodeBlock language='xml'>
+{
+`<repository>
+    <id>JodexIndustries</id>
+    <name>JodexIndustries Repo</name>
+    <url>https://repo.jodex.xyz/releases</url>
+</repository>`
+}
+    </CodeBlock>
+  </TabItem>
+
+  <TabItem value="gradle-groovy">
+<CodeBlock language="groovy">
+{
+`repositories {
+    maven { url = 'https://repo.jodex.xyz/releases' }
+}
+`
+}
+</CodeBlock>
+  </TabItem>
+
+  <TabItem value="gradle-kts">
+<CodeBlock language="groovy">
+{
+            `repositories {
+    maven("https://repo.jodex.xyz/releases")
+}
+`
+          }
+    </CodeBlock>
+  </TabItem>
+
+</Tabs>
+
+
+## Installation and Usage
+
+Snippets are available for Maven, Gradle Groovy, and Gradle Kotlin DSL.
+
+There are **two ways** to use the library depending on your project structure:
+
+### 1. Using as a standalone plugin (`api` module)
+
+* JGuiWrapper is installed as a separate plugin on the server.
+* Your plugin simply connects to its API **without shading**.
+
+<Tabs
+  defaultValue="maven"
+  groupId="build"
+  values={[
+    {label: 'Maven', value: 'maven'},
+    {label: 'Gradle (Groovy DSL)', value: 'gradle-groovy'},
+    {label: 'Gradle (Kotlin DSL)', value: 'gradle-kts'}
+  ]}>
+  <TabItem value="maven">
+    <FetchVersion type="maven" artifactId="api" groupId="com.jodexindustries.jguiwrapper" />
+  </TabItem>
+
+  <TabItem value="gradle-groovy">
+    <FetchVersion type="gradle-groovy" artifactId="api" groupId="com.jodexindustries.jguiwrapper" />
+  </TabItem>
+
+  <TabItem value="gradle-kts">
+    <FetchVersion type="gradle-kts" artifactId="api" groupId="com.jodexindustries.jguiwrapper" />
+  </TabItem>
+</Tabs>
+
+### 2. Embedding into your project (`common` module)
+
+* You directly include the library and **shade** it into the final jar using `shade` (or `shadowJar`).
+* No need to install JGuiWrapper as a separate plugin.
+
+<Tabs
+  defaultValue="maven"
+  groupId="build"
+  values={[
+    {label: 'Maven', value: 'maven'},
+    {label: 'Gradle (Groovy DSL)', value: 'gradle-groovy'},
+    {label: 'Gradle (Kotlin DSL)', value: 'gradle-kts'}
+  ]}>
+  <TabItem value="maven">
+    <FetchVersion type="maven" artifactId="common" groupId="com.jodexindustries.jguiwrapper" implementation />
+
+    If you want to include nms logic for title management
+    <FetchVersion type="maven" artifactId="nms" groupId="com.jodexindustries.jguiwrapper" implementation />
+  </TabItem>
+
+  <TabItem value="gradle-groovy">
+    <FetchVersion type="gradle-groovy" artifactId="common" groupId="com.jodexindustries.jguiwrapper" implementation />
+
+    If you want to include nms logic for title management
+    <FetchVersion type="gradle-groovy" artifactId="nms" groupId="com.jodexindustries.jguiwrapper" implementation />
+  </TabItem>
+
+  <TabItem value="gradle-kts">
+    <FetchVersion type="gradle-kts" artifactId="common" groupId="com.jodexindustries.jguiwrapper" implementation />
+
+    If you want to include nms logic for title management
+    <FetchVersion type="gradle-kts" artifactId="nms" groupId="com.jodexindustries.jguiwrapper" implementation />
+  </TabItem>
+</Tabs>
+
+#### General Initialization
+
+:::warning
+Using the library without the standalone JGuiWrapper plugin requires you to initialize the listeners in your main plugin class.
+:::
+
+```java
+@Override
+public void onEnable() {
+    JGuiInitializer.init(this); // registers all listeners
+}
+```
+
+After calling `init`, you can create and open GUIs for any player.
+
+---

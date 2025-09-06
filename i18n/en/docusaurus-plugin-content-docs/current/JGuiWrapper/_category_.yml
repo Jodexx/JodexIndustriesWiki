@@ -1,0 +1,8 @@
+label: "JGuiWrapper"
+collapsible: true
+collapsed: true
+link:
+  type: doc
+  id: "jguiwrapper-start"
+customProps:
+  icon: "FaDesktop"

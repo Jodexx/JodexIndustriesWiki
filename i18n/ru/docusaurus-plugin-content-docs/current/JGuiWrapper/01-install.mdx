@@ -1,0 +1,142 @@
+---
+id: install
+title: Установка
+sidebar_custom_props:
+  icon: FaCogs
+---
+
+import FetchVersion from '@site/src/components/FetchVersion';
+import CodeBlock from '@theme/CodeBlock';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+[![MavenRepo](https://img.shields.io/badge/Maven-Repository-blue?logo=apachemaven&style=for-the-badge)](https://repo.jodex.xyz/#/releases/com/jodexindustries/jguiwrapper)
+[![JavaDocs](https://img.shields.io/badge/JavaDocs-Latest-green?logo=openjdk&style=for-the-badge)](https://repo.jodex.xyz/javadoc/releases/com/jodexindustries/jguiwrapper/api/latest)
+
+## Репозиторий
+<Tabs
+  defaultValue="maven"
+  groupId="build"
+  values={[
+    {label: 'Maven', value: 'maven'},
+    {label: 'Gradle (Groovy DSL)', value: 'gradle-groovy'},
+    {label: 'Gradle (Kotlin DSL)', value: 'gradle-kts'}
+  ]}>
+  <TabItem value="maven">
+    <CodeBlock language='xml'>
+{
+`<repository>
+    <id>JodexIndustries</id>
+    <name>JodexIndustries Repo</name>
+    <url>https://repo.jodex.xyz/releases</url>
+</repository>`
+}
+    </CodeBlock>
+  </TabItem>
+
+  <TabItem value="gradle-groovy">
+<CodeBlock language="groovy">
+{
+`repositories {
+    maven { url = 'https://repo.jodex.xyz/releases' }
+}
+`
+}
+</CodeBlock>
+  </TabItem>
+
+  <TabItem value="gradle-kts">
+<CodeBlock language="groovy">
+{
+            `repositories {
+    maven("https://repo.jodex.xyz/releases")
+}
+`
+          }
+    </CodeBlock>
+  </TabItem>
+
+</Tabs>
+
+
+## Установка и использование
+
+Фрагменты доступны для Maven, Gradle Groovy и Gradle Kotlin DSL.
+
+В зависимости от структуры вашего проекта, существует **два способа** использования библиотеки:
+
+### 1. Использование как самостоятельный плагин (модуль `api`)
+
+* JGuiWrapper устанавливается как отдельный плагин на сервере.
+* Ваш плагин просто подключается к его API **без затенения**.
+
+<Tabs
+  defaultValue="maven"
+  groupId="build"
+  values={[
+    {label: 'Maven', value: 'maven'},
+    {label: 'Gradle (Groovy DSL)', value: 'gradle-groovy'},
+    {label: 'Gradle (Kotlin DSL)', value: 'gradle-kts'}
+  ]}>
+  <TabItem value="maven">
+    <FetchVersion type="maven" artifactId="api" groupId="com.jodexindustries.jguiwrapper" />
+  </TabItem>
+
+  <TabItem value="gradle-groovy">
+    <FetchVersion type="gradle-groovy" artifactId="api" groupId="com.jodexindustries.jguiwrapper" />
+  </TabItem>
+
+  <TabItem value="gradle-kts">
+    <FetchVersion type="gradle-kts" artifactId="api" groupId="com.jodexindustries.jguiwrapper" />
+  </TabItem>
+</Tabs>
+
+### 2. Встраивание в ваш проект (модуль `common`)
+
+* Вы напрямую включаете библиотеку и **затеняете** ее в конечный jar-файл с помощью `shade` (или `shadowJar`).
+* Не нужно устанавливать JGuiWrapper как отдельный плагин.
+
+<Tabs
+  defaultValue="maven"
+  groupId="build"
+  values={[
+    {label: 'Maven', value: 'maven'},
+    {label: 'Gradle (Groovy DSL)', value: 'gradle-groovy'},
+    {label: 'Gradle (Kotlin DSL)', value: 'gradle-kts'}
+  ]}>
+  <TabItem value="maven">
+    <FetchVersion type="maven" artifactId="common" groupId="com.jodexindustries.jguiwrapper" implementation />
+
+    Если вы хотите включить логику nms для управления заголовками
+    <FetchVersion type="maven" artifactId="nms" groupId="com.jodexindustries.jguiwrapper" implementation />
+  </TabItem>
+
+  <TabItem value="gradle-groovy">
+    <FetchVersion type="gradle-groovy" artifactId="common" groupId="com.jodexindustries.jguiwrapper" implementation />
+    Если вы хотите включить логику nms для управления заголовками
+    <FetchVersion type="gradle-groovy" artifactId="nms" groupId="com.jodexindustries.jguiwrapper" implementation />
+  </TabItem>
+
+  <TabItem value="gradle-kts">
+    <FetchVersion type="gradle-kts" artifactId="common" groupId="com.jodexindustries.jguiwrapper" implementation />
+    Если вы хотите включить логику nms для управления заголовками
+    <FetchVersion type="gradle-kts" artifactId="nms" groupId="com.jodexindustries.jguiwrapper" implementation />
+  </TabItem>
+</Tabs>
+
+#### Общая инициализация
+
+:::warning
+Использование библиотеки без отдельного плагина JGuiWrapper требует инициализации слушателей в вашем основном классе плагина.
+:::
+
+```java
+@Override
+public void onEnable() {
+    JGuiInitializer.init(this); // регистрирует всех слушателей
+}
+```
+
+После вызова `init` вы можете создавать и открывать графические интерфейсы для любого игрока.
+
+---
