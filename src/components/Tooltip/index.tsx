@@ -6,11 +6,18 @@ interface TooltipProps {
   children: ReactNode;
 }
 
+function parseTooltipText(text: string): ReactNode {
+  return <span dangerouslySetInnerHTML={{ __html: text }} />;
+}
+
 export default function Tooltip({ text, children }: TooltipProps) {
   return (
     <span className={styles.tooltipWrapper}>
       {children}
-      <span className={styles.tooltipText}>{text}</span>
+      <span
+        className={styles.tooltipText}
+        dangerouslySetInnerHTML={{ __html: text }}
+      ></span>
     </span>
   );
 }
