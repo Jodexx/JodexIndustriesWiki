@@ -1,0 +1,73 @@
+---
+id: abstract-gui
+title: AbstractGui
+sidebar_custom_props:
+  icon: FaCogs
+---
+
+**AbstractGui** - базовий графічний інтерфейс з мінімальним функціоналом для тих, хто привик працювати зі звичайним **Bukkit Inventory API**
+
+## Приклад реалізації простого меню
+
+```java title="TestAbstractGui"
+import com.jodexindustries.jguiwrapper.gui.AbstractGui;
+import org.bukkit.entity.HumanEntity;
+import org.bukkit.event.inventory.InventoryClickEvent;
+import org.jetbrains.annotations.NotNull;
+
+public class TestAbstractGui extends AbstractGui {
+    
+    public TestAbstractGui() {
+        super("&cTest abstract gui"); // заголовок меню
+    }
+
+    @Override
+    public void onClick(@NotNull InventoryClickEvent e) {
+        // реакція на клік
+        HumanEntity player = e.getWhoClicked();
+
+        player.sendMessage("You just clicked!");
+    }
+}
+```
+
+:::info
+Перевизначити також можна методи: `onOpen`, `onClose`, `onDrag`
+:::
+
+### Відкриття меню для гравця
+
+```java
+TestAbstractGui gui = new TestAbstractGui();
+
+gui.open(player);
+```
+
+## Конструктори
+**AbstractGui** дає можливість одразу встановити базові параметри меню (заголовок, розмір, тип та [серіалайзер](../serializer)) за допомогою вбудованих конструкторів
+див. [JavaDocs](https://repo.jodex.xyz/javadoc/releases/com/jodexindustries/jguiwrapper/api/1.0.0.7/raw/com/jodexindustries/jguiwrapper/gui/AbstractGui.html)
+
+:::info
+```java
+AbstractGui(int size, String title)
+AbstractGui(int size, Component title)
+AbstractGui(String title)
+AbstractGui(Component title)
+AbstractGui(InventoryType type, Component title)
+AbstractGui(InventoryType type, Component title, SerializerType defaultSerializer)
+```
+:::
+
+## Оновлення заголовку
+Усі графічні інтерфейси підтримують оновлення заголовку без закриття меню за допомогою NMS
+
+```java
+@Override
+public void onClick(@NotNull InventoryClickEvent e) {
+    updateMenu(Component.text("New title"));
+}
+```
+
+:::info
+Усі наступні графічні інтерфейси наслідують **AbstractGui**
+:::
