@@ -34,11 +34,11 @@ title: JGuiWrapper
 AdvancedGui gui = new AdvancedGui("&cCustom menu");
 
 gui.registerItem("test", builder -> builder
-        .slots(0, 1, 2, 3)
-        .defaultItem(ItemWrapper.builder(Material.DIAMOND)
+        .slots(0, 1, 2, 3) // tip="Слоти, якими оперує предмет"
+        .defaultItem(ItemWrapper.builder(Material.DIAMOND) // tip="Стандартний предмет для усіх слотів"
                 .displayName("&bDiamond")
                 .build())
-        .defaultClickHandler((event, controller) -> 
+        .defaultClickHandler((event, controller) -> // tip="Стандартний обробник кліків для усіх слотів"
                 event.getWhoClicked().sendMessage("Clicked on diamond!"))
 );
 ```

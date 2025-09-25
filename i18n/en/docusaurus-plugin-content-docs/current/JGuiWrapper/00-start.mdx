@@ -34,11 +34,11 @@ It allows you to build custom menus and inventories with just a few lines of cod
 AdvancedGui gui = new AdvancedGui("&cCustom menu");
 
 gui.registerItem("test", builder -> builder
-        .slots(0, 1, 2, 3)
-        .defaultItem(ItemWrapper.builder(Material.DIAMOND)
+        .slots(0, 1, 2, 3) // tip="Slots operated by the item"
+        .defaultItem(ItemWrapper.builder(Material.DIAMOND) // tip="Standard item for all slots"
                 .displayName("&bDiamond")
                 .build())
-        .defaultClickHandler((event, controller) -> 
+        .defaultClickHandler((event, controller) -> // tip="Default click handler for all slots"
                 event.getWhoClicked().sendMessage("Clicked on diamond!"))
 );
 ```

@@ -5,6 +5,8 @@ sidebar_custom_props:
   icon: FaCogs
 ---
 
+import CodeBlock from '@theme/CodeBlock';
+
 **AbstractGui** - базовий графічний інтерфейс з мінімальним функціоналом для тих, хто привик працювати зі звичайним **Bukkit Inventory API**
 
 ## Приклад реалізації простого меню
@@ -18,7 +20,7 @@ import org.jetbrains.annotations.NotNull;
 public class TestAbstractGui extends AbstractGui {
     
     public TestAbstractGui() {
-        super("&cTest abstract gui"); // заголовок меню
+        super("&cTest abstract gui"); // tip="Заголовок меню"
     }
 
     @Override

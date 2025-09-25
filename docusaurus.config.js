@@ -19,7 +19,6 @@ const config = {
   trailingSlash: false,
 
   onBrokenLinks: "ignore",
-  onBrokenMarkdownLinks: "ignore",
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
@@ -44,6 +43,9 @@ const config = {
 
   markdown: {
     mermaid: true,
+    hooks: {
+      onBrokenMarkdownLinks: "ignore",
+    },
   },
   themes: ["@docusaurus/theme-mermaid"],
 
@@ -145,6 +147,17 @@ const config = {
       theme: prismThemes.vsLight,
       darkTheme: prismThemes.vsDark,
       additionalLanguages: ["java", "gradle", "yaml", "xml-doc"],
+      magicComments: [
+        {
+          className: "theme-code-block-highlighted-line",
+          line: "highlight-next-line",
+          block: { start: "highlight-start", end: "highlight-end" },
+        },
+        {
+          className: "code-block-error-line",
+          line: "highlight-next-line-error",
+        },
+      ],
     },
     //   announcementBar: {
     //     id: "deprecated-warning",

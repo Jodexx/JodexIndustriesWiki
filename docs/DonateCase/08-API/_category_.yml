@@ -1,2 +1,4 @@
+label: "API"
+key: donatecase-api
 customProps:
   icon: "FaCode"
