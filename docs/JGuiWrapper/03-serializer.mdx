@@ -4,3 +4,39 @@ title: Серіалайзер
 sidebar_custom_props:
   icon: FaCode
 ---
+
+**JGuiWrapper** використовує [Adventure](https://docs.advntr.dev/) бібліотеку для серіалізації строк у компоненти Minecraft.
+
+## Типи серіалайзерів
+Для зручної серіалізації, було створено 
+[SerializerType](https://repo.jodex.xyz/javadoc/releases/com/jodexindustries/jguiwrapper/api/1.0.0.7/raw/com/jodexindustries/jguiwrapper/api/text/SerializerType.html) enum,
+що містить в собі усі типи обробників з [Adventure](https://docs.advntr.dev/), включаючи [MiniMessage](https://docs.advntr.dev/minimessage/index.html)
+
+:::warning
+**JGuiWrapper** не містить в собі ніяких серіалайзерів, а лише предоставляє до них зручний доступ. Деякі з них вже включені у ядро сервера, усі інші потрібно додавати вручну у свій проект.
+
+У разі відсутності серіалайзера на сервері, результат серіалізації/десеріалізації буде пустим.
+:::
+
+### Приклад використання
+```java
+Component component = SerializerType.LEGACY_AMPERSAND.deserialize("&6Some &9legacy &dtext");
+```
+
+## Стандартний серіалайзер
+
+**JGuiWrapper** за замовчуванням використовує 
+[LegacyComponentSerializer](https://jd.advntr.dev/text-serializer-legacy/4.24.0/net/kyori/adventure/text/serializer/legacy/LegacyComponentSerializer.html), 
+тобто [SerializerType#LEGACY_AMPERSAND](https://repo.jodex.xyz/javadoc/releases/com/jodexindustries/jguiwrapper/api/1.0.0.7/raw/com/jodexindustries/jguiwrapper/api/text/SerializerType.html#LEGACY_AMPERSAND).
+
+Серіалайзер за замовчуванням використовується у заголовках меню та [ItemWrapper](https://repo.jodex.xyz/javadoc/releases/com/jodexindustries/jguiwrapper/api/1.0.0.7/raw/com/jodexindustries/jguiwrapper/api/item/ItemWrapper.html)
+
+Для того, щоб змінити серіалайзер за замовчуванням, можна використати метод [GuiApi#defaultSerializer(SerializerType)](https://repo.jodex.xyz/javadoc/releases/com/jodexindustries/jguiwrapper/api/1.0.0.7/raw/com/jodexindustries/jguiwrapper/api/GuiApi.html#defaultSerializer(com.jodexindustries.jguiwrapper.api.text.SerializerType))
+
+```java
+api.defaultSerializer(SerializerType.MINI_MESSAGE);
+```
+
+:::info
+[Детальніше про API доступ](./install#api)
+:::

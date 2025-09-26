@@ -9,6 +9,8 @@ import CodeBlock from '@theme/CodeBlock';
 
 **AbstractGui** - базовий графічний інтерфейс з мінімальним функціоналом для тих, хто привик працювати зі звичайним **Bukkit Inventory API**
 
+Усі наступні графічні інтерфейси наслідують **AbstractGui**
+
 ## Приклад реалізації простого меню
 
 ```java title="TestAbstractGui"
@@ -21,6 +23,18 @@ public class TestAbstractGui extends AbstractGui {
     
     public TestAbstractGui() {
         super("&cTest abstract gui"); // tip="Заголовок меню"
+
+        Inventory inventory = holder().getInventory(); // tip="<a href="https://repo.jodex.xyz/javadoc/releases/com/jodexindustries/jguiwrapper/api/1.0.0.7/raw/com/jodexindustries/jguiwrapper/api/gui/GuiHolder.html" target="_blank">GuiHolder</a>"
+
+        for (int i = 0; i < 5; i++) {
+            ItemStack itemStack = new ItemStack(Material.DIAMOND);
+            ItemMeta itemMeta = itemStack.getItemMeta();
+
+            itemMeta.displayName(Component.text(i));
+            itemStack.setItemMeta(itemMeta);
+
+            inventory.setItem(i, itemStack);
+        }
     }
 
     @Override
@@ -70,6 +84,15 @@ public void onClick(@NotNull InventoryClickEvent e) {
 }
 ```
 
-:::info
-Усі наступні графічні інтерфейси наслідують **AbstractGui**
+:::warning
+Часто при оновлені меню, у якому відбувається взаємодія з предметами, варто оновлювати його вміст, 
+щоб це зробити, використовуйте метод [AbstractGui#updateMenu(HumanEntity, InventoryType, int, Component, boolean)](https://repo.jodex.xyz/javadoc/releases/com/jodexindustries/jguiwrapper/api/1.0.0.7/raw/com/jodexindustries/jguiwrapper/gui/AbstractGui.html#updateMenu(org.bukkit.entity.HumanEntity,org.bukkit.event.inventory.InventoryType,int,net.kyori.adventure.text.Component,boolean))
+
+Аргумент refreshData повинен бути `true` задля оновлення положення предметів (особливо при зміні типу та розміру). 
+Оновлення меню також потрібно здійснити після взаємодії з предметами (у випадку реакції на [InventoryClickEvent](https://jd.papermc.io/paper/1.16.5/org/bukkit/event/inventory/InventoryClickEvent.html)), тобто через один тік:
+```java
+runTask(() -> { // tip="<a target="_blank" href="https://repo.jodex.xyz/javadoc/releases/com/jodexindustries/jguiwrapper/api/1.0.0.7/raw/com/jodexindustries/jguiwrapper/gui/AbstractGui.html#runTask(java.lang.Runnable)">runTask</a> це заміна звичайному<br>BukkitScheduler#runTask(Plugin, Runnable)"
+    updateMenu(player, type(), size(), Component.text("New title"), true);
+});
+```
 :::

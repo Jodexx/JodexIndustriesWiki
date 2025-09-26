@@ -140,3 +140,29 @@ public void onEnable() {
 После вызова `init` вы можете создавать и открывать графические интерфейсы для любого игрока.
 
 ---
+
+## API
+
+Общедоступные api методы можно найти в классе [GuiApi](https://repo.jodex.xyz/javadoc/releases/com/jodexindustries/jguiwrapper/api/1.0.0.7/raw/com/jodexindustries/jguiwrapper/api/GuiApi.html),
+который является родительским классом `JGuiInitializer`.
+
+```java
+GuiApi api = GuiApi.get();
+```
+
+:::warning
+Стоит отметить, что [GuiApi#get()](https://repo.jodex.xyz/javadoc/releases/com/jodexindustries/jguiwrapper/api/1.0.0.7/raw/com/jodexindustries/jguiwrapper/api/GuiApi.html#get())
+может выдать ошибку инициализации, так как не был выполнен вызов `JGuiInitializer#init(Plugin)`, что означает, что API не было инициализировано.
+:::
+
+### Безопасный доступ к API
+
+Иногда случается так, что инициализация может вызываться позже определенной логики с взаимодействием с 
+[GuiApi](https://repo.jodex.xyz/javadoc/releases/com/jodexindustries/jguiwrapper/api/1.0.0.7/raw/com/jodexindustries/jguiwrapper/api/GuiApi.html), 
+поэтому стоит использовать [GuiApi#getOptional()](https://repo.jodex.xyz/javadoc/releases/com/jodexindustries/jguiwrapper/api/1.0.0.7/raw/com/jodexindustries/jguiwrapper/api/GuiApi.html#getOptional())
+
+```java
+GuiApi.getOptional().ifPresent(api -> {
+    Plugin plugin = api.getPlugin();
+});
+```
