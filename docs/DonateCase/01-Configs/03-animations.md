@@ -13,22 +13,30 @@ sidebar_custom_props:
 ---
 
 ## Спільні налаштування
+
 Деякі анімації мають спільні параметри, тому вони винесені сюди
+
 ### `ItemSlot`
+
 > Встановлює слот в якому буде відображатись предмет для ArmorStand'а\
 > Доступні параметри: `HEAD`, `HAND`, `OFF_HAND`, `FEET`, `LEGS`, `CHEST`
+
 ```yaml
 ItemSlot: HEAD
 ```
 
 ### `SmallArmorStand`
+
 > Встановлює маленький розмір ArmorStand'а
+
 ```yaml
 SmallArmorStand: true
 ```
 
 ### `StartPosition`
+
 > Змінює початкову позицію за координатами
+
 ```yaml
 StartPosition:
   x: 0.5
@@ -37,6 +45,7 @@ StartPosition:
 ```
 
 ### `Facing`
+
 > Примусово встановлює сторону для показу анімації\
 > Доступні параметри: `NORTH`, `NORTH_EAST`, `EAST`, `SOUTH_EAST`, `SOUTH`, `SOUTH_WEST`, `WEST`, `NORTH_WEST`, `UP`, `DOWN`, `UP_NORTH`, `UP_EAST`, `UP_SOUTH`, `UP_WEST`, `DOWN_NORTH`, `DOWN_EAST`, `DOWN_SOUTH`, `DOWN_WEST`, `UP_NORTH_WEST`, `DOWN_SOUTH_EAST`
 
@@ -49,8 +58,10 @@ Facing: EAST
 ```
 
 ### `Pose`
+
 > Змінює позу ArmorStand'ів\
 > Зазвичай не використовується у більшості випадків
+
 ```yaml
 Pose:
   Head:
@@ -114,6 +125,7 @@ SHAPE:
 ```
 
 ## [RAINLY](../animations#rainly)
+
 ```yaml
 RAINLY:
   ItemSlot: HEAD
@@ -130,6 +142,7 @@ RAINLY:
 ```
 
 ## [FIREWORK](../animations#firework)
+
 ```yaml
 FIREWORK:
   ItemSlot:
@@ -150,6 +163,7 @@ FIREWORK:
 ```
 
 ## [WHEEL](../animations#wheel-full)
+
 ```yaml
 WHEEL:
   Type: FULL
@@ -176,6 +190,7 @@ WHEEL:
 ```
 
 ## RANDOM
+
 ```yaml
 RANDOM:
   SHAPE: 15
@@ -187,6 +202,7 @@ RANDOM:
 ```
 
 ## [POP](../animations#pop)
+
 ```yaml
 POP:
   Scroll:
@@ -201,6 +217,7 @@ POP:
 ```
 
 ## [SELECT](../animations#select)
+
 ```yaml
 SELECT:
   Facing: EAST

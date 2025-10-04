@@ -16,6 +16,7 @@ sidebar_custom_props:
 - [CMI Holograms](https://www.zrips.net/cmi/holograms/) (1.16+)
 
 ### Налаштування
+
 > Стандартні параметри з цієї секції - [`hologram`](./Configs/Cases#hologram)
 
 ```yaml
@@ -34,8 +35,8 @@ hologram:
 - [FancyHolograms](https://hangar.papermc.io/Oliver/FancyHolograms)
 
 ### Налаштування
-> Лише параметри `enabled` та `height` залишаються стандартними. Поглиблені налаштування зчитуються напряму плагіном [FancyHolograms](https://hangar.papermc.io/Oliver/FancyHolograms) з його форматом конфігурації
 
+> Лише параметри `enabled` та `height` залишаються стандартними. Поглиблені налаштування зчитуються напряму плагіном [FancyHolograms](https://hangar.papermc.io/Oliver/FancyHolograms) з його форматом конфігурації
 
 ```yaml
 hologram:

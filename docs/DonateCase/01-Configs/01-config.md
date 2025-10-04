@@ -10,14 +10,19 @@ sidebar_custom_props:
 ---
 
 ## Параметри
+
 ### `update-checker`
+
 > Перевіряє наявність нової версії з Modrinth
+
 ```yaml
 update-checker: true
 ```
 
 ### `mysql`
+
 > Налаштування для підключення до бази даних MySQL
+
 ```yaml
 mysql:
   enabled: false
@@ -38,13 +43,16 @@ mysql:
 | `password` | Пароль для підключення           |
 
 ### `language`
+
 > Локалізація плагіну\
 > Доступні параметри: `en_US`, `es_ES`, `ru_RU`, `ua_UA`
+
 ```yaml
 language: en_US
 ```
 
 ### `hologram-driver`
+
 > Драйвер для створення голограм над блоками кейсів\
 > Доступні параметри: `CMI`, `DecentHolograms`, `HolographicDisplays`, `FancyHolograms`
 
@@ -57,6 +65,7 @@ hologram-driver: DecentHolograms
 ```
 
 ### `level-groups`
+
 > Глобальні налаштування рівнів для груп\
 > Використовується для перевірки групи гравця в LuckPerms при отриманні приза
 
@@ -75,19 +84,24 @@ level-groups:
 ```
 
 ### `date-format`
+
 > Формат відображення дати для історії відкриттів\
 > Генерується за допомогою [SimpleDateFormat](https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html)
+
 ```yaml
 date-format: "dd.MM HH:mm:ss"
 ```
 
 ### `addons-help`
+
 > Показує допомогу для команд аддонів після використання `/dc` або `/dc help`
+
 ```yaml
 addons-help: true
 ```
 
 ### `use-packets`
+
 > Використовує [PacketEvents](https://modrinth.com/plugin/packetevents) для створення несправжніх ArmorStand'ів, дуже корисно, коли сервер опрацьовує багато сутностей
 
 :::info
@@ -99,6 +113,7 @@ use-packets: true
 ```
 
 ### `caching`
+
 > Кешування для отримання кількості ключів, відкриттів кейсів та історії\
 > Використовується лише при увімкненому параметрі `mysql`\
 > Задається в тіках (1 секунда = 20 тіків)
@@ -112,16 +127,19 @@ caching: 20
 ```
 
 ### `format-player-name`
+
 > Форматує нікнейм гравця, шукає схожий на сервері без урахування регістру
 
 :::tip
 Важливо використовувати, якщо на вашому сервері є сайт автодонату, коли гравці можуть помилково ввести свій нік з нижнього регістру (`_jodex__` заміть `_Jodex__`)
 :::
+
 ```yaml
 format-player-name: false
 ```
 
 ### `converter`
+
 > Налаштування конвертації старих конфігурацій
 
 ```yaml
@@ -129,8 +147,11 @@ converter:
   keys: false
   data: false
 ```
+
 #### `keys`
+
 > Конвертація Keys.yml до бази данних
 
 #### `data`
+
 > Конвертація Data.yml до бази данних
