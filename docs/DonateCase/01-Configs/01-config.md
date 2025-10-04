@@ -19,23 +19,32 @@ sidebar_custom_props:
 update-checker: true
 ```
 
-### `mysql`
+### `database`
 
-> Налаштування для підключення до бази даних MySQL
+> Налаштування для підключення до бази даних
 
 ```yaml
-mysql:
-  enabled: false
-  host: 'localhost'
-  port: 3306
-  database: 'nameDataBase'
-  username: 'root'
-  password: 'password'
+database:
+  type: SQLITE
+  settings:
+    host: 'localhost'
+    port: 3306
+    database: 'nameDataBase'
+    username: 'root'
+    password: 'password'
 ```
+
+#### `type`
+
+> Тип бази даних\
+> Доступні параметри: `SQLITE`, `MYSQL`, `POSTGRESQL`
+
+#### `settings`
+
+> Налаштування для віддалених баз даних (MYSQL, POSTGRESQL)
 
 | Параметр   | Опис                             |
 | ---------- | -------------------------------- |
-| `enabled`  | Перемикає увімкненість MySQL     |
 | `host`     | Хост для підключення             |
 | `port`     | Порт для підключення             |
 | `database` | Назва бази даних                 |
@@ -150,8 +159,8 @@ converter:
 
 #### `keys`
 
-> Конвертація Keys.yml до бази данних
+> Конвертація Keys.yml до бази даних
 
 #### `data`
 
-> Конвертація Data.yml до бази данних
+> Конвертація Data.yml до бази даних

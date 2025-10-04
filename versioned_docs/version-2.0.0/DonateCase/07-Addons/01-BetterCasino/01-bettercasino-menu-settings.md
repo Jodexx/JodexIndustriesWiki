@@ -158,7 +158,7 @@ ticks:
 | `display_name` | Відображуване ім'я предмета                                            | `name`, `displayName`                  | Ні                             |
 | `lore`         | Опис предмету                                                          | немає                                  | Ні                             | 
 | `enchanted`    | Визначає зачарованість предмету                                        | немає                                  | Ні                             |
-| `model_data`   | Задає користувацьці данні моделі                                       | `custom_model_data`, `customModelData` | Ні                             |
+| `model_data`   | Задає користувацьці дані моделі                                       | `custom_model_data`, `customModelData` | Ні                             |
 | `rgb`          | Задає колір шкіряних предметів                                         | немає                                  | Ні                             |
 
 </TabItem>

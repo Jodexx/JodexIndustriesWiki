@@ -111,7 +111,7 @@ lore:
 ```
 
 #### `model-data` (необов'язково)
-> Задає користувацькі данні моделі (CustomModelData)
+> Задає користувацькі дані моделі (CustomModelData)
 ```yaml
 model-data: 1234
 ```
