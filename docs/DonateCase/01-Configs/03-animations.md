@@ -10,6 +10,7 @@ sidebar_custom_props:
 :::tip
 Даний файл являється глобальною конфігурацією для всіх кейсів, однак кожен кейс також може мати свої особисті налаштування анімацій за допомогою секції [`animation-settings`](./cases#animation-settings)
 :::
+
 ---
 
 ## Спільні налаштування
@@ -138,7 +139,7 @@ RAINLY:
     Sound: ENTITY_GENERIC_EXPLODE
     Volume: 1
     Pitch: 1
-  FallingParticle: FALLING_WATER 
+  FallingParticle: FALLING_WATER # you can use all particles, full list: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Particle.html
 ```
 
 ## [FIREWORK](../animations#firework)
@@ -147,7 +148,7 @@ RAINLY:
 FIREWORK:
   ItemSlot:
   SmallArmorStand: true
-  Power: 0
+  Power: 0 # Firework power
   StartPosition:
     x: 0.5
     y: 1
@@ -166,11 +167,11 @@ FIREWORK:
 
 ```yaml
 WHEEL:
-  Type: FULL
+  Type: FULL # or RANDOM
   ItemSlot: HEAD
   SmallArmorStand: true
-  ItemsCount: 6
-  Shuffle: true
+  ItemsCount: 6 # only for RANDOM type
+  Shuffle: true # only for FULL type
   CircleRadius: 2
   # Facing: UP
   StartPosition:
@@ -183,7 +184,7 @@ WHEEL:
   Scroll:
     Count: 1
     Time: 150
-    EaseAmount: 2.5
+    EaseAmount: 2.5 # 1 = linear
     Sound: UI_BUTTON_CLICK
     Volume: 10
     Pitch: 1
@@ -193,7 +194,7 @@ WHEEL:
 
 ```yaml
 RANDOM:
-  SHAPE: 15
+  SHAPE: 15 # Chance
   RAINLY: 15
   FIREWORK: 15
   WHEEL: 15
@@ -221,9 +222,40 @@ POP:
 ```yaml
 SELECT:
   Facing: EAST
-  Timeout: 600
+  Timeout: 600 # in ticks
   Radius: 1.5
   Item: CHEST
 #  Period: 0
 #  ItemSlot: HEAD
+```
+
+## [FUTURE_WHEEL](../animations#futurewheel)
+
+```yaml
+FUTURE_WHEEL:
+  #  Facing: EAST
+  StartPosition:
+    x: 0.5
+    y: -0.5
+    z: 0.5
+  HologramPosition:
+    x: 0.0
+    y: 1.0
+    z: 0.0
+  Spawn:
+    Interval: 20 # in ticks
+    Particle: SMOKE
+    ParticleCount: 3
+    Sound: ENTITY_ARROW_SHOOT
+    Volume: 10
+    Pitch: 1
+  Scroll:
+    Particle: SMOKE
+    ParticleCount: 3
+    Sound: ENTITY_ARROW_SHOOT
+    Volume: 10
+    Pitch: 1
+  CircleRadius: 1.0
+  ScrollingTime: 120 # in ticks, this value will be appended to the total spawn-time (spawn-time = {item count} * SpawnInterval)
+  SkipTicks: 5 # this means that every 5th tick an item in the circle will glow
 ```
