@@ -132,13 +132,16 @@ RAINLY:
   ItemSlot: HEAD
   SmallArmorStand: true
   Scroll:
+    Particle: FIREWORK
     Sound: ENTITY_EXPERIENCE_ORB_PICKUP
     Volume: 1
     Pitch: 1
   End:
+    Particle: EXPLOSION
     Sound: ENTITY_GENERIC_EXPLODE
     Volume: 1
     Pitch: 1
+  CloudParticle: CLOUD
   FallingParticle: FALLING_WATER # you can use all particles, full list: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Particle.html
 ```
 
