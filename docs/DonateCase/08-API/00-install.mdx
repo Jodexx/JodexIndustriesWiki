@@ -13,9 +13,9 @@ import TabItem from '@theme/TabItem';
 # Встановлення 
 
 Модулі DonateCase API:
-- [`api`](https://repo.jodex.xyz/javadoc/releases/com/jodexindustries/donatecase/api/latest) 
+- `api`
 головний модуль, який містить в собі основні конструкції для взаємодії з DonateCase. Немає залежностей.
-- [`spigot-api`](https://repo.jodex.xyz/javadoc/releases/com/jodexindustries/donatecase/spigot-api/latest) 
+- `spigot-api`
 модуль для платформи `spigot`, містить в собі конструкції для взаємодії з плагіном. Є залежність від Spigot 1.16.5.
 
 ## Maven
@@ -25,9 +25,8 @@ import TabItem from '@theme/TabItem';
 >
 {
 `<repository>
-    <id>JodexIndustries</id>
-    <name>JodexIndustries Repo</name>
-    <url>https://repo.jodex.xyz/releases</url>
+    <id>jitpack.io</id>
+    <url>https://jitpack.io</url>
 </repository>`
 }
 </CodeBlock>
@@ -55,8 +54,8 @@ import TabItem from '@theme/TabItem';
 >
 {
 `maven {
-    name "JodexIndustries"
-    url "https://repo.jodex.xyz/releases"
+    name "jitpack.io"
+    url "https://jitpack.io"
 }
 `
 }
@@ -70,9 +69,9 @@ import TabItem from '@theme/TabItem';
     {label: 'spigot-api', value: 'spigot-api'},
   ]}>
   <TabItem value="api">
-<FetchVersion type="gradle" artifactId="api" groupId="com.jodexindustries.donatecase" />
+<FetchVersion type="gradle" artifactId="api" />
   </TabItem>
   <TabItem value="spigot-api">
-  <FetchVersion type="gradle" artifactId="spigot-api" groupId="com.jodexindustries.donatecase" />
+  <FetchVersion type="gradle" artifactId="spigot-api"/>
   </TabItem>
 </Tabs>

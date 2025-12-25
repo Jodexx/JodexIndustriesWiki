@@ -145,7 +145,7 @@ After calling `init`, you can create and open GUIs for any player.
 
 ## API
 
-Publicly available API methods can be found in the [GuiApi](https://repo.jodex.xyz/javadoc/releases/com/jodexindustries/jguiwrapper/api/1.0.0.7/raw/com/jodexindustries/jguiwrapper/api/GuiApi.html) class,
+Publicly available API methods can be found in the [GuiApi](https://github.com/Jodexx/JGuiWrapper/tree/master/api/src/main/java/com/jodexindustries/jguiwrapper/api/GuiApi.java) class,
 which is the parent class of `JGuiInitializer`.
 
 ```java
@@ -153,15 +153,15 @@ GuiApi api = GuiApi.get();
 ```
 
 :::warning
-It should be noted that [GuiApi#get()](https://repo.jodex.xyz/javadoc/releases/com/jodexindustries/jguiwrapper/api/1.0.0.7/raw/com/jodexindustries/jguiwrapper/api/GuiApi.html#get())
+It should be noted that [GuiApi#get()](https://github.com/Jodexx/JGuiWrapper/tree/master/api/src/main/java/com/jodexindustries/jguiwrapper/api/GuiApi.java#L41)
 may throw an initialization error, as `JGuiInitializer#init(Plugin)` was not called, which means that the API was not initialized.
 :::
 
 ### Secure access to the API
 
 Sometimes it happens that initialization can be called later than certain logic with interaction with 
-[GuiApi](https://repo.jodex.xyz/javadoc/releases/com/jodexindustries/jguiwrapper/api/1.0.0.7/raw/com/jodexindustries/jguiwrapper/api/GuiApi.html), 
-so it is worth using [GuiApi#getOptional()](https://repo.jodex.xyz/javadoc/releases/com/jodexindustries/jguiwrapper/api/1.0.0.7/raw/com/jodexindustries/jguiwrapper/api/GuiApi.html#getOptional())
+[GuiApi](https://github.com/Jodexx/JGuiWrapper/tree/master/api/src/main/java/com/jodexindustries/jguiwrapper/api/GuiApi.java), 
+so it is worth using [GuiApi#getOptional()](https://github.com/Jodexx/JGuiWrapper/tree/master/api/src/main/java/com/jodexindustries/jguiwrapper/api/GuiApi.java#L65)
 
 ```java
 GuiApi.getOptional().ifPresent(api -> {

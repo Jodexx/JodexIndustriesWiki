@@ -24,7 +24,7 @@ public class TestAbstractGui extends AbstractGui {
     public TestAbstractGui() {
         super("&cTest abstract gui"); // tip="Заголовок меню"
 
-        Inventory inventory = holder().getInventory(); // tip="<a href="https://repo.jodex.xyz/javadoc/releases/com/jodexindustries/jguiwrapper/api/1.0.0.7/raw/com/jodexindustries/jguiwrapper/api/gui/GuiHolder.html" target="_blank">GuiHolder</a>"
+        Inventory inventory = holder().getInventory(); // tip="<a href="https://github.com/Jodexx/JGuiWrapper/tree/master/api/src/main/java/com/jodexindustries/jguiwrapper/api/gui/GuiHolder.java" target="_blank">GuiHolder</a>"
 
         for (int i = 0; i < 5; i++) {
             ItemStack itemStack = new ItemStack(Material.DIAMOND);
@@ -56,12 +56,12 @@ public class TestAbstractGui extends AbstractGui {
 ```java
 TestAbstractGui gui = new TestAbstractGui();
 
-gui.open(player); // tip="<a href="https://repo.jodex.xyz/javadoc/releases/com/jodexindustries/jguiwrapper/api/1.0.0.7/raw/com/jodexindustries/jguiwrapper/api/gui/Gui.html#open(org.bukkit.entity.HumanEntity)" target="_blank">Gui#open(HumanEntity player)</a>"
+gui.open(player); // tip="<a href="https://github.com/Jodexx/JGuiWrapper/tree/master/api/src/main/java/com/jodexindustries/jguiwrapper/api/gui/Gui.java#L45)" target="_blank">Gui#open(HumanEntity player)</a>"
 ```
 
 ## Конструктори
 **AbstractGui** дає можливість одразу встановити базові параметри меню (заголовок, розмір, тип та [серіалайзер](../serializer)) за допомогою вбудованих конструкторів
-див. [JavaDocs](https://repo.jodex.xyz/javadoc/releases/com/jodexindustries/jguiwrapper/api/1.0.0.7/raw/com/jodexindustries/jguiwrapper/gui/AbstractGui.html)
+див. [JavaDocs](https://github.com/Jodexx/JGuiWrapper/tree/master/api/src/main/java/com/jodexindustries/jguiwrapper/gui/AbstractGui.java)
 
 :::info
 ```java
@@ -86,12 +86,12 @@ public void onClick(@NotNull InventoryClickEvent e) {
 
 :::warning
 Часто при оновлені меню, у якому відбувається взаємодія з предметами, варто оновлювати його вміст, 
-щоб це зробити, використовуйте метод [AbstractGui#updateMenu(HumanEntity, InventoryType, int, Component, boolean)](https://repo.jodex.xyz/javadoc/releases/com/jodexindustries/jguiwrapper/api/1.0.0.7/raw/com/jodexindustries/jguiwrapper/gui/AbstractGui.html#updateMenu(org.bukkit.entity.HumanEntity,org.bukkit.event.inventory.InventoryType,int,net.kyori.adventure.text.Component,boolean))
+щоб це зробити, використовуйте метод [AbstractGui#updateMenu(boolean)](https://github.com/Jodexx/JGuiWrapper/tree/master/api/src/main/java/com/jodexindustries/jguiwrapper/gui/AbstractGui.java#L266)
 
 Аргумент refreshData повинен бути `true` задля оновлення положення предметів (особливо при зміні типу та розміру). 
 Оновлення меню також потрібно здійснити після взаємодії з предметами (у випадку реакції на [InventoryClickEvent](https://jd.papermc.io/paper/1.16.5/org/bukkit/event/inventory/InventoryClickEvent.html)), тобто через один тік:
 ```java
-runTask(() -> { // tip="<a target="_blank" href="https://repo.jodex.xyz/javadoc/releases/com/jodexindustries/jguiwrapper/api/1.0.0.7/raw/com/jodexindustries/jguiwrapper/gui/AbstractGui.html#runTask(java.lang.Runnable)">runTask</a> це заміна звичайному<br>BukkitScheduler#runTask(Plugin, Runnable)"
+runTask(() -> { // tip="<a target="_blank" href="https://github.com/Jodexx/JGuiWrapper/tree/master/api/src/main/java/com/jodexindustries/jguiwrapper/gui/AbstractGui.java#L408">runTask</a> це заміна звичайному<br>BukkitScheduler#runTask(Plugin, Runnable)"
     updateMenu(player, type(), size(), Component.text("New title"), true);
 });
 ```

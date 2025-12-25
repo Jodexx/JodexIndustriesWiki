@@ -87,7 +87,7 @@ public class TestGuiLoader implements GuiDataLoader {
 }
 ```
 
-Метод `load` викликатиметься кожного разу, коли визвано метод [AdvancedGui#loadData](https://repo.jodex.xyz/javadoc/releases/com/jodexindustries/jguiwrapper/api/1.0.0.7/raw/com/jodexindustries/jguiwrapper/gui/advanced/AdvancedGui.html#loadData(org.bukkit.entity.HumanEntity))
+Метод `load` викликатиметься кожного разу, коли визвано метод [AdvancedGui#loadData](https://github.com/Jodexx/JGuiWrapper/tree/master/api/src/main/java/com/jodexindustries/jguiwrapper/gui/advanced/AdvancedGui.java#L85)
 
 Зареєструємо наш лоадер в регістр
 ```java
@@ -122,7 +122,7 @@ public class TestItemHandler implements ItemHandler<TestGuiLoader> {
 Наш обробник імплементує інтерфейс ItemHandler з типізацією нашого лоадера `TestGuiLoader`, щоб діставати з нього потрібну інформацію
 :::
 
-Метод `load` викликатиметься кожного разу, коли визвано метод [GuiItemController#loadItemHandler](https://repo.jodex.xyz/javadoc/releases/com/jodexindustries/jguiwrapper/api/1.0.0.7/raw/com/jodexindustries/jguiwrapper/gui/advanced/GuiItemController.html#loadItemHandler(com.jodexindustries.jguiwrapper.api.gui.LoadType))
+Метод `load` викликатиметься кожного разу, коли визвано метод [GuiItemController#loadItemHandler](https://github.com/Jodexx/JGuiWrapper/tree/master/api/src/main/java/com/jodexindustries/jguiwrapper/gui/advanced/GuiItemController.java#L445)
 
 Зареєструємо обробник в регістр
 ```java

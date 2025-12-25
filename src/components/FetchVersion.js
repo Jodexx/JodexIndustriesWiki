@@ -20,12 +20,15 @@ function setCachedVersion(groupId, artifactId, version) {
 
 export default function FetchVersion({
   type = "maven", // 'maven', 'gradle-groovy', 'gradle-kts'
-  groupId = "com.jodexindustries.donatecase",
+  groupId = "com.github.Jodexx",
+  projectId = "DonateCase",
   artifactId = "api",
   implementation = false, // Gradle: implementation/compileOnly, Maven: compile/provided
 }) {
+  const allGroupId = groupId + "." + projectId;
+
   const [version, setVersion] = useState(() => {
-    return getCachedVersion(groupId, artifactId) || "loading";
+    return getCachedVersion(allGroupId, artifactId) || "loading";
   });
 
   useEffect(() => {
@@ -33,15 +36,14 @@ export default function FetchVersion({
 
     async function fetchVersion() {
       try {
-        const groupPath = groupId.replace(/\./g, "/");
         const response = await fetch(
-          `https://repo.jodex.xyz/api/maven/latest/version/releases/${groupPath}/${artifactId}?type=raw`
+          `https://jitpack.io/api/builds/${groupId}/${projectId}/latest`
         );
-        const data = await response.text();
-        const fetchedVersion = data.trim();
+        const data = await response.json();
+        const fetchedVersion = data.version.trim();
 
         setVersion(fetchedVersion);
-        setCachedVersion(groupId, artifactId, fetchedVersion);
+        setCachedVersion(allGroupId, artifactId, fetchedVersion);
       } catch (error) {
         console.error(error);
         setVersion("Error fetching version");
@@ -49,7 +51,7 @@ export default function FetchVersion({
     }
 
     fetchVersion();
-  }, [artifactId, groupId]);
+  }, [groupId, projectId, artifactId, allGroupId, version]);
 
   const dependencyType = implementation ? "implementation" : "compileOnly";
   const mavenScope = implementation ? "compile" : "provided";
@@ -60,14 +62,14 @@ export default function FetchVersion({
   switch (type) {
     case "gradle-groovy":
       dependency = `dependencies {
-    ${dependencyType}("${groupId}:${artifactId}:${version}")
+    ${dependencyType}("${allGroupId}:${artifactId}:${version}")
 }`;
       language = "groovy";
       break;
 
     case "gradle-kts":
       dependency = `dependencies {
-    ${dependencyType}("${groupId}:${artifactId}:${version}")
+    ${dependencyType}("${allGroupId}:${artifactId}:${version}")
 }`;
       language = "kotlin";
       break;
@@ -75,7 +77,7 @@ export default function FetchVersion({
     case "maven":
     default:
       dependency = `<dependency>
-    <groupId>${groupId}</groupId>
+    <groupId>${allGroupId}</groupId>
     <artifactId>${artifactId}</artifactId>
     <version>${version}</version>
     <scope>${mavenScope}</scope>
