@@ -37,6 +37,8 @@ items:
       display-name: '&eVIP'
       enchanted: false
     index: 0
+    custom-data:
+      webhook-name: "Vip"
     give-type: ONE
     actions:
       - '[command] lp user %player% parent set %group%'
@@ -127,6 +129,20 @@ rgb: 123, 50, 15
 ```yaml
 index: 0
 ```
+
+### `custom-data` (необов'язково)
+> Довільні дані для використання аддонами\
+> Аддони можуть зчитувати будь-які параметри з цієї секції\
+> Наприклад, DCWebHook використовує це для відображення чистих назв призів у Discord без кольорових кодів
+
+```yaml
+custom-data:
+  webhook-name: "Vip"
+```
+
+:::tip
+Корисно для аддонів, які потребують текстового представлення приза без Minecraft-форматування
+:::
 
 ### `give-type`
 > Задає тип видачі приза\
