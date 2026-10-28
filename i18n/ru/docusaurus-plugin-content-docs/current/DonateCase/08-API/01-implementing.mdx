@@ -1,0 +1,108 @@
+---
+id: implementing
+title: Создание аддона
+toc_min_heading_level: 2
+toc_max_heading_level: 5
+sidebar_custom_props:
+  icon: FaCog
+---
+
+import CodeBlock from '@theme/CodeBlock';
+
+# Создание аддона
+
+Этот вариант предлагает создание специализированных аддонов для DonateCase, которые содержатся в директории DonateCase/addons/
+
+Пример аддона: [Github](https://github.com/Jodexx/DonateCaseTestAddon)
+
+## Главный класс
+Главный класс — это начальная точка вашего аддона, и он может наследовать только [InternalJavaAddon](https://github.com/Jodexx/DonateCase/tree/main/api/src/main/java/com/jodexindustries/donatecase/api/addon/InternalJavaAddon.java).
+Вот пример, как должен выглядеть ваш класс `TestAddon`:
+<CodeBlock
+        language="java"
+        title="src/main/java/com/jodexindustries/testaddon/TestAddon.java"
+>
+{
+`import com.jodexindustries.donatecase.api.DCAPI;
+import com.jodexindustries.donatecase.api.addon.InternalJavaAddon;
+
+public class TestAddon extends InternalJavaAddon {
+
+    private final DCAPI api = DCAPI.getInstance();
+
+    @Override
+    public void onLoad() {
+        getLogger().info("TestAddon is loaded!");
+    }
+
+    @Override
+    public void onEnable() {
+        getLogger().info("TestAddon is enabled!");
+    }
+
+    @Override
+    public void onDisable() {
+        getLogger().info("TestAddon is disabled!");
+    }
+}
+`
+}
+</CodeBlock>
+
+## Настройка директории ресурсов
+Директория `resources` — это та, в которую вам нужно поместить ваш файл `addon.yml`.
+
+### Пример
+<CodeBlock
+        language="yaml"
+        title="src/main/resources/addon.yml"
+>
+{`name: TestAddon
+main: com.jodexindustries.testaddon.TestAddon
+version: 1.0.0
+api: 2.1.0.0
+author: _Jodex__
+platforms: [Bukkit]
+softdepend: [FriendCase]
+depend: [DCEventManager]
+`
+}
+</CodeBlock>
+
+### Поля
+:::note
+Если рядом с полями есть звёздочка (*), это означает, что они обязательны.
+:::
+
+#### name*
+Имя вашего аддона. Это то, что будет отображаться в списке аддонов и сообщениях журнала.
+- `name: TestAddon`
+
+#### version*
+Текущая версия аддона. Будет отображаться в логах сервера.
+- `version: 1.0.0`
+
+#### main*
+Главный класс вашего аддона. Это класс, который наследует `InternalJavaAddon` и является начальной точкой вашего аддона.
+- `main: com.jodexindustries.testaddon.TestAddon`
+
+#### platforms*
+Список платформ, на которых аддон может работать
+- `platforms: [Bukkit]`
+
+#### author / authors
+Автор(ы) аддона. Может быть один автор или список авторов.
+- `author: _Jodex__`
+- `authors: [_Jodex__, JodexIndustries]`
+
+#### api
+Минимальная версия DonateCase API, которая нужна для работы аддона.
+- `api: 2.1.0.0`
+
+#### depend
+Список аддонов, от **загрузки** которых зависит загрузка вашего аддона. Они указываются по названию аддона.
+- `depend: [DCEventManager]`
+
+#### softdepend
+Список аддонов, от которых зависит ваш аддон, чтобы иметь **полную функциональность**. Они указываются по названию аддона.
+- `softdepend: [FriendCase]`

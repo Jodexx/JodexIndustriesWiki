@@ -1,0 +1,108 @@
+---
+id: implementing
+title: Creating an addon
+toc_min_heading_level: 2
+toc_max_heading_level: 5
+sidebar_custom_props:
+  icon: FaCog
+---
+
+import CodeBlock from '@theme/CodeBlock';
+
+# Creating an addon
+
+This option offers the creation of specialized addons for DonateCase, which are located in the DonateCase/addons/ directory
+
+Addon example: [Github](https://github.com/Jodexx/DonateCaseTestAddon)
+
+## Main class
+The main class is the entry point of your addon and can only extend [InternalJavaAddon](https://github.com/Jodexx/DonateCase/tree/main/api/src/main/java/com/jodexindustries/donatecase/api/addon/InternalJavaAddon.java).
+Here is an example of what your `TestAddon` class should look like:
+<CodeBlock
+        language="java"
+        title="src/main/java/com/jodexindustries/testaddon/TestAddon.java"
+>
+{
+`import com.jodexindustries.donatecase.api.DCAPI;
+import com.jodexindustries.donatecase.api.addon.InternalJavaAddon;
+
+public class TestAddon extends InternalJavaAddon {
+
+    private final DCAPI api = DCAPI.getInstance();
+
+    @Override
+    public void onLoad() {
+        getLogger().info("TestAddon is loaded!");
+    }
+
+    @Override
+    public void onEnable() {
+        getLogger().info("TestAddon is enabled!");
+    }
+
+    @Override
+    public void onDisable() {
+        getLogger().info("TestAddon is disabled!");
+    }
+}
+`
+}
+</CodeBlock>
+
+## Setting up the resources directory
+The `resources` directory is the one where you need to place your `addon.yml` file.
+
+### Example
+<CodeBlock
+        language="yaml"
+        title="src/main/resources/addon.yml"
+>
+{`name: TestAddon
+main: com.jodexindustries.testaddon.TestAddon
+version: 1.0.0
+api: 2.1.0.0
+author: _Jodex__
+platforms: [Bukkit]
+softdepend: [FriendCase]
+depend: [DCEventManager]
+`
+}
+</CodeBlock>
+
+### Fields
+:::note
+If there is an asterisk (*) next to the fields, it means they are required.
+:::
+
+#### name*
+The name of your addon. This is what will be displayed in the addon list and log messages.
+- `name: TestAddon`
+
+#### version*
+The current version of the addon. Will be displayed in the server logs.
+- `version: 1.0.0`
+
+#### main*
+The main class of your addon. This is the class that extends `InternalJavaAddon` and is the entry point of your addon.
+- `main: com.jodexindustries.testaddon.TestAddon`
+
+#### platforms*
+A list of platforms the addon can run on
+- `platforms: [Bukkit]`
+
+#### author / authors
+The author(s) of the addon. Can be a single author or a list of authors.
+- `author: _Jodex__`
+- `authors: [_Jodex__, JodexIndustries]`
+
+#### api
+The minimum DonateCase API version required for the addon to work.
+- `api: 2.1.0.0`
+
+#### depend
+A list of addons on whose **loading** the loading of your addon depends. They are specified by addon name.
+- `depend: [DCEventManager]`
+
+#### softdepend
+A list of addons that your addon depends on to have **full functionality**. They are specified by addon name.
+- `softdepend: [FriendCase]`

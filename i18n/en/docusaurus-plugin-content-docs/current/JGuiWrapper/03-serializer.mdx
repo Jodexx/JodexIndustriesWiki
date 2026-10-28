@@ -1,0 +1,42 @@
+---
+id: serializer
+title: Serializer
+sidebar_custom_props:
+  icon: FaCode
+---
+
+**JGuiWrapper** uses the [Adventure](https://docs.advntr.dev/) library for serializing strings into Minecraft components.
+
+## Serializer types
+For convenient serialization, the 
+[SerializerType](https://github.com/Jodexx/JGuiWrapper/tree/master/api/src/main/java/com/jodexindustries/jguiwrapper/api/text/SerializerType.java) enum was created,
+which contains all handler types from [Adventure](https://docs.advntr.dev/), including [MiniMessage](https://docs.advntr.dev/minimessage/index.html)
+
+:::warning
+**JGuiWrapper** does not contain any serializers itself, it only provides convenient access to them. Some of them are already included in the server core, all others need to be added manually to your project.
+
+If a serializer is absent on the server, the result of serialization/deserialization will be empty.
+:::
+
+### Usage example
+```java
+Component component = SerializerType.LEGACY_AMPERSAND.deserialize("&6Some &9legacy &dtext");
+```
+
+## Default serializer
+
+**JGuiWrapper** by default uses 
+[LegacyComponentSerializer](https://jd.advntr.dev/text-serializer-legacy/4.24.0/net/kyori/adventure/text/serializer/legacy/LegacyComponentSerializer.html), 
+that is, [SerializerType#LEGACY_AMPERSAND](https://github.com/Jodexx/JGuiWrapper/tree/master/api/src/main/java/com/jodexindustries/jguiwrapper/api/text/SerializerType.java#L32).
+
+The default serializer is used in menu titles and [ItemWrapper](https://github.com/Jodexx/JGuiWrapper/tree/master/api/src/main/java/com/jodexindustries/jguiwrapper/api/item/ItemWrapper.java)
+
+In order to change the default serializer, you can use the [GuiApi#defaultSerializer(SerializerType)](https://github.com/Jodexx/JGuiWrapper/tree/master/api/src/main/java/com/jodexindustries/jguiwrapper/api/GuiApi.java#L145) method
+
+```java
+api.defaultSerializer(SerializerType.MINI_MESSAGE);
+```
+
+:::info
+[More about API access](./install#api)
+:::

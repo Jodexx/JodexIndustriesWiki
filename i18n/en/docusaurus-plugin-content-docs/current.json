@@ -2,5 +2,53 @@
   "version.label": {
     "message": "2.1.0",
     "description": "The label for version current"
+  },
+  "sidebar.defaultSidebar.category.DonateCase": {
+    "message": "DonateCase",
+    "description": "The label for category 'DonateCase' in sidebar 'defaultSidebar'"
+  },
+  "sidebar.defaultSidebar.category.Конфігурації": {
+    "message": "Configurations",
+    "description": "The label for category 'Конфігурації' in sidebar 'defaultSidebar'"
+  },
+  "sidebar.defaultSidebar.category.Налаштування кейсів": {
+    "message": "Case settings",
+    "description": "The label for category 'Налаштування кейсів' in sidebar 'defaultSidebar'"
+  },
+  "sidebar.defaultSidebar.category.Аддони": {
+    "message": "Addons",
+    "description": "The label for category 'Аддони' in sidebar 'defaultSidebar'"
+  },
+  "sidebar.defaultSidebar.category.BetterCasino": {
+    "message": "BetterCasino",
+    "description": "The label for category 'BetterCasino' in sidebar 'defaultSidebar'"
+  },
+  "sidebar.defaultSidebar.category.Неофіційні": {
+    "message": "Unofficial",
+    "description": "The label for category 'Неофіційні' in sidebar 'defaultSidebar'"
+  },
+  "sidebar.defaultSidebar.category.EveryDayCase": {
+    "message": "EveryDayCase",
+    "description": "The label for category 'EveryDayCase' in sidebar 'defaultSidebar'"
+  },
+  "sidebar.defaultSidebar.category.everydaycase-api": {
+    "message": "API",
+    "description": "The label for category 'API' in sidebar 'defaultSidebar'"
+  },
+  "sidebar.defaultSidebar.category.donatecase-api": {
+    "message": "API",
+    "description": "The label for category 'API' in sidebar 'defaultSidebar'"
+  },
+  "sidebar.defaultSidebar.category.Spigot": {
+    "message": "Spigot",
+    "description": "The label for category 'Spigot' in sidebar 'defaultSidebar'"
+  },
+  "sidebar.defaultSidebar.category.JGuiWrapper": {
+    "message": "JGuiWrapper",
+    "description": "The label for category 'JGuiWrapper' in sidebar 'defaultSidebar'"
+  },
+  "sidebar.defaultSidebar.category.Інтерфейси": {
+    "message": "Interfaces",
+    "description": "The label for category 'Інтерфейси' in sidebar 'defaultSidebar'"
   }
 }

@@ -1,0 +1,165 @@
+---
+id: registry
+title: Registry
+sidebar_custom_props:
+  icon: FaList
+---
+
+# 📋 Registry
+
+In JGuiWrapper there is a registry for item handlers and their data loaders. It serves to organize elements in graphical interface systems.
+
+:::note
+Using the registry is appropriate exclusively for `AdvancedGui`
+:::
+
+---
+
+## 🔑 Why is a registry needed?
+
+- ✅ Allows you to **register your own item types**.  
+- ✅ Makes it possible to **add custom click handlers** and behaviors.  
+- ✅ Provides **convenient data loading** for GUI elements.  
+- ✅ Contributes to **extensibility** — other plugins or modules can plug in their own elements.  
+
+---
+
+## 🧩 Registration example
+
+First, let's get the main registry
+
+```java
+GlobalRegistry registry = GuiApi.get().getRegistry();
+```
+
+In order to register one of the elements (a loader or a handler), you first need to make an identification key (the library uses [Adventure Key](https://jd.advntr.dev/key/4.14.0/net/kyori/adventure/key/package-summary.html))
+
+```java
+// jguiwrapper - namespace
+// test - id
+public static final Key TEST_LOADER_KEY = Key.key("jguiwrapper", "test"); // loader
+public static final Key TEST_HANDLER_KEY = Key.key("jguiwrapper", "test"); // handler
+```
+
+Let's create a small loader to store the number of clicks and menu openings
+
+```java title="TestGuiLoader.java"
+public class TestGuiLoader implements GuiDataLoader {
+
+    private final PlaceholderEngine placeholderEngine = PlaceholderEngine.of();
+
+    private int openCount;
+    private int clickCount;
+
+    public TestGuiLoader() {
+        // registering placeholders
+        placeholderEngine.register("%open_count%", (player) -> String.valueOf(openCount));
+        placeholderEngine.register("%click_count%", (player) -> {
+            if (clickCount >= 100) return ">= 100";
+
+            return String.valueOf(clickCount);
+        });
+    }
+
+    @Override
+    public void load(AdvancedGui gui, HumanEntity player) {
+        openCount++;
+
+        // assigning placeholders for all items
+        for (GuiItemController controller : gui.getControllers()) {
+            controller.updateItems(itemWrapper -> {
+                if (itemWrapper.placeholderEngine() == null) {
+                    itemWrapper.placeholderEngine(placeholderEngine);
+                } else {
+                    itemWrapper.placeholderEngine().addAll(placeholderEngine);
+                }
+            });
+        }
+    }
+
+    public void click() {
+        clickCount++;
+    }
+
+    public int getOpenCount() {
+        return openCount;
+    }
+}
+```
+
+The `load` method will be called every time the [AdvancedGui#loadData](https://github.com/Jodexx/JGuiWrapper/tree/master/api/src/main/java/com/jodexindustries/jguiwrapper/gui/advanced/AdvancedGui.java#L85) method is called
+
+Let's register our loader in the registry
+```java
+registry.registerLoader(TEST_LOADER_KEY, new TestGuiLoader());
+```
+
+Let's move on to creating an item handler
+
+```java title="TestItemHandler"
+public class TestItemHandler implements ItemHandler<TestGuiLoader> {
+
+    @Override
+    public void load(@NotNull TestGuiLoader loader, @NotNull GuiItemController controller, @NotNull HandlerContext context) {
+        // assigning a click handler when the handler loads
+        controller.defaultClickHandler((e, c) -> {
+            e.setCancelled(true);
+
+            loader.click(); // increasing the number of clicks
+
+            // updating all items of the controller
+            c.updateItems(itemWrapper -> itemWrapper.update(e.getWhoClicked()));
+        });
+
+        // changing the controller's data when the handler loads
+        controller.updateItems(wrapper -> wrapper.lore("&cPlayer: &6%player_name%", "&cOpen count: &6%open_count%", "&cClick count: &6%click_count%"),
+                (OfflinePlayer) context.player());
+    }
+}
+```
+
+:::info
+Our handler implements the ItemHandler interface typed with our loader `TestGuiLoader`, in order to get the information we need from it
+:::
+
+The `load` method will be called every time the [GuiItemController#loadItemHandler](https://github.com/Jodexx/JGuiWrapper/tree/master/api/src/main/java/com/jodexindustries/jguiwrapper/gui/advanced/GuiItemController.java#L445) method is called
+
+Let's register the handler in the registry
+```java
+registry.registerHandler(TEST_HANDLER_KEY, new TestItemHandler());
+```
+
+After we have registered the handler and the loader, let's use them in practice. Inside the gui, let's register the loader
+
+```java title="TestAdvancedGui"
+public TestAdvancedGui() {
+    super("&cAdvanced gui");
+
+    registerLoader(TEST_LOADER_KEY);
+
+    // other code
+}
+```
+
+Let's assign the handler to the `handled` item
+
+```java title="TestAdvancedGui"
+registerItem("handled", builder -> builder.slots(52)
+        .defaultItem(ItemWrapper.builder(Material.DIAMOND_BLOCK).build())
+        .itemHandler(TEST_HANDLER_KEY));
+```
+
+Let's load the data and handlers on open
+```java
+onOpen(event -> {
+    HumanEntity player = event.getPlayer();
+
+    // loading TestGuiLoader
+    loadData(player);
+
+    // loading TestItemHandler
+    for (GuiItemController controller : getControllers()) {
+        controller.loadItemHandler(LoadType.ON_OPEN, player);
+    }
+});
+```
