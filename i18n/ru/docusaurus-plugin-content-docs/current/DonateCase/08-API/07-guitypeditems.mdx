@@ -1,0 +1,118 @@
+---
+id: register-guitypeditems
+title: Регистрация предметов, заданных в GUI
+toc_min_heading_level: 2
+toc_max_heading_level: 5
+sidebar_custom_props:
+  icon: FaCog
+---
+
+import CodeBlock from '@theme/CodeBlock';
+
+# Регистрация предметов, заданных в GUI
+
+Пользовательские предметы в GUI обрабатываются с помощью интерфейсов [TypedItemHandler](https://github.com/Jodexx/DonateCase/tree/main/api/src/main/java/com/jodexindustries/donatecase/api/data/casedata/gui/typeditem/TypedItemHandler.java)
+и [TypedItemClickHandler](https://github.com/Jodexx/DonateCase/tree/main/api/src/main/java/com/jodexindustries/donatecase/api/data/casedata/gui/typeditem/TypedItemClickHandler.java)
+
+## Пример реализации предмета `TEST`
+
+<CodeBlock
+        language="java"
+        title="src/main/java/com/jodexindustries/testaddon/registry/TestTypedItemClickHandler.java"
+>
+{`import com.jodexindustries.donatecase.api.data.casedata.gui.typeditem.TypedItemClickHandler;
+import com.jodexindustries.donatecase.api.data.casedata.gui.typeditem.TypedItemException;
+import com.jodexindustries.donatecase.api.event.player.GuiClickEvent;
+import org.jetbrains.annotations.NotNull;
+
+public class TestTypedItemClickHandler implements TypedItemClickHandler {
+
+    @Override
+    public void onClick(@NotNull GuiClickEvent event) throws TypedItemException {
+        // execute on click actions
+
+    }
+}
+`}
+</CodeBlock>
+
+<CodeBlock
+        language="java"
+        title="src/main/java/com/jodexindustries/testaddon/registry/TestTypedItemHandler.java"
+>
+{`import com.jodexindustries.donatecase.api.data.casedata.gui.CaseGui;
+import com.jodexindustries.donatecase.api.data.casedata.gui.CaseGuiWrapper;
+import com.jodexindustries.donatecase.api.data.casedata.gui.typeditem.TypedItemException;
+import com.jodexindustries.donatecase.api.data.casedata.gui.typeditem.TypedItemHandler;
+import org.jetbrains.annotations.NotNull;
+
+public class TestTypedItemHandler implements TypedItemHandler {
+
+    @Override
+    public CaseGui.@NotNull Item handle(@NotNull CaseGuiWrapper caseGui, CaseGui.@NotNull Item item) throws TypedItemException {
+        // example: HISTORY-0
+        // args[0] = HISTORY
+        // args[1] = 0
+        String[] args = item.type().split("-");
+        if(args.length >= 2) {
+            if(args[1].equalsIgnoreCase("test")) {
+                item.material().displayName("Test");
+            }
+        }
+
+        return item;
+    }
+}
+`}
+</CodeBlock>
+
+
+<CodeBlock
+        language="java"
+        title="src/main/java/com/jodexindustries/testaddon/MainAddon.java"
+>
+{`import com.jodexindustries.donatecase.api.DCAPI;
+import com.jodexindustries.donatecase.api.addon.InternalJavaAddon;
+import com.jodexindustries.donatecase.api.data.casedata.gui.typeditem.TypedItem;
+import com.jodexindustries.testaddon.registry.TestTypedItemClickHandler;
+import com.jodexindustries.testaddon.registry.TestTypedItemHandler;
+
+public class MainAddon extends InternalJavaAddon {
+
+    private final DCAPI api = DCAPI.getInstance();
+
+    @Override
+    public void onEnable() {
+        api.getGuiTypedItemManager().register(
+                TypedItem.builder()
+                        .id("TEST")
+                        .addon(this)
+                        .description("Some cool item")
+                        .handler(new TestTypedItemHandler())
+                        .click(new TestTypedItemClickHandler())
+                        .build()
+        );
+    }
+
+}
+`}
+</CodeBlock>
+:::info
+Также возможна регистрация только одного из обработчиков
+:::
+
+
+### Пояснение
+#### Обработчики
+- `TypedItemHandler` используется для изменения метаданных предмета во время загрузки GUI.
+- `TypedItemClickHandler` используется для реакции на клик мыши по предмету в GUI.
+
+#### Дополнительные параметры
+По умолчанию предмет не будет обработан во время загрузки кейса (так же, как и в `HISTORY`), 
+но это можно исправить, использовав параметр
+[loadOnCase](https://github.com/Jodexx/DonateCase/tree/main/api/src/main/java/com/jodexindustries/donatecase/api/data/casedata/gui/typeditem/TypedItem.TypedItemBuilder.java#loadOnCase(boolean))
+в билдере предмета ([TypedItem#builder](https://github.com/Jodexx/DonateCase/tree/main/api/src/main/java/com/jodexindustries/donatecase/api/data/casedata/gui/typeditem/TypedItem.java#builder())),
+который используется для обработки предмета `OPEN`, потому что он не содержит в себе обработчика и в подгрузке в GUI не нуждается.
+Также очень важен параметр
+[updateMeta](https://github.com/Jodexx/DonateCase/tree/main/api/src/main/java/com/jodexindustries/donatecase/api/data/casedata/gui/typeditem/TypedItem.TypedItemBuilder.java#updateMeta(boolean)), 
+который отвечает за обновление метаданных предметов с указанным интервалом в настройках GUI. (В основном используется для обновления плейсхолдеров (стандартных от DonateCase и PlaceholderAPI))

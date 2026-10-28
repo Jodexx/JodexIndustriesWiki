@@ -1,0 +1,45 @@
+---
+id: everydaycase-api-implementing
+title: Создание аддона
+toc_min_heading_level: 2
+toc_max_heading_level: 5
+sidebar_custom_props:
+  icon: FaCog
+---
+
+import CodeBlock from '@theme/CodeBlock';
+
+# Создание аддона
+
+Этот вариант предлагает создание специализированных аддонов для DCEveryDayCase
+
+Пример аддона: [Github](https://github.com/1wairesd/DCEveryDayCaseTestAddon)
+
+## Главный класс
+Главный класс — это начальная точка вашего аддона.
+Вот пример, как должен выглядеть ваш класс `DCEveryDayCaseTestAddon`:
+<CodeBlock
+        language="java"
+        title="src/main/java/com/wairesd/testaddon/DCEveryDayCaseTestAddon.java"
+>
+{
+`import com.wairesd.dceverydaycase.api.DCEDCAPI;
+import org.bukkit.plugin.java.JavaPlugin;
+
+public class DCEveryDayCaseTestAddon extends JavaPlugin {
+
+    private final DCEDCAPI api = DCEDCAPI.getInstance();
+
+    @Override
+    public void onEnable() {
+        getLogger().info("TestAddon is enabled!");
+    }
+
+    @Override
+    public void onDisable() {
+        getLogger().info("TestAddon is disabled!");
+    }
+}
+`
+}
+</CodeBlock>

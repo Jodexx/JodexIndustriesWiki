@@ -1,0 +1,98 @@
+---
+id: abstract-gui
+title: AbstractGui
+sidebar_custom_props:
+  icon: FaCogs
+---
+
+import CodeBlock from '@theme/CodeBlock';
+
+**AbstractGui** - базовый графический интерфейс с минимальным функционалом для тех, кто привык работать с обычным **Bukkit Inventory API**
+
+Все последующие графические интерфейсы наследуют **AbstractGui**
+
+## Пример реализации простого меню
+
+```java title="TestAbstractGui"
+import com.jodexindustries.jguiwrapper.gui.AbstractGui;
+import org.bukkit.entity.HumanEntity;
+import org.bukkit.event.inventory.InventoryClickEvent;
+import org.jetbrains.annotations.NotNull;
+
+public class TestAbstractGui extends AbstractGui {
+    
+    public TestAbstractGui() {
+        super("&cTest abstract gui"); // tip="Заголовок меню"
+
+        Inventory inventory = holder().getInventory(); // tip="<a href="https://github.com/Jodexx/JGuiWrapper/tree/master/api/src/main/java/com/jodexindustries/jguiwrapper/api/gui/GuiHolder.java" target="_blank">GuiHolder</a>"
+
+        for (int i = 0; i < 5; i++) {
+            ItemStack itemStack = new ItemStack(Material.DIAMOND);
+            ItemMeta itemMeta = itemStack.getItemMeta();
+
+            itemMeta.displayName(Component.text(i));
+            itemStack.setItemMeta(itemMeta);
+
+            inventory.setItem(i, itemStack);
+        }
+    }
+
+    @Override
+    public void onClick(@NotNull InventoryClickEvent e) {
+        // реакция на клик
+        HumanEntity player = e.getWhoClicked();
+
+        player.sendMessage("You just clicked!");
+    }
+}
+```
+
+:::info
+Переопределить также можно методы: `onOpen`, `onClose`, `onDrag`
+:::
+
+### Открытие меню для игрока
+
+```java
+TestAbstractGui gui = new TestAbstractGui();
+
+gui.open(player); // tip="<a href="https://github.com/Jodexx/JGuiWrapper/tree/master/api/src/main/java/com/jodexindustries/jguiwrapper/api/gui/Gui.java#L45)" target="_blank">Gui#open(HumanEntity player)</a>"
+```
+
+## Конструкторы
+**AbstractGui** даёт возможность сразу установить базовые параметры меню (заголовок, размер, тип и [сериалайзер](../serializer)) с помощью встроенных конструкторов
+см. [JavaDocs](https://github.com/Jodexx/JGuiWrapper/tree/master/api/src/main/java/com/jodexindustries/jguiwrapper/gui/AbstractGui.java)
+
+:::info
+```java
+AbstractGui(int size, String title)
+AbstractGui(int size, Component title)
+AbstractGui(String title)
+AbstractGui(Component title)
+AbstractGui(InventoryType type, Component title)
+AbstractGui(InventoryType type, Component title, SerializerType defaultSerializer)
+```
+:::
+
+## Обновление заголовка
+Все графические интерфейсы поддерживают обновление заголовка без закрытия меню с помощью NMS
+
+```java
+@Override
+public void onClick(@NotNull InventoryClickEvent e) {
+    updateMenu(Component.text("New title"));
+}
+```
+
+:::warning
+Часто при обновлении меню, в котором происходит взаимодействие с предметами, стоит обновлять его содержимое, 
+чтобы это сделать, используйте метод [AbstractGui#updateMenu(boolean)](https://github.com/Jodexx/JGuiWrapper/tree/master/api/src/main/java/com/jodexindustries/jguiwrapper/gui/AbstractGui.java#L266)
+
+Аргумент refreshData должен быть `true` для обновления положения предметов (особенно при изменении типа и размера). 
+Обновление меню также нужно выполнить после взаимодействия с предметами (в случае реакции на [InventoryClickEvent](https://jd.papermc.io/paper/1.16.5/org/bukkit/event/inventory/InventoryClickEvent.html)), то есть через один тик:
+```java
+runTask(() -> { // tip="<a target="_blank" href="https://github.com/Jodexx/JGuiWrapper/tree/master/api/src/main/java/com/jodexindustries/jguiwrapper/gui/AbstractGui.java#L408">runTask</a> это замена обычному<br>BukkitScheduler#runTask(Plugin, Runnable)"
+    updateMenu(player, type(), size(), Component.text("New title"), true);
+});
+```
+:::

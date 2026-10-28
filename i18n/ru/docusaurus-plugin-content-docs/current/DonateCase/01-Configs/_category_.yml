@@ -1,0 +1,6 @@
+label: "Конфигурации"
+link:
+  type: doc
+  id: "overview"
+customProps:
+  icon: FaSlidersH

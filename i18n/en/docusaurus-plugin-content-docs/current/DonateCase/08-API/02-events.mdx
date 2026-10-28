@@ -1,0 +1,98 @@
+---
+id: register-events
+title: Registering events
+sidebar_custom_props:
+  icon: FaCog
+---
+
+import CodeBlock from '@theme/CodeBlock';
+
+# Registering events
+DonateCase events are registered using the [EventBus](https://github.com/Jodexx/DonateCase/tree/main/api/src/main/java/com/jodexindustries/donatecase/api/event/EventBus.java)
+
+## Listener
+The listener must implement the [Subscriber](https://github.com/Jodexx/DonateCase/tree/main/api/src/main/java/com/jodexindustries/donatecase/api/event/Subscriber.java) interface
+and contain methods that have the Subscribe annotation
+
+:::info
+The number of methods in a listener can be unlimited
+:::
+<CodeBlock
+        language="java"
+        title="src/main/java/com/jodexindustries/testaddon/EventListener.java"
+>
+{`import com.jodexindustries.donatecase.api.event.Subscriber;
+import com.jodexindustries.donatecase.api.event.player.CaseInteractEvent;
+import net.kyori.event.method.annotation.Subscribe;
+
+public class EventListener implements Subscriber {
+
+    @Subscribe
+    public void onCaseInteract(CaseInteractEvent event) {
+        if(event.action() == CaseInteractEvent.Action.RIGHT) {
+            event.player().sendMessage("Right clicked!");
+        } else {
+            event.player().sendMessage("Left clicked!");
+        }
+    }
+}
+`}
+</CodeBlock>
+
+### Registration
+<CodeBlock
+        language="java"
+        title="src/main/java/com/jodexindustries/testaddon/MainAddon.java"
+>
+{`import com.jodexindustries.donatecase.api.DCAPI;
+import com.jodexindustries.donatecase.api.addon.InternalJavaAddon;
+import com.jodexindustries.testaddon.EventListener;
+
+public class MainAddon extends InternalJavaAddon {
+
+    private final DCAPI api = DCAPI.getInstance();
+    
+    private final EventListener listener = new EventListener();
+
+    @Override
+    public void onEnable() {
+        api.getEventBus().register(listener);
+    }
+    
+    @Override
+    public void onDisable() {
+        api.getEventBus().unregister(listener);
+    }
+}
+`}
+</CodeBlock>
+
+
+## Lambda expression
+Registering an event can be done using a lambda expression if there is no need to register a large number of events
+<CodeBlock
+        language="java"
+        title="src/main/java/com/jodexindustries/testaddon/MainAddon.java"
+>
+{`import com.jodexindustries.donatecase.api.DCAPI;
+import com.jodexindustries.donatecase.api.addon.InternalJavaAddon;
+import com.jodexindustries.donatecase.api.event.player.CaseInteractEvent;
+
+public class MainAddon extends InternalJavaAddon {
+
+    private final DCAPI api = DCAPI.getInstance();
+
+    @Override
+    public void onEnable() {
+        api.getEventBus().register(CaseInteractEvent.class, event -> {
+            if(event.action() == CaseInteractEvent.Action.RIGHT) {
+                event.player().sendMessage("Right clicked!");
+            } else {
+                event.player().sendMessage("Left clicked!");
+            }
+        });
+    }
+
+}
+`}
+</CodeBlock>

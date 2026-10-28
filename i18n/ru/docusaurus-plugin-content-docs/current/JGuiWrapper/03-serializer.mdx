@@ -1,0 +1,42 @@
+---
+id: serializer
+title: Сериалайзер
+sidebar_custom_props:
+  icon: FaCode
+---
+
+**JGuiWrapper** использует библиотеку [Adventure](https://docs.advntr.dev/) для сериализации строк в компоненты Minecraft.
+
+## Типы сериалайзеров
+Для удобной сериализации был создан enum 
+[SerializerType](https://github.com/Jodexx/JGuiWrapper/tree/master/api/src/main/java/com/jodexindustries/jguiwrapper/api/text/SerializerType.java),
+который содержит в себе все типы обработчиков из [Adventure](https://docs.advntr.dev/), включая [MiniMessage](https://docs.advntr.dev/minimessage/index.html)
+
+:::warning
+**JGuiWrapper** не содержит в себе никаких сериалайзеров, а лишь предоставляет к ним удобный доступ. Некоторые из них уже включены в ядро сервера, все остальные нужно добавлять вручную в свой проект.
+
+В случае отсутствия сериалайзера на сервере результат сериализации/десериализации будет пустым.
+:::
+
+### Пример использования
+```java
+Component component = SerializerType.LEGACY_AMPERSAND.deserialize("&6Some &9legacy &dtext");
+```
+
+## Стандартный сериалайзер
+
+**JGuiWrapper** по умолчанию использует 
+[LegacyComponentSerializer](https://jd.advntr.dev/text-serializer-legacy/4.24.0/net/kyori/adventure/text/serializer/legacy/LegacyComponentSerializer.html), 
+то есть [SerializerType#LEGACY_AMPERSAND](https://github.com/Jodexx/JGuiWrapper/tree/master/api/src/main/java/com/jodexindustries/jguiwrapper/api/text/SerializerType.java#L32).
+
+Сериалайзер по умолчанию используется в заголовках меню и [ItemWrapper](https://github.com/Jodexx/JGuiWrapper/tree/master/api/src/main/java/com/jodexindustries/jguiwrapper/api/item/ItemWrapper.java)
+
+Для того чтобы изменить сериалайзер по умолчанию, можно использовать метод [GuiApi#defaultSerializer(SerializerType)](https://github.com/Jodexx/JGuiWrapper/tree/master/api/src/main/java/com/jodexindustries/jguiwrapper/api/GuiApi.java#L145)
+
+```java
+api.defaultSerializer(SerializerType.MINI_MESSAGE);
+```
+
+:::info
+[Подробнее про API-доступ](./install#api)
+:::

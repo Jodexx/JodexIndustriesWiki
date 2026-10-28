@@ -1,0 +1,77 @@
+---
+id: install
+title: Installation
+sidebar_custom_props:
+  icon: FaCog
+---
+
+import FetchVersion from '@site/src/components/FetchVersion';
+import CodeBlock from '@theme/CodeBlock';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Installation 
+
+DonateCase API modules:
+- `api`
+the main module, which contains the core constructs for interacting with DonateCase. Has no dependencies.
+- `spigot-api`
+a module for the `spigot` platform, contains constructs for interacting with the plugin. Has a dependency on Spigot 1.16.5.
+
+## Maven
+<CodeBlock
+        language="xml"
+        title="Maven"
+>
+{
+`<repository>
+    <id>jitpack.io</id>
+    <url>https://jitpack.io</url>
+</repository>`
+}
+</CodeBlock>
+
+<Tabs
+  defaultValue="api"
+  groupId="module"
+  values={[
+    {label: 'api', value: 'api'},
+    {label: 'spigot-api', value: 'spigot-api'},
+  ]}>
+  <TabItem value="api">
+<FetchVersion type="maven" artifactId="api" />
+  </TabItem>
+  <TabItem value="spigot-api">
+  <FetchVersion type="maven" artifactId="spigot-api" />
+  </TabItem>
+</Tabs>
+
+
+## Gradle
+<CodeBlock
+        language="gradle"
+        title="Gradle"
+>
+{
+`maven {
+    name "jitpack.io"
+    url "https://jitpack.io"
+}
+`
+}
+</CodeBlock>
+
+<Tabs
+  defaultValue="api"
+  groupId="module"
+  values={[
+    {label: 'api', value: 'api'},
+    {label: 'spigot-api', value: 'spigot-api'},
+  ]}>
+  <TabItem value="api">
+<FetchVersion type="gradle" artifactId="api" />
+  </TabItem>
+  <TabItem value="spigot-api">
+  <FetchVersion type="gradle" artifactId="spigot-api"/>
+  </TabItem>
+</Tabs>

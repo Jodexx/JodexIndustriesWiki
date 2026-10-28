@@ -1,0 +1,76 @@
+---
+id: register-materials
+title: Registering materials
+sidebar_custom_props:
+  icon: FaCog
+---
+
+import CodeBlock from '@theme/CodeBlock';
+
+# Registering materials
+
+Custom materials are handled using the [MaterialHandler](https://github.com/Jodexx/DonateCase/tree/main/api/src/main/java/com/jodexindustries/donatecase/api/data/material/MaterialHandler.java) interface
+
+## Example of implementing a `HEAD` material
+
+The `handle` method must return an [ItemStack](https://helpch.at/docs/1.16.5/org/bukkit/inventory/ItemStack.html)-like object,
+which will be used after the `MaterialHandler` handler is called.
+
+<CodeBlock
+        language="java"
+        title="src/main/java/com/jodexindustries/testaddon/registry/TestMaterial.java"
+>
+{`import com.jodexindustries.donatecase.api.data.material.MaterialHandler;
+import org.bukkit.Material;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.SkullMeta;
+import org.jetbrains.annotations.NotNull;
+
+public class TestMaterial implements MaterialHandler {
+
+    @Override
+    public @NotNull ItemStack handle(@NotNull String context) {
+
+        Material type = Material.getMaterial("SKULL_ITEM");
+        ItemStack item = type == null ? new ItemStack(Material.getMaterial("PLAYER_HEAD")) : new ItemStack(type, 1, (short) 3);
+        SkullMeta meta = (SkullMeta) item.getItemMeta();
+        if (meta != null) {
+            meta.setOwner(context);
+            item.setItemMeta(meta);
+        }
+        return item;
+    }
+}
+`}
+
+</CodeBlock>
+
+
+<CodeBlock
+        language="java"
+        title="src/main/java/com/jodexindustries/testaddon/MainAddon.java"
+>
+{`import com.jodexindustries.donatecase.api.DCAPI;
+import com.jodexindustries.donatecase.api.addon.InternalJavaAddon;
+import com.jodexindustries.donatecase.api.data.material.CaseMaterial;
+import com.jodexindustries.testaddon.registry.TestMaterial;
+
+public class MainAddon extends InternalJavaAddon {
+
+    private final DCAPI api = DCAPI.getInstance();
+
+    @Override
+    public void onEnable() {
+        api.getMaterialManager().register(
+                CaseMaterial.builder()
+                        .id("HEAD")
+                        .addon(this)
+                        .description("Default Minecraft heads by nickname")
+                        .handler(new TestMaterial())
+                        .build()
+        );
+    }
+
+}
+`}
+</CodeBlock>

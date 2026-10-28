@@ -1,0 +1,98 @@
+---
+id: register-events
+title: Регистрация ивентов
+sidebar_custom_props:
+  icon: FaCog
+---
+
+import CodeBlock from '@theme/CodeBlock';
+
+# Регистрация ивентов
+Ивенты DonateCase регистрируются с помощью [EventBus](https://github.com/Jodexx/DonateCase/tree/main/api/src/main/java/com/jodexindustries/donatecase/api/event/EventBus.java)
+
+## Слушатель
+Слушатель обязательно должен реализовывать интерфейс [Subscriber](https://github.com/Jodexx/DonateCase/tree/main/api/src/main/java/com/jodexindustries/donatecase/api/event/Subscriber.java)
+и содержать в себе методы, которые имеют аннотацию Subscribe
+
+:::info
+Количество методов в слушателе может быть неограниченным
+:::
+<CodeBlock
+        language="java"
+        title="src/main/java/com/jodexindustries/testaddon/EventListener.java"
+>
+{`import com.jodexindustries.donatecase.api.event.Subscriber;
+import com.jodexindustries.donatecase.api.event.player.CaseInteractEvent;
+import net.kyori.event.method.annotation.Subscribe;
+
+public class EventListener implements Subscriber {
+
+    @Subscribe
+    public void onCaseInteract(CaseInteractEvent event) {
+        if(event.action() == CaseInteractEvent.Action.RIGHT) {
+            event.player().sendMessage("Right clicked!");
+        } else {
+            event.player().sendMessage("Left clicked!");
+        }
+    }
+}
+`}
+</CodeBlock>
+
+### Регистрация
+<CodeBlock
+        language="java"
+        title="src/main/java/com/jodexindustries/testaddon/MainAddon.java"
+>
+{`import com.jodexindustries.donatecase.api.DCAPI;
+import com.jodexindustries.donatecase.api.addon.InternalJavaAddon;
+import com.jodexindustries.testaddon.EventListener;
+
+public class MainAddon extends InternalJavaAddon {
+
+    private final DCAPI api = DCAPI.getInstance();
+    
+    private final EventListener listener = new EventListener();
+
+    @Override
+    public void onEnable() {
+        api.getEventBus().register(listener);
+    }
+    
+    @Override
+    public void onDisable() {
+        api.getEventBus().unregister(listener);
+    }
+}
+`}
+</CodeBlock>
+
+
+## Лямбда-выражение
+Регистрация ивента может быть выполнена с помощью лямбда-выражения, если нет необходимости регистрировать большое количество ивентов
+<CodeBlock
+        language="java"
+        title="src/main/java/com/jodexindustries/testaddon/MainAddon.java"
+>
+{`import com.jodexindustries.donatecase.api.DCAPI;
+import com.jodexindustries.donatecase.api.addon.InternalJavaAddon;
+import com.jodexindustries.donatecase.api.event.player.CaseInteractEvent;
+
+public class MainAddon extends InternalJavaAddon {
+
+    private final DCAPI api = DCAPI.getInstance();
+
+    @Override
+    public void onEnable() {
+        api.getEventBus().register(CaseInteractEvent.class, event -> {
+            if(event.action() == CaseInteractEvent.Action.RIGHT) {
+                event.player().sendMessage("Right clicked!");
+            } else {
+                event.player().sendMessage("Left clicked!");
+            }
+        });
+    }
+
+}
+`}
+</CodeBlock>

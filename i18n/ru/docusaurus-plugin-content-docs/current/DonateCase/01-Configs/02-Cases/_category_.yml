@@ -1,0 +1,6 @@
+label: "Настройки кейсов"
+link:
+  type: doc
+  id: "cases"
+customProps:
+  icon: FaBoxes

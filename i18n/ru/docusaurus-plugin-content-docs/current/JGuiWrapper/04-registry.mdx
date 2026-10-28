@@ -1,0 +1,165 @@
+---
+id: registry
+title: Реестр
+sidebar_custom_props:
+  icon: FaList
+---
+
+# 📋 Реестр
+
+В JGuiWrapper существует реестр для обработчиков предметов и их загрузчиков данных. Он служит для упорядочивания элементов в системах графических интерфейсов.
+
+:::note
+Использование реестра уместно исключительно для `AdvancedGui`
+:::
+
+---
+
+## 🔑 Зачем нужен реестр?
+
+- ✅ Позволяет **зарегистрировать собственные типы предметов**.  
+- ✅ Даёт возможность **добавлять кастомные обработчики кликов** и поведения.  
+- ✅ Обеспечивает **удобную загрузку данных** для GUI-элементов.  
+- ✅ Способствует **расширяемости** — другие плагины или модули могут подключать свои элементы.  
+
+---
+
+## 🧩 Пример регистрации
+
+Сначала получим главный реестр
+
+```java
+GlobalRegistry registry = GuiApi.get().getRegistry();
+```
+
+Для того чтобы зарегистрировать какой-либо из элементов (загрузчик или обработчик), сначала нужно сделать идентификационный ключ (библиотека использует [Adventure Key](https://jd.advntr.dev/key/4.14.0/net/kyori/adventure/key/package-summary.html))
+
+```java
+// jguiwrapper - namespace
+// test - id
+public static final Key TEST_LOADER_KEY = Key.key("jguiwrapper", "test"); // загрузчик
+public static final Key TEST_HANDLER_KEY = Key.key("jguiwrapper", "test"); // обработчик
+```
+
+Создадим небольшой загрузчик для хранения количества кликов и открытий меню
+
+```java title="TestGuiLoader.java"
+public class TestGuiLoader implements GuiDataLoader {
+
+    private final PlaceholderEngine placeholderEngine = PlaceholderEngine.of();
+
+    private int openCount;
+    private int clickCount;
+
+    public TestGuiLoader() {
+        // регистрация плейсхолдеров
+        placeholderEngine.register("%open_count%", (player) -> String.valueOf(openCount));
+        placeholderEngine.register("%click_count%", (player) -> {
+            if (clickCount >= 100) return ">= 100";
+
+            return String.valueOf(clickCount);
+        });
+    }
+
+    @Override
+    public void load(AdvancedGui gui, HumanEntity player) {
+        openCount++;
+
+        // присвоение плейсхолдеров для всех предметов
+        for (GuiItemController controller : gui.getControllers()) {
+            controller.updateItems(itemWrapper -> {
+                if (itemWrapper.placeholderEngine() == null) {
+                    itemWrapper.placeholderEngine(placeholderEngine);
+                } else {
+                    itemWrapper.placeholderEngine().addAll(placeholderEngine);
+                }
+            });
+        }
+    }
+
+    public void click() {
+        clickCount++;
+    }
+
+    public int getOpenCount() {
+        return openCount;
+    }
+}
+```
+
+Метод `load` будет вызываться каждый раз, когда вызван метод [AdvancedGui#loadData](https://github.com/Jodexx/JGuiWrapper/tree/master/api/src/main/java/com/jodexindustries/jguiwrapper/gui/advanced/AdvancedGui.java#L85)
+
+Зарегистрируем наш загрузчик в реестр
+```java
+registry.registerLoader(TEST_LOADER_KEY, new TestGuiLoader());
+```
+
+Перейдём к созданию обработчика предметов
+
+```java title="TestItemHandler"
+public class TestItemHandler implements ItemHandler<TestGuiLoader> {
+
+    @Override
+    public void load(@NotNull TestGuiLoader loader, @NotNull GuiItemController controller, @NotNull HandlerContext context) {
+        // назначение обработчика кликов при загрузке обработчика
+        controller.defaultClickHandler((e, c) -> {
+            e.setCancelled(true);
+
+            loader.click(); // увеличение количества кликов
+
+            // обновление всех предметов контроллера
+            c.updateItems(itemWrapper -> itemWrapper.update(e.getWhoClicked()));
+        });
+
+        // изменение данных контроллера при загрузке обработчика
+        controller.updateItems(wrapper -> wrapper.lore("&cPlayer: &6%player_name%", "&cOpen count: &6%open_count%", "&cClick count: &6%click_count%"),
+                (OfflinePlayer) context.player());
+    }
+}
+```
+
+:::info
+Наш обработчик имплементирует интерфейс ItemHandler с типизацией нашего загрузчика `TestGuiLoader`, чтобы доставать из него нужную информацию
+:::
+
+Метод `load` будет вызываться каждый раз, когда вызван метод [GuiItemController#loadItemHandler](https://github.com/Jodexx/JGuiWrapper/tree/master/api/src/main/java/com/jodexindustries/jguiwrapper/gui/advanced/GuiItemController.java#L445)
+
+Зарегистрируем обработчик в реестр
+```java
+registry.registerHandler(TEST_HANDLER_KEY, new TestItemHandler());
+```
+
+После того как мы зарегистрировали обработчик и загрузчик, используем их на практике. Внутри gui зарегистрируем загрузчик
+
+```java title="TestAdvancedGui"
+public TestAdvancedGui() {
+    super("&cAdvanced gui");
+
+    registerLoader(TEST_LOADER_KEY);
+
+    // другой код
+}
+```
+
+Назначим обработчик для предмета `handled`
+
+```java title="TestAdvancedGui"
+registerItem("handled", builder -> builder.slots(52)
+        .defaultItem(ItemWrapper.builder(Material.DIAMOND_BLOCK).build())
+        .itemHandler(TEST_HANDLER_KEY));
+```
+
+Загрузим данные и обработчики при открытии
+```java
+onOpen(event -> {
+    HumanEntity player = event.getPlayer();
+
+    // загрузка TestGuiLoader
+    loadData(player);
+
+    // загрузка TestItemHandler
+    for (GuiItemController controller : getControllers()) {
+        controller.loadItemHandler(LoadType.ON_OPEN, player);
+    }
+});
+```
